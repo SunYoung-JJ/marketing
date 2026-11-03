@@ -1,12 +1,2 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
-<body>
+<%@ page pageEncoding="UTF-8" %>
 <div class="" style="background-color:yellow ;"> 헤더 </div>
-
-</body>
-</html>
