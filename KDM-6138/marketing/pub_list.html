@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>DT Renewal</title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+      * {margin: 0;padding: 0;box-sizing: border-box;list-style: none;font-style: normal;}
+      a {color: #000;text-decoration: underline;}
+      img {border: 0;}
+      label,input {vertical-align: middle;}
+      input {outline: none;}
+      table {width: 100%;border-collapse: collapse;border-spacing: 0;}
+      caption {width: 100%;height: 30px;}
+      body {font-size: 16px;font-family: "Noto Sans KR", sans-serif;}
+      p {line-height: 1.5;}
+      .wrapper {width: 100%; min-width: 1280px; margin: auto;}
+      .content {padding:0 20px;}
+      table {border-bottom: 1px solid #f4f4f4;margin-bottom: 50px;border-top: 3px solid #d2d6de;}
+      h1 {font-size: 20px;font-weight: bold; padding:10px 20px; background-color: #edf2fa;}
+      h2 {font-size: 1rem;font-weight: normal;margin-bottom: 20px;}
+      hr {margin-bottom: 50px;}
+      th,td {padding: 10px;font-size: 16px;text-align: center;}
+      th {font-weight: normal;border-right: 1px solid #f4f4f4;border-bottom: 1px solid #f4f4f4;background-color: #fff;}
+      th:last-child {border-right: none;}
+      table tr:last-child td {border-bottom: none;}
+      table td {padding: 5px;font-size: 14px;border-bottom: 1px solid #f4f4f4;border-right: 1px solid #f4f4f4;color: #666;}
+      table td:first-child {width: 20%;padding-left: 20px;text-align: left;}
+      table td:nth-of-type(2) {width: 20%;}
+      table td.category {position: relative;padding: 10px;text-align: left;font-size: 15px;background-color: #f9f9f9;color: #1d1e25;}
+      table td.category:before {position: absolute;top: 0;left: 0;display: inline-block;width: 3px;height: 100%;background-color: #d2d6de;content: "";}
+      table td:last-child {text-align: left;border-right: none;}
+      table td a {display: block;width: 100%;height: 100%;}
+      .top {display: flex;justify-content: space-between; align-items: center; padding:10px 20px;}
+      .top ul {display: flex; gap:50px;}
+      .header .list {padding: 0 0 50px 0;line-height: 30px;}
+      .state {display: inline-block; color: #fff;width: 25px;height: 25px;border-radius: 50%;line-height: 25px;text-align: center;}
+      .state.r {background-color: #a55eea;}
+      .state.r::before {content: "R";}
+      .state.w {background-color: #20bf6b;}
+      .state.w::before {content: "W";}
+      .state.main {background-color: #20bf6b;}
+      .state.main::before {content: "M";}
+      .state.pop {background-color: #ee5f0c;}
+      .state.pop::before {content: "P";}
+      .state.m {background-color: #f7b731;}
+      .state.m::before {content: "M";}
+      .state.end {background-color: #eb3b5a;font-weight: bold;}
+      .state.end::before {content: "완";}
+      .state.ing {font-weight: bold; background-color: #2d98da;}
+      .state.ing::before {content: "진";}
+      .state.modify {padding: 0 5px;border-radius: 30px;font-weight: bold;background-color: #39c4cd;text-align: center;}
+      .state.modify::before {content: "수";}
+      .state span {font-size: 16px;color: #666;}
+      .t_em {color: #e10e0e;}
+      .t_re {color: #046ac9;}
+      .t_pu {color: #17ae03;}
+      .t_lg {color: #c904b4;}
+
+      .list.none a {text-decoration: line-through;color: #aeaeae;cursor: not-allowed;}
+      #progress {overflow: hidden;float: left;display: block;width: 100%;height: 20px;margin-bottom: 5px;background: #eee;border-radius: 30px;}
+      #progress em {display: block;height: 20px;background: #eb3b5a;border-radius: 30px;}
+      .status {width: 300px;}
+      #finish {color: #1352a2;}
+      #total {display: block;}
+      .percent {display: block;float: right;}
+
+      .guide_logo {display: inline-block; height:30px; margin-right:20px; vertical-align: middle;}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1><img src="../image/chubb_logo_.png" class="guide_logo" alt="라이나손보">DT Renewal</h1>
+        <div class="top clear">
+          <ul>
+            <li>
+              <strong>*구분 :</strong> 
+              <span class="state r"></span> 반응형
+              <span class="state main"></span> main
+              <span class="state pop"></span> Popup
+            </li>
+            <li>
+              <strong>*상태 :</strong>
+              <span class="state end"></span> 완료
+              <span class="state ing"></span> 진행중
+              <span class="state modify"></span> 수정
+            </li>
+          </ul>
+          <div class="status">
+            <span id="progress"><em></em></span> 
+            <span id="total"></span>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <table>
+          <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: auto;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>페이지</th>
+              <th>파일명</th>
+              <th>시작일</th>
+              <th>완료일</th>              
+              <th>구분</th>
+              <th>화면</th>             
+              <th>상태</th>
+              <th>참고사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="list">
+              <td>스타일가이드</td>
+              <td><a href="./style.html" target="_blank">sytle.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>             
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="category" colspan="8">1. Main</td>
+            </tr>
+            <tr class="list">
+              <td>가입규약동의</td>
+              <td><a href="SCR000.html" target="_blank">SCR000.html</a></td>
+              <td>2025.08.18</td>
+              <td>2025.08.18</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state end"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>여행국가</td>
+              <td><a href="SCR001.html" target="_blank">SCR001.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 보험인수국가</td>
+              <td><a href="SCR002.html" target="_blank">SCR002.html</a></td>
+              <td>2025.08.18</td>
+              <td>2025.08.18</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state end"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>여행일정</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 여행일정 캘린더 / Time Picker</td>
+              <td><a href="SCR004.html" target="_blank">SCR004.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>가입자정보</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>플랜선택</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 플랜비교하기</td>
+              <td><a href="SCR007.html" target="_blank">SCR007.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>&nbsp;&nbsp;&nbsp;┗ 플랜명 상세 </td>
+              <td><a href="SCR008.html" target="_blank">SCR008.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 각자 다른플랜</td>
+              <td><a href="SCR009.html" target="_blank">SCR009.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="category" colspan="8">2. SUMMARY CFMR</td>
+            </tr>
+            <tr class="list">
+              <td>Summary</td>
+              <td><a href="SCR010.html" target="_blank">SCR010.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 중요안내</td>
+              <td><a href="SCR011.html" target="_blank">SCR011.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em">추후전달예정</p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 약관보기</td>
+              <td>pdf 연결</td>
+              <td></td>
+              <td></td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state end"></span></td>
+              <td>
+                <p class="t_em">OTA_P.pdf 파일링크 새탭</p>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="category" colspan="8">3. 결제화면</td>
+            </tr>
+            <tr class="list">
+              <td>결제화면</td>
+              <td><a href="SCR013.html" target="_blank">SCR013.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="category" colspan="8">4. 가입완료</td>
+            </tr>
+            <tr class="list">
+              <td>가입완료</td>
+              <td><a href="SCR014.html" target="_blank">SCR014.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+           
+            <tr>
+              <td class="category" colspan="8">5. 가입조회</td>
+            </tr>
+            <tr class="list">
+              <td>가입조회</td>
+              <td><a href="SCR015.html" target="_blank">SCR015.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="category" colspan="8" style="color:#ff0000">6. 위약금보상 (후순위[디자인,퍼블])</td>
+            </tr>
+            <tr class="list">
+              <td>위약금보상보험 안내</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 자세히 알아보기</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 단체보험 규약 및 제3자 제공동의 팝업</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>┗ 위약금보사보험 특별약관</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>              
+              <td><span class="state r"></span></td>
+              <td><span class="state pop"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>위약금 보상보험 가입완료</td>
+              <td><a href="#n" target="_blank">.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+            <tr class="list">
+              <td>KDM-5814</td>
+              <td><a href="#n" target="_blank">KDM-5814-001.html</a></td>
+              <td>2025.00.00</td>
+              <td>2025.00.00</td>
+              <td><span class="state r"></span></td>
+              <td><span class="state main"></span></td>
+              <td><span class="state ing"></span></td>
+              <td>
+                <p class="t_em"></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      const content = document.querySelector(".content table");
+      const graph = document.querySelector("#progress em");
+      const graphTotal = document.querySelector("#total");
+      const total = content.querySelectorAll(".list").length;
+      const finish = content.querySelectorAll(".list .end").length;
+      const progress = Math.floor((finish / total) * 100);
+      graph.style.width = progress + "%";
+      graphTotal.innerHTML = `
+            ${finish} / ${total}page <span class='percent'>진행률 ${progress}%</span>
+        `;
+    </script>
+  </body>
+</html>

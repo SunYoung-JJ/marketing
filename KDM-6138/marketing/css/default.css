@@ -1,0 +1,129 @@
+@charset "utf-8";
+@import url("pretendard.css"); 
+
+/* reset */
+html, body { width: 100%; height: 100%; }
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, strike, tt, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, input, button, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video { margin: 0; padding: 0; font-family: "pretendard", "Noto Sans Korean", sans-serif; font-weight: 500; line-height: 1; color:#2A2A2A; font-size: 16px; box-sizing: border-box;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+
+p {line-height: 1.4;}
+
+/* html::-webkit-scrollbar, body::-webkit-scrollbar {width:0;} */
+button { cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 1); background-color: transparent }
+button, textarea, select { box-shadow: none; cursor: pointer;  font-family: "pretendard", "Noto Sans Korean", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",  Roboto,"Pretendard", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;}
+select {height:24px; min-width: 90px; border:1px solid #D2D7DB;}
+input { /* -webkit-appearance: none; appearance: none; */ }
+::-webkit-input-placeholder { color: #ACB8C2;}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+a { font-size: inherit; color: inherit; text-decoration:none; cursor:pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+a, dl, dt, dd, ul, li, button, span, div, p { -webkit-appearance: none; appearance: none; box-shadow: none; border: none; border-radius: 0; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+a.link { display: block; }
+img { width: 100%; height: auto; }
+ul, ol, li, dl, dt, dd { list-style:none; }
+
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:none; }
+ 
+table {table-layout:fixed; border-collapse: collapse; border-spacing: 0px; word-break: break-all; word-wrap: break-word; }
+caption, legend { visibility:hidden;overflow:hidden;font-size:0;line-height:0; }
+address,caption,cite,code,dfn,em,var {font-style: normal; font-weight: 400;}
+
+button:disabled{opacity:0.3;}
+
+b, strong {font-family: inherit; font-size:inherit; color:inherit; font-weight:700; letter-spacing:inherit;}
+
+em, span, i, label{font-size:inherit; color:inherit; font-weight:inherit; letter-spacing:inherit;}
+
+
+/* 대체텍스트 hidden */
+.blind {position: absolute;	clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px;	overflow: hidden;}
+
+/*flexbox*/
+.flexSb { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-pack: justify; -webkit-box-align: center; }
+.flexTop { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: flex-start; align-items: flex-start; -webkit-box-orient: horizontal; -webkit-box-pack: justify; -webkit-box-align: start; }
+.flexBottom { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: flex-end; align-items: flex-end; -webkit-box-orient: horizontal; -webkit-box-pack: justify; -webkit-box-align: center; }
+.flexCen { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; }
+.flexSb > *, .flexTop > *, .flexBottom > *, .flexCen > * { display: block; }
+.flex-1 { -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; }
+
+.v-top {vertical-align: top;}
+.v-mid {vertical-align: middle;}
+.v-bot {vertical-align: bottom;}
+
+
+/* ds-none */
+.ds-none { display: none; }
+.ds-block { display: block; }
+
+/* padding */
+.paBot10 { padding-bottom: 10px; }
+
+/* margin */
+.maBot8{ margin-bottom: 8px; }
+.maBot10 { margin-bottom: 10px; }
+
+.maBot10 { margin-bottom: 10px; }
+.maBot16 { margin-bottom: 16px; }
+.maBot24 { margin-bottom: 24px; }
+.maTot16 { margin-top: 16px; }
+
+/* text */
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+
+
+/* 달력 */
+.hasDatepicker {min-height: 360px;}
+.ui-datepicker .ui-datepicker-header {position: relative; margin-bottom:8px;}
+.ui-datepicker .ui-datepicker-prev {display: none; position: absolute; left:20px;} 
+.ui-datepicker .ui-datepicker-next {display: none; position: absolute; right:20px;}
+.ui-datepicker-title {text-align: center; line-height: 1.4;}
+.ui-datepicker-month {font-size: 18px; font-weight: 600; margin-left:12px;}
+.ui-datepicker-calendar {width: 100%;}
+.ui-datepicker-calendar th {height: 47px;}
+.ui-datepicker-calendar td {height: 47px; text-align: center; font-size: 14px;}
+.ui-datepicker td.ui-datepicker-unselectable span {color: #aaa !important; opacity: 0.5;}
+
+.ui-datepicker td.start-date,
+.ui-datepicker td.end-date {position: relative;}
+.ui-datepicker td.start-date a, 
+.ui-datepicker td.end-date a {position: relative; display: inline-block; width: 30px; height: 30px; border-radius: 100%; color:#fff !important; line-height: 30px; background-color: #01C1D6;}
+.ui-datepicker td.start-date::before,
+.ui-datepicker td.end-date::before {content: ''; display: block; position: absolute; top:0; top:8px; width: 50%; height: 30px; background-color: rgb(1, 193, 214, .2);}
+.ui-datepicker td.start-date::before {left:50%;}
+.ui-datepicker td.end-date::before {left:0;}
+
+.ui-datepicker td.range-highlight a {display:block; height: 30px; text-align: center; line-height: 30px; background-color: rgb(1, 193, 214, .2);}
+
+.ui-datepicker td.holiday a, 
+.ui-datepicker td.ui-datepicker-week-end:first-child a {color: #D50000;}
+
+.ui-datepicker-today span {display: inline-block; width: 30px; height: 30px; border-radius: 100%; border:1px solid #FF0198; line-height: 28px;}
+
+/* time */
+.mbsc-ios .dwwr {padding-top:0;}
+.dw-inline .dw {display: block;}
+.mbsc-ios .dwv {display: none;}
+.mbsc-ios .dwbc {border-bottom: 0;}
+.mbsc-ios .dwwol {margin:0; border-radius: 8px; background-color: #01C1D6;}
+.mbsc-ios .dw-i {line-height: 50px;}
+.mbsc-ios .dw-sel .dw-i {font-size: 20px; color:#fff; font-weight: 700;}
+
+/* mo */
+@media screen and (max-width:767px) {
+  .ui-datepicker-row-break {height:16px;}
+}
+
+/* pc */
+@media screen and (min-width:768px) {
+  .ui-datepicker-row-break {display: none; height: 16px;}
+  .ui-datepicker-group {display: inline-block; width: calc(50% - 20px); margin:0 10px}
+}
