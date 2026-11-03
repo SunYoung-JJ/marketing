@@ -3,6 +3,8 @@
 /*
 !/.gitignore
 !/KDM-6138/
+# GitHub Pages 첫 화면 (KDM-6138/marketing/mkt.jsp를 정적 HTML로 변환)
+!/index.html
 
 # OS
 Thumbs.db
