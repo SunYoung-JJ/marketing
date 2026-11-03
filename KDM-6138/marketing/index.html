@@ -6,23 +6,28 @@
   <title>marketing</title>
 </head>
 <body>
-  <!-- includes/header.jsp → includes/header.html -->
-  <div id="header" data-include="includes/header.html"></div>
+  <!-- includes/header.jsp -->
+  <div id="header" data-include="includes/header.jsp"></div>
 
   <main id="contents">ㄹㄷㄹㄷㄹㄷㄹㄷㄹ</main>
 
-  <!-- includes/footer.jsp → includes/footer.html -->
-  <div id="footer" data-include="includes/footer.html"></div>
+  <!-- includes/footer.jsp -->
+  <div id="footer" data-include="includes/footer.jsp"></div>
 
   <script>
-    // JSP <%@ include %> 대신 정적 HTML 조각을 불러와 넣음 (GitHub Pages용)
+    // JSP <%@ include %> 대신 includes/*.jsp 파일을 그대로 불러와 넣음 (GitHub Pages용)
+    // - JSP 태그(<% %>)는 지우고, 전체 문서(<html>…)면 <body> 안쪽만 사용
     (function () {
       var targets = document.querySelectorAll('[data-include]');
       Array.prototype.forEach.call(targets, function (el) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', el.getAttribute('data-include'), true);
+        xhr.overrideMimeType('text/html; charset=utf-8');
         xhr.onload = function () {
-          if (xhr.status >= 200 && xhr.status < 300) el.innerHTML = xhr.responseText;
+          if (xhr.status < 200 || xhr.status >= 300) return;
+          var html = xhr.responseText.replace(/<%[\s\S]*?%>/g, '');
+          var body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+          el.innerHTML = body ? body[1] : html;
         };
         xhr.send();
       });

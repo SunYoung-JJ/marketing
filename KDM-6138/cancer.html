@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>암보험</title>
+</head>
+<body>
+  <!-- marketing/includes/header.jsp -->
+  <div id="header" data-include="marketing/includes/header.jsp"></div>
+
+  <!-- marketing/products/cancer001/contents.jsp -->
+  <main id="contents">암보험 상품 내용</main>
+
+  <!-- marketing/includes/footer.jsp -->
+  <div id="footer" data-include="marketing/includes/footer.jsp"></div>
+
+  <script>
+    // JSP <%@ include %> 대신 includes/*.jsp 파일을 그대로 불러와 넣음 (GitHub Pages용)
+    // - JSP 태그(<% %>)는 지우고, 전체 문서(<html>…)면 <body> 안쪽만 사용
+    (function () {
+      var targets = document.querySelectorAll('[data-include]');
+      Array.prototype.forEach.call(targets, function (el) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', el.getAttribute('data-include'), true);
+        xhr.overrideMimeType('text/html; charset=utf-8');
+        xhr.onload = function () {
+          if (xhr.status < 200 || xhr.status >= 300) return;
+          var html = xhr.responseText.replace(/<%[\s\S]*?%>/g, '');
+          var body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+          el.innerHTML = body ? body[1] : html;
+        };
+        xhr.send();
+      });
+    })();
+  </script>
+  <script src="marketing/products/cancer001/js/cancer001.js"></script>
+</body>
+</html>
