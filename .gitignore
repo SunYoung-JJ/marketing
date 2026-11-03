@@ -1,0 +1,10 @@
+# 이 저장소에는 KDM-6138 폴더만 올립니다.
+# 나머지는 모두 무시합니다.
+/*
+!/.gitignore
+!/KDM-6138/
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
