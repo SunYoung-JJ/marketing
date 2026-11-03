@@ -3,7 +3,7 @@
 /*
 !/.gitignore
 !/KDM-6138/
-# GitHub Pages 첫 화면 (KDM-6138/marketing/mkt.jsp를 정적 HTML로 변환)
+# GitHub Pages 루트: KDM-6138/index.html로 이동시키는 리다이렉트
 !/index.html
 
 # OS
