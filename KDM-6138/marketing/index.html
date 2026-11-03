@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>marketing</title>
+</head>
+<body>
+  <!-- includes/header.jsp → includes/header.html -->
+  <div id="header" data-include="includes/header.html"></div>
+
+  <main id="contents">ㄹㄷㄹㄷㄹㄷㄹㄷㄹ</main>
+
+  <!-- includes/footer.jsp → includes/footer.html -->
+  <div id="footer" data-include="includes/footer.html"></div>
+
+  <script>
+    // JSP <%@ include %> 대신 정적 HTML 조각을 불러와 넣음 (GitHub Pages용)
+    (function () {
+      var targets = document.querySelectorAll('[data-include]');
+      Array.prototype.forEach.call(targets, function (el) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', el.getAttribute('data-include'), true);
+        xhr.onload = function () {
+          if (xhr.status >= 200 && xhr.status < 300) el.innerHTML = xhr.responseText;
+        };
+        xhr.send();
+      });
+    })();
+  </script>
+</body>
+</html>
