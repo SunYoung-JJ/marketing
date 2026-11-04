@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>여행보험 서비스</title>
+  <title> web-in</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -15,7 +15,7 @@
   <link type="text/css" rel="stylesheet" href="../css/jquery.ui.tooltip.css">  
   <link type="text/css" rel="stylesheet" href="../css/mobiscroll.custom-2.17.1.min.css">
   <link type="text/css" rel="stylesheet" href="../css/default.css"><!-- 2025 리뉴얼 css : 기존 수정 -->
-  <link type="text/css" rel="stylesheet" href="../css/dtc.css"><!-- 2025 리뉴얼 css -->
+  <link type="text/css" rel="stylesheet" href="../css/cancer.css"><!-- 2025 리뉴얼 css -->
 
   <script src="../js/lib/jquery-1.11.3.min.js"></script>
   <script src="../js/lib/mobile-detect.min.js"></script>
@@ -31,18 +31,172 @@
   <script src="../js/layer.js"></script>
   <script src="../js/common.js"></script>
   <script src="../js/dtc-ui.js"></script><!-- 2025 리뉴얼 js -->
-  <script src="../js/b2cPIajax.js"></script>        
+  <script src="../js/b2cPIajax.js"></script>
 
-  <script src="../js/b2cPI.js"></script>		
+<style type="text/css">
+    .dtc-wrapper {height:auto;}
+    .section-body > * + * {margin-top:12px;}
+    .guide-section + .guide-section {border-top:1px dashed #ccc;}
+    .input-row {margin-top:8px;}
+    .form-switch {margin:12px 0;}
+    .title2 {margin-bottom:12px;}
+
+    .guide-menu {position:sticky; top:0; z-index:10; width:100%; background-color:#6e27c5;}
+    .guide-menu ul {display:flex; max-width:1120px; margin:0 auto;}
+    .guide-menu ul > li {flex:1;}
+    .guide-menu a {display:block; height:30px; line-height:30px; color:#fff; font-size: 14px; text-align:center;}
+    .guide-menu li.on a {border-radius:20px; color:#6e27c5; font-weight:600; background-color:#fff;}
+
+    .guide-area + .guide-area {margin-top:30px;}
+
+    .fc000 {color:#000 !important;}
+</style>
 </head>
 <body>
-  <div class="dtc-wrapper">
-    <header class="dtc-header">
+  <div class="">
+    <header class="">
       
     </header>
     <div class="dtc-container">
+        <!--[S] cancer/dental 공통css-->
+        <h1> 공통컴포넌트</h1>
+        <div class="guide-section">
+            <div class="section-body">
+                <h4>list-dot</h4>
+                <ul class="list-dot">
+                    <li>list-dot  리스트 도트</li>
+                    <li>list-dot  리스트 도트</li>
+                    <li class="bold">list-dot  리스트 bold</li>
+                </ul>
+            </div>
+            <div class="section-body">
+                <h4>list-dash</h4>
+                <ul class="list-dash">
+                    <li>list-dash  리스트 도트</li>
+                    <li>list-dash  리스트 도트</li>
+                    <li class="bold">list-dash  리스트 bold</li>
+                    <li class="">list-dash  <strong>리스트 strong</strong></li>
+                </ul>
+            </div>
+
+            <div class="section-body">
+                <h4>list-dash > 서브 dash</h4>
+                <ul class="list-dash">
+                    <li>list-dash  리스트 도트</li>
+                    <li>
+                        list-dash  리스트 도트
+                        <ol class="list-num">
+                            <li>서브 리스트</li>
+                            <li>서브 리스트</li>
+                            <li>서브 리스트</li>
+                            <li>서브 리스트</li>
+                        </ol>
+                    </li>
+                    <li class="bold">list-dash  리스트 bold</li>
+                    <li class="">list-dash  <strong>리스트 strong</strong></li>
+                </ul>
+            </div>
+
+            <div class="section-body">
+                <h4>가나다 리스트 > 서브dash</h4>
+                <ul class="type-hangul">
+                    <li>list-dash  리스트 도트</li>
+                    <li>
+                        list-dash  리스트 도트
+                        <ol class="list-dash">
+                            <li>서브 리스트</li>
+                            <li>서브 리스트</li>
+                            <li>서브 리스트</li>
+                            <li>서브 리스트</li>
+                        </ol>
+                    </li>
+                    <li class="bold">list-dash  리스트 bold</li>
+                    <li class="">list-dash  <strong>리스트 strong</strong></li>
+                </ul>
+            </div>
+
+            <div class="section-body">
+                <h4>숫자리스트</h4>
+                <ul class="list-num">
+                    <li>숫자리스트</li>
+                    <li>숫자리스트</li>
+                    <li>숫자리스트</li>
+                </ul>
+            </div>
+            <div class="section-body">
+                <div class="box-basic">
+                    <h3 class="box-basic--title">알아두실사항</h3>
+                    <p class="box-basic--subtitle">(특약) 5회받는 암진단비Ⅱ(신재진단암 포함)</p>
+                    <ul class="list-dash">
+                        <li>공통컴포넌트 가이드</li>
+                        <li>공통컴포넌트 가이드</li>
+                        <li>공통컴포넌트 가이드</li>
+                        <li>공통컴포넌트 가이드</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <h1>버튼가이드</h1>
+        <div class="guide-section" id="guideBtn">
+            <p> a,button  모두 사용가능</p>
+            <div class="section-body">
+                <div class="section-body">
+                    <div class="btns-wrap">
+                      <a href="#n" class="btn-line-link">.btn-line-link</a>
+                    </div>
+                    <div class="btns-flex-wrap">
+                        <button type="button" class="btn-cta-sec">상담신청</button>
+                        <button type="button" class="btn-cta-pri">보험료확인</button>
+                    </div>
+                    <div class="btns-flex-wrap">
+                        <button type="button" class="btn-cta-sec" disabled="">.btn-cta-sec disabled</button>
+                        <button type="button" class="btn-cta-pri" disabled="">.btn-cta-pri disabled</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>라디오/체크박스</h1>
+        <div class="guide-section">
+            <p>약관동의 라디오버튼</p>
+            <div class="radio-btns-wrap">
+                <div class="radio-btn">
+                    <input type="radio" name="ra02" id="ra02_01">
+                    <label for="ra02_01">
+                        <span>동의</span>
+                    </label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" name="ra02" id="ra02_02">
+                    <label for="ra02_02">
+                        <span>동의안함</span>
+                    </label>
+                </div>
+
+            </div>
+            <P>기본 라디오버튼</P>
+            <div class="radio-area">
+                <input type="radio" name="radio01" id="radio01_01" class="radio-input" checked="">
+                <label for="radio01_01">라디오 01</label>
+            </div>
+            <div class="radio-area">
+                <input type="radio" name="radio01" id="radio01_02" class="radio-input" checked="">
+                <label for="radio01_02">라디오 01</label>
+            </div>
+            <p>기본 체크박스</p>
+            <div class="checkbox-area">
+                <input type="checkbox" name="check01" id="check01_01" class="checkbox-input" checked="">
+                <label for="check01_01">체크박스 01</label>
+            </div>
+            <div class="checkbox-area">
+                <input type="checkbox" name="check01" id="check01_02" class="checkbox-input" checked="">
+                <label for="check01_02">체크박스 01</label>
+            </div>
+        </div>
+        <!--[E] cancer/dental 공통css-->
+
       <!-- dtc-content -->
-      <div class="dtc-content">
+      <div class="dtc-content" style="display: none";>
         <div class="btns-flex-wrap">
           <button type="button" class="btn-cta-sec">이전</button>
           <button type="button" class="btn-cta-pri">확인했어요</button>

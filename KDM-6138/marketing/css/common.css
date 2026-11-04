@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+:root {
+    --primary-color : #00C1D7;
+    --second-color : #D9D9D9;
+    --gap-large : 40px;
+    --gap-middle : 24px;
+    --gqp-small : 8px;
+    --font-large: 24px;
+    --font-default: 14px;
+    --font-small: 12px;
+    --pop-padding-side: 20px;
+    --point-blue: #1742FF;
+    --point-red:#F1352B;
+    --black100:#000; /*bold폰트색상*/
+    --black90:#1c1c1e; /* default폰트색상*/
+    --black80:#252525;/*sub폰트색상*/
+}
+
+
+.fc-point01 {color:var(--point-red)!important;}
+.fc-point02 {color:var(--point-blue) !important;}
+
+.list-dash *,
+.list-dot * {color:#4e4e4e; font-size:14px; line-height:1.4;}
+.list-dash > li {position:relative; padding-left:10px;}
+.list-dot > li {position:relative; padding-left:10px;}
+.list-dash > li > ul,
+.list-dot > li > ul,
+.list-dash > li li ~ li,
+.list-dot > li li ~ li {margin-top:8px}
+.list-dash > li ~ li,
+.list-dot > li ~ li {margin-top:8px;}
+.list-dot > li::before {content:''; position:absolute; top:8px; left:0; display:block; width:4px; height:4px; border-radius:100%; background-color:#4e4e4e;}
+.list-dash > li::before {content:'-'; position:absolute; top:0; left:0; display:block;}
+
+.list-dash .bold,
+.list-dash .bold *,
+.list-dash strong ,
+.list-dot .bold,
+.list-dot .bold *,
+.list-dot strong {font-weight:600; color:#404040}
+/* 숫자 리스트 : <ol class="list-num"> */
+.list-num,
+.type-hangul{counter-reset:list-num;}
+.list-num > li,
+.type-hangul > li{position:relative; padding-left:16px; color:#4e4e4e; font-size:14px; line-height:1.4; counter-increment:list-num;}
+.list-num > li::before ,
+.type-hangul > li::before{content:counter(list-num) "."; position:absolute; top:0; left:0; color:inherit; font-size:inherit; line-height:inherit;}
+.list-num > li ~ li,
+.type-hangul > li ~ li{margin-top:8px;}
+
+.list-dash > li > ol,
+.list-dot > li > ol {margin-top:8px;}
+/* 가나다 리스트 : <ol class="list-num type-hangul"> */
+.type-hangul > li {padding-left:20px;}
+.type-hangul > li::before {content:counter(list-num, hangul) ".";}
+
+.box-basic{padding:40px;border-radius: 16px;font-size:14px;background-color:#f9f9f9;}
+.box-basic--title{font-size:16px;font-weight: 600;color:var(--black90);margin-bottom:8px}
+.box-basic--subtitle{font-size:14px;font-weight: 500;color:var(--black80);margin-bottom:8px}
+
+/* checkbox basic */
+.checkbox-area {display:inline-flex;}
+.checkbox-input {display:inline-block; vertical-align:middle; width:24px; min-width:24px; height:24px; -webkit-appearance: none; appearance: none; cursor:pointer; background:url(../image/common/ic_check.svg) no-repeat center / contain}
+.checkbox-input:checked {background-image:url(../image/common/ic_check_on.svg);}
+.checkbox-input + label {display:inline-block; margin-left:4px; line-height:24px; vertical-align:middle; cursor:pointer;}
+
+/* radio basic */
+.radio-area {display:inline-flex;}
+.radio-input {display:inline-block; vertical-align:middle; width:24px; min-width:24px; height:24px; -webkit-appearance: none; appearance: none; cursor:pointer; background:url(../image/common/ic_radio.svg) no-repeat center / contain}
+.radio-input:checked {background-image:url(../image/common/ic_radio_on.svg);}
+.radio-input + label {display:inline-block; margin-left:4px; line-height:24px; vertical-align:middle; cursor:pointer;}
+
+/* 버튼형 라디오 */
+.radio-btns-wrap {display: flex; align-items: center; gap:10px;}
+.radio-btn {position: relative; flex:1;}
+.radio-btn > input {position: absolute; opacity: 0;}
+.radio-btn > input + label {display: flex; flex-direction: column; align-items: center; justify-content: center;height:40px;border:1px solid #A3A3A3; border-radius: 8px;text-align: center; cursor: pointer;}
+.radio-btn > input + label > span {display: block; font-size: 14px;font-weight: 500;color:var(--black90);}
+
+.radio-btn > input:checked + label,
+.radio-btn > input:focus + label {border-color: #00C1D7; background-color: #fff;}
+
+/* 선택 시 체크 아이콘 */
+.radio-btn > input:checked + label > span{color:var(--primary-color);}
+.radio-btn > input:checked + label > span::before {content:""; display:inline-block; width:15px; height:10px; margin-right:6px; vertical-align:middle; background:url(../image/common/ic_check02_on.svg) no-repeat center / contain;}
+
+
+.radio-btn > input:disabled + label {cursor: default; background-color:#f1f1f1;}
+.radio-btn > input:disabled + label,
+.radio-btn > input:disabled + label * {color:#2a2a2a99;}
+
+
+
+
+@media screen and (max-width:768px) {
+    .box-basic {
+        padding: 20px;
+    }
+}

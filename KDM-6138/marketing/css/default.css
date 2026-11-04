@@ -3,7 +3,7 @@
 
 /* reset */
 html, body { width: 100%; height: 100%; }
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, strike, tt, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, input, button, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video { margin: 0; padding: 0; font-family: "pretendard", "Noto Sans Korean", sans-serif; font-weight: 500; line-height: 1; color:#2A2A2A; font-size: 16px; box-sizing: border-box;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, strike, tt, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, input, button, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video { margin: 0; padding: 0; font-family: "pretendard", "Noto Sans Korean", sans-serif; font-weight: 500; line-height: 1; color:#1C1C1E; font-size: 16px; box-sizing: border-box;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
 
 p {line-height: 1.4;}
@@ -67,9 +67,7 @@ em, span, i, label{font-size:inherit; color:inherit; font-weight:inherit; letter
 
 /* margin */
 .maBot8{ margin-bottom: 8px; }
-.maBot10 { margin-bottom: 10px; }
-
-.maBot10 { margin-bottom: 10px; }
+.maBot12 { margin-bottom: 12px; }
 .maBot16 { margin-bottom: 16px; }
 .maBot24 { margin-bottom: 24px; }
 .maTot16 { margin-top: 16px; }
@@ -78,52 +76,3 @@ em, span, i, label{font-size:inherit; color:inherit; font-weight:inherit; letter
 .text-left { text-align: left !important; }
 .text-right { text-align: right !important; }
 .text-center { text-align: center !important; }
-
-
-/* 달력 */
-.hasDatepicker {min-height: 360px;}
-.ui-datepicker .ui-datepicker-header {position: relative; margin-bottom:8px;}
-.ui-datepicker .ui-datepicker-prev {display: none; position: absolute; left:20px;} 
-.ui-datepicker .ui-datepicker-next {display: none; position: absolute; right:20px;}
-.ui-datepicker-title {text-align: center; line-height: 1.4;}
-.ui-datepicker-month {font-size: 18px; font-weight: 600; margin-left:12px;}
-.ui-datepicker-calendar {width: 100%;}
-.ui-datepicker-calendar th {height: 47px;}
-.ui-datepicker-calendar td {height: 47px; text-align: center; font-size: 14px;}
-.ui-datepicker td.ui-datepicker-unselectable span {color: #aaa !important; opacity: 0.5;}
-
-.ui-datepicker td.start-date,
-.ui-datepicker td.end-date {position: relative;}
-.ui-datepicker td.start-date a, 
-.ui-datepicker td.end-date a {position: relative; display: inline-block; width: 30px; height: 30px; border-radius: 100%; color:#fff !important; line-height: 30px; background-color: #01C1D6;}
-.ui-datepicker td.start-date::before,
-.ui-datepicker td.end-date::before {content: ''; display: block; position: absolute; top:0; top:8px; width: 50%; height: 30px; background-color: rgb(1, 193, 214, .2);}
-.ui-datepicker td.start-date::before {left:50%;}
-.ui-datepicker td.end-date::before {left:0;}
-
-.ui-datepicker td.range-highlight a {display:block; height: 30px; text-align: center; line-height: 30px; background-color: rgb(1, 193, 214, .2);}
-
-.ui-datepicker td.holiday a, 
-.ui-datepicker td.ui-datepicker-week-end:first-child a {color: #D50000;}
-
-.ui-datepicker-today span {display: inline-block; width: 30px; height: 30px; border-radius: 100%; border:1px solid #FF0198; line-height: 28px;}
-
-/* time */
-.mbsc-ios .dwwr {padding-top:0;}
-.dw-inline .dw {display: block;}
-.mbsc-ios .dwv {display: none;}
-.mbsc-ios .dwbc {border-bottom: 0;}
-.mbsc-ios .dwwol {margin:0; border-radius: 8px; background-color: #01C1D6;}
-.mbsc-ios .dw-i {line-height: 50px;}
-.mbsc-ios .dw-sel .dw-i {font-size: 20px; color:#fff; font-weight: 700;}
-
-/* mo */
-@media screen and (max-width:767px) {
-  .ui-datepicker-row-break {height:16px;}
-}
-
-/* pc */
-@media screen and (min-width:768px) {
-  .ui-datepicker-row-break {display: none; height: 16px;}
-  .ui-datepicker-group {display: inline-block; width: calc(50% - 20px); margin:0 10px}
-}
