@@ -10,7 +10,7 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
 
-  <link type="text/css" rel="stylesheet" href="/jsp/jslib/themes/base/jquery.ui.all.css">
+
   <link type="text/css" rel="stylesheet" href="../css/jquery.ui.base.css">
   <link type="text/css" rel="stylesheet" href="../css/jquery.ui.tooltip.css">  
   <link type="text/css" rel="stylesheet" href="../css/mobiscroll.custom-2.17.1.min.css">
@@ -27,11 +27,9 @@
   <script src="../js/lib/common-ui.js"></script>
   <script src="../js/lib/jquery-ui.1.10.4.min.js"></script>
 
-  <script src="../js/appPayment.js"></script>
-  <script src="../js/layer.js"></script>
+
+
   <script src="../js/common.js"></script>
-  <script src="../js/dtc-ui.js"></script><!-- 2025 리뉴얼 js -->
-  <script src="../js/b2cPIajax.js"></script>
 
 <style type="text/css">
     .dtc-wrapper {height:auto;}
@@ -124,6 +122,14 @@
                 </ul>
             </div>
             <div class="section-body">
+                <h4>숫자리스트</h4>
+                <ul class="list-mark">
+                    <li>list-mark</li>
+                    <li>list-mark</li>
+                    <li>list-mark</li>
+                </ul>
+            </div>
+            <div class="section-body">
                 <div class="box-basic">
                     <h3 class="box-basic--title">알아두실사항</h3>
                     <p class="box-basic--subtitle">(특약) 5회받는 암진단비Ⅱ(신재진단암 포함)</p>
@@ -193,6 +199,41 @@
                 <label for="check01_02">체크박스 01</label>
             </div>
         </div>
+        <h1>팝업가이드</h1>
+        <div class="guide-section" id="guideModal">
+
+            <p class="">팝업가이드</p>
+            <p class="">버튼을 클릭하면 스타일별 팝업이 노출 됩니다.</p>
+
+            <div class="section-body">
+                <ul class="list-dot">
+                    <li>방법 1 : dataset 연결
+                        <p>- 열기 : 팝업버튼에 data-popup-btn="팝업ID" 연결(미사용시 삭제 가능)</p>
+                        <p>- 닫기 : 버튼에 data-popup-close="팝업ID" 연결</p>
+                    </li>
+                    <li>방법 2 : function 사용
+                        <p>- 열기 : function modalOpen(popId)</p>
+                        <p>- 닫기 : function modalClose(popId)</p>
+                    </li>
+                    <li>
+                        <p>방법 3 : 개별 js 설정 가능</p>
+                        <p>- 모달 오픈 시 on 추가 : .modal-wrap<span class="fc-point02">.on</span> / .modal-bottomsheet<span class="fc-point02">.on</span> (class on 추가로 modal 여닫음)</p>
+                    </li>
+                    <li>팝업버튼 a 태그 권장 : href="#팝업ID" 연결 - 웹접근성 준수 포커스 이동 가능</li>
+                    <li>alert popup은 기본 / 오류 / 성공에 따라 상단 아이콘 상이</li>
+                </ul>
+                <div class="btns-wrap">
+                    <!-- data-popup-btn="모달팝업id연결" -->
+                    <a href="#modalAlert" data-popup-btn="modalAlert" class="btn-pri">modal alert</a>
+                    <a href="#modalAlertError" data-popup-btn="modalAlertError" class="btn-sec">modal alert error</a>
+                    <a href="#modalAlert02" data-popup-btn="modalAlert02" class="btn-pri">modal alert success</a> <br><br>
+                    <a href="#modalBottomsheet" data-popup-btn="modalBottomsheet" class="btn-pri">modal Bottomsheet</a>
+                    <a href="#denyTravelPlace" data-popup-btn="denyTravelPlace" class="btn-sec">modal Popup</a>
+                    <a href="#modalFullPop" data-popup-btn="modalFullPop" class="btn-pri">modal Full Popup</a>
+                </div>
+            </div>
+        </div>
+
         <!--[E] cancer/dental 공통css-->
 
       <!-- dtc-content -->
@@ -218,7 +259,7 @@
           <!-- data-popup-btn="모달팝업id연결" -->
           <a href="#modalAlert" data-popup-btn="modalAlert" class="btn-pri">modal alert</a>
           <a href="#modalBottomsheet" data-popup-btn="modalBottomsheet" class="btn-pri">modal Bottomsheet</a>
-          <a href="#modalFullPop" data-popup-btn="denyTravelPlace" class="btn-pri">modal Popup</a>
+          <a href="#denyTravelPlace" data-popup-btn="denyTravelPlace" class="btn-pri">modal Popup</a>
           <a href="#modalFullPop" data-popup-btn="modalFullPop" class="btn-pri">modal Full Popup</a>
         </div>
 
@@ -273,7 +314,31 @@
         <p class="alert-text">계약을 취소하시겠습니까?</p>
         <div class="btns-wrap">
           <button type="button" data-popup-close="modalAlert" class="btn-sec">취소</button>
-          <button type="button" class="btn-pri">확인</button>          
+          <button type="button" class="btn-pri">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal : alert error -->
+  <div class="modal-wrap" id="modalAlertError">
+    <div class="modal-alert">
+      <div class="alert-body alert--error">
+        <p class="alert-text">오류가 발생했습니다.<br>잠시 후 다시 시도해 주세요.</p>
+        <div class="btns-wrap">
+          <button type="button" data-popup-close="modalAlertError" class="btn-pri">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal : alert success -->
+  <div class="modal-wrap" id="modalAlert02">
+    <div class="modal-alert">
+      <div class="alert-body alert--success">
+        <p class="alert-text">신청이 완료되었습니다.</p>
+        <div class="btns-wrap">
+          <button type="button" data-popup-close="modalAlert02" class="btn-pri">확인</button>
         </div>
       </div>
     </div>
@@ -283,10 +348,25 @@
   <div class="modal-wrap" id="modalBottomsheet">
     <div class="modal-bottomsheet">
       <div class="bottomsheet-head">
-        <h1>출발일과 도착일을 선택해 주세요</h1>
-        <p class="txt-noti">1년 이내 출발하는 일정만 가입가능합니다.</p>
+        <h1>알아두실 사항</h1>
       </div>
       <div class="bottomsheet-body">
+          <div class="coverage-info">
+              <h2>(특약) 표적항암약물허가치료보장</h2>
+              <ul class="list-dash">
+                  <li>보상한도 : 암/기타피부암/갑상선암 각각 최초 1회한</li>
+                  <li>면책기간 : ‘암’의 경우 계약일로부터 90일간 보장 제외</li>
+                  <li>감액지급 : 계약일로부터 1년간 보험금 50%</li>
+              </ul>
+          </div>
+          <div class="coverage-info">
+              <h2>(특약) 표적항암약물허가치료보장2222</h2>
+              <ul class="list-dash">
+                  <li>보상한도 : 암/기타피부암/갑상선암 각각 최초 1회한</li>
+                  <li>면책기간 : ‘암’의 경우 계약일로부터 90일간 보장 제외</li>
+                  <li>감액지급 : 계약일로부터 1년간 보험금 50%</li>
+              </ul>
+          </div>
         
       </div>
       <div class="bottomsheet-foot">
@@ -335,76 +415,109 @@
 
   <!-- modal : full popup -->
   <div class="modal-wrap" id="modalFullPop">
-    <div class="modal-popup popup--full">
+    <div class="modal-full">
       <div class="popup-head">
-        <h1>보험계약 중요안내</h1>
+          <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
       </div>
       <div class="popup-body">
-        <!-- 컨텐츠 영역 -->
-         <div>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
+          <div class="agree-item">
+              <div class="agree-item-head">
+                 <h2>보험상품 안내 목적의 개인정보 수집∙이용 동의</h2>
+                 <p class="sub-info">입력하신 정보는 아래 수집∙이용 목적 외에 활용되지 않습니다.</p>
+              </div>
+              <!-- 컨텐츠 영역 -->
+              <div class="agree-item-body">
+                  <div>
+                      <h3>(필수) 개인정보 수집∙이용에 동의하십니까?</h3>
+                  </div>
+                  <div>
+                      <table class="agree-table">
+                          <caption>개인정보 수집∙이용에 동의하십니까?</caption>
+                          <colgroup>
+                              <col style="width:30%"/>
+                              <col style="width:*"/>
+                          </colgroup>
+                          <tbody>
+                              <tr>
+                                  <th>수집∙이용목적</th>
+                                  <td>
+                                      <ul class="list-dot">
+                                        <li>전화를 통한 맞춤형 보험상품안내, 상품권유를 위한 활동</li>
+                                        <li>이벤트 안내, 민원처리, 고객분석</li>
+                                      </ul>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th>보유 및 이용기간</th>
+                                  <td>
+                                      <ul class="list-dot">
+                                          <li>동의일로부터 최대 3년까지 (단, 고객 요청시지체없이 파기)</li>
+                                       </ul>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th>거부 권리 및불이익</th>
+                                  <td>귀하는 아래 개인정보 수집∙이용에 관한 상기동의를 거부하실 수 있습니다. 다만, 이에 대한 동의를 하시지 않을 경우, 보험상품상담 및 이벤트 참여가 제한될 수 있습니다.</td>
+                              </tr>
+                              <tr>
+                                  <th>수집∙이용 항목</th>
+                                  <td>
+                                      <ul class="list-dash">
+                                          <li>일반개인정보: 성명, 성별, 생년월일, 휴대폰번호, 참여매체, 참여일시</li>
+                                      </ul>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <ul class="list-mark">
+                      <li>본 동의는 당사와 모집위탁계약을 체결한 업무수탁자가 수집∙이용하는 것을 포함합니다. 동의하시더라도 당사 고객센터(1566-5800)를 통해 철회하거나 가입권유 목적의 연락에 대한 중단을 요청하실 수 있으며 연락중지시스템(www.donotcall.or.kr)을 통해 언제든지 마케팅활동에 대한 중지를 요청할 수 있습니다.</li>
+                  </ul>
+                  <p class="txt-noti txt-error">동의하셔야 상담신청이 가능합니다.</p>
+                  <div class="radio-btns-wrap">
+                      <div class="radio-btn">
+                          <input type="radio" name="ra02" id="ra03_01">
+                          <label for="ra03_01">
+                              <span>동의</span>
+                          </label>
+                      </div>
+                      <div class="radio-btn">
+                          <input type="radio" name="ra02" id="ra03_02">
+                          <label for="ra03_02">
+                              <span>동의안함</span>
+                          </label>
+                      </div>
+                  </div>
+                  <h3>(선택) 광고성 정보의 수신 동의</h3>
+                  <p class="sub-info">입력하신 정보는 아래 수집∙이용 목적 외에 활용되지 않습니다.</p>
 
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
+                  <div class="radio-btns-wrap">
+                      <div class="radio-btn">
+                          <input type="radio" name="ra03" id="ra03_04">
+                          <label for="ra03_04">
+                              <span>동의</span>
+                          </label>
+                      </div>
+                      <div class="radio-btn">
+                          <input type="radio" name="ra02" id="ra03_05">
+                          <label for="ra03_05">
+                              <span>동의안함</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
 
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
 
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p><p>dsdfsdf</p>
-          <p>dsdfsdf</p>
 
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p><p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p><p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>dsdfsdf</p>
-          <p>마지막</p>
-         </div>
-      </div>
-
-      <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
+          </div>
+        </div>
+        <div class="popup-foot">
+            <div class="btns-flex-wrap">
+                <button type="button" class="btn-cta-pri" disabled>네, 모두 동의합니다.</button>
+            </div>
+        </div>
     </div>
+
   </div>
 
   <script>        
