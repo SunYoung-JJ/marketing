@@ -281,10 +281,10 @@
 
 .util{display: flex;align-items: center;gap:16px;}
 .btn-call{border:1px solid #d9d9d9;background:var(--white);border-radius: 100px;padding:8px 12px;}
-.btn-call--icon{display:inline-block;width:26px;height:20px;vertical-align:middle;background:url(/KDM-6138/marketing/image/cancer/ic_callcenter.svg) no-repeat center center;background-size:100% 100%;margin-right:8px;}
+.btn-call--icon{display:inline-block;width:26px;height:20px;vertical-align:middle;background:url(/../marketing/image/cancer/ic_callcenter.svg) no-repeat center center;background-size:100% 100%;margin-right:8px;}
 .header .btn-menu{display: none}
 .btn-menu:focus:not(:focus-visible){outline:none;} /* 마우스 클릭 시 포커스 테두리 숨김 (키보드 이동 시에는 유지) */
-.btn-menu--bar{background:url(/KDM-6138/marketing/image/common/ic_menu.png) no-repeat center center;background-size:100% 100%;width:40px;height:40px;border-radius: 0}
+.btn-menu--bar{background:url(/../marketing/image/common/ic_menu.png) no-repeat center center;background-size:100% 100%;width:40px;height:40px;border-radius: 0}
 /* 모바일 메뉴 (modal-wrap#gnbSub) : 오른쪽에서 왼쪽으로 슬라이드 */
 .modal-gnb{position:absolute;top:0;right:0;bottom:0;width:80%;max-width:360px;padding:64px 20px 20px;background:var(--white);overflow-y:auto;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);}
 .modal-gnb.on{transform:translateX(0);}
