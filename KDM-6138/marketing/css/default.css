@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url("/marketing/KDM-6138/marketing/css/pretendard.css"); 
+@import url("pretendard.css"); 
 
 /* reset */
 html, body { width: 100%; height: 100%; }
