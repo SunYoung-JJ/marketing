@@ -11,61 +11,61 @@ http://scripts.sil.org/OFL
 	font-family: 'Pretendard';
 	font-weight: 900;
 	font-display: swap;
-	src: local('Pretendard Black'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Black.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Black.woff') format('woff');
+	src: local('Pretendard Black'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Black.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Black.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 800;
 	font-display: swap;
-	src: local('Pretendard ExtraBold'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-ExtraBold.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-ExtraBold.woff') format('woff');
+	src: local('Pretendard ExtraBold'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-ExtraBold.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-ExtraBold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 700;
 	font-display: swap;
-	src: local('Pretendard Bold'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Bold.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Bold.woff') format('woff');
+	src: local('Pretendard Bold'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Bold.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 600;
 	font-display: swap;
-	src: local('Pretendard SemiBold'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-SemiBold.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-SemiBold.woff') format('woff');
+	src: local('Pretendard SemiBold'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-SemiBold.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-SemiBold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 500;
 	font-display: swap;
-	src: local('Pretendard Medium'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Medium.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Medium.woff') format('woff');
+	src: local('Pretendard Medium'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Medium.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Medium.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 400;
 	font-display: swap;
-	src: local('Pretendard Regular'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Regular.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Regular.woff') format('woff');
+	src: local('Pretendard Regular'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Regular.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 300;
 	font-display: swap;
-	src: local('Pretendard Light'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Light.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Light.woff') format('woff');
+	src: local('Pretendard Light'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Light.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Light.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 200;
 	font-display: swap;
-	src: local('Pretendard ExtraLight'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-ExtraLight.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-ExtraLight.woff') format('woff');
+	src: local('Pretendard ExtraLight'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-ExtraLight.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-ExtraLight.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 100;
 	font-display: swap;
-	src: local('Pretendard Thin'), url('/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Thin.woff2') format('woff2'), url('/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Thin.woff') format('woff');
+	src: local('Pretendard Thin'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff2/Pretendard-Thin.woff2') format('woff2'), url('/marketing/KDM-6138/marketing/fonts/pretendard/woff/Pretendard-Thin.woff') format('woff');
 }
