@@ -3,7 +3,7 @@
     <header class="header">
       <div class="header--inner">
         <h1 class="header--logo">
-          <a href="/"><img src="/image/common/img_logo.png" alt="라이나손보"></a>
+          <a href="/"><img src="/KDM-6138/marketing/image/common/img_logo.png" alt="라이나손보"></a>
         </h1>
 
         <nav class="gnb" id="gnb" aria-label="주요 메뉴">

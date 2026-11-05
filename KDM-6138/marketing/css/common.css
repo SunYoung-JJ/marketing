@@ -71,7 +71,7 @@
 .type-hangul > li::before {content:counter(list-num, hangul) ".";}
 
 .txt-error {color: #e41913;}
-.txt-noti {padding-left:22px; font-size:14px; color:var(--gray90); line-height: 1.4; background: url(../image/common/ic_noti.svg) no-repeat 0 2px / 14px 14px}
+.txt-noti {padding-left:22px; font-size:14px; color:var(--gray90); line-height: 1.4; background: url(/KDM-6138/marketing/image/common/ic_noti.svg) no-repeat 0 2px / 14px 14px}
 .txt-noti.txt-error{color:var(--point-red);}
 @media screen and (max-width:768px) {
     .list-dash *,
@@ -91,14 +91,14 @@
 
 /* checkbox basic */
 .checkbox-area {display:inline-flex;}
-.checkbox-input {display:inline-block; vertical-align:middle; width:24px; min-width:24px; height:24px; -webkit-appearance: none; appearance: none; cursor:pointer; background:url(../image/common/ic_check.svg) no-repeat center / contain}
-.checkbox-input:checked {background-image:url(../image/common/ic_check_on.svg);}
+.checkbox-input {display:inline-block; vertical-align:middle; width:24px; min-width:24px; height:24px; -webkit-appearance: none; appearance: none; cursor:pointer; background:url(/KDM-6138/marketing/image/common/ic_check.svg) no-repeat center / contain}
+.checkbox-input:checked {background-image:url(/KDM-6138/marketing/image/common/ic_check_on.svg);}
 .checkbox-input + label {display:inline-block; margin-left:4px; line-height:24px; vertical-align:middle; cursor:pointer;}
 
 /* radio basic */
 .radio-area {display:inline-flex;}
-.radio-input {display:inline-block; vertical-align:middle; width:24px; min-width:24px; height:24px; -webkit-appearance: none; appearance: none; cursor:pointer; background:url(../image/common/ic_radio.svg) no-repeat center / contain}
-.radio-input:checked {background-image:url(../image/common/ic_radio_on.svg);}
+.radio-input {display:inline-block; vertical-align:middle; width:24px; min-width:24px; height:24px; -webkit-appearance: none; appearance: none; cursor:pointer; background:url(/KDM-6138/marketing/image/common/ic_radio.svg) no-repeat center / contain}
+.radio-input:checked {background-image:url(/KDM-6138/marketing/image/common/ic_radio_on.svg);}
 .radio-input + label {display:inline-block; margin-left:4px; line-height:24px; vertical-align:middle; cursor:pointer;}
 
 /* 버튼형 라디오 */
@@ -113,7 +113,7 @@
 
 /* 선택 시 체크 아이콘 */
 .radio-btn > input:checked + label > span{color:var(--primary-color);}
-.radio-btn > input:checked + label > span::before {content:""; display:inline-block; width:15px; height:10px; margin-right:6px; vertical-align:middle; background:url(../image/common/ic_check02_on.svg) no-repeat center / contain;}
+.radio-btn > input:checked + label > span::before {content:""; display:inline-block; width:15px; height:10px; margin-right:6px; vertical-align:middle; background:url(/KDM-6138/marketing/image/common/ic_check02_on.svg) no-repeat center / contain;}
 
 
 .radio-btn > input:disabled + label {cursor: default; background-color:#f1f1f1;}
@@ -154,7 +154,7 @@
 .select-dropdown {position:relative; z-index:10; display:inline-block; }
 .select-dropdown > ul {display:none; overflow-y:auto; position: absolute; min-width:100%; max-height:107px; padding:8px; border:1px solid #cacaca; border-radius:8px; background-color:#fff;}
 
-.dropdown-btn {display:block; width:100%; min-width:100px; min-height:33px; padding:0 24px 0 8px; border-radius:8px; text-align:left; background:#fff url(../image/dental/icon_arr_down.svg) no-repeat right 0 center / 24px 24px;}
+.dropdown-btn {display:block; width:100%; min-width:100px; min-height:33px; padding:0 24px 0 8px; border-radius:8px; text-align:left; background:#fff url(/KDM-6138/marketing/image/dental/icon_arr_down.svg) no-repeat right 0 center / 24px 24px;}
 .option-btn {display:block; width:100%; min-height:30px; padding:6px; text-align:left; font-size:14px;}
 .option-btn.on,
 .option-btn:hover {background-color:#f2fcfd;}
@@ -164,7 +164,7 @@
 .form-panel{background: var(--white);border: 1px solid var(--primary-color);border-radius: 16px;padding:30px 20px;width:100%;max-width:345px;box-sizing:border-box;  }
 .form-panel-header{display:flex; align-items:center;justify-content:space-between;margin-bottom: 20px;  }
 .form-panel-header h2{font-size: 18px;font-weight: 700;margin:0;color:var(--black01)}
-.close-btn{ width:32px; height:32px;cursor:pointer;background:url(../image/common/btn_pop_close.svg) no-repeat center / contain;border:0;padding:0;}
+.close-btn{ width:32px; height:32px;cursor:pointer;background:url(/KDM-6138/marketing/image/common/btn_pop_close.svg) no-repeat center / contain;border:0;padding:0;}
 .form-panel .close-btn{display:none;} /* PC : 닫기 버튼 숨김 */
 .form-open-bar{display:none;}
 
@@ -177,14 +177,12 @@
     .modal-form.on{transform:translateY(0);}
     .form-panel .close-btn{display:block;}
     /* 하단 고정 열기 버튼 */
-    /* 처음엔 화면 아래에 숨어 있다가, 스크롤하면 .is-show로 올라옴 */
-    .form-open-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:12px 20px;background:var(--white);box-shadow:0 -4px 12px rgba(0,0,0,.08);visibility:hidden;transform:translateY(100%);transition:transform 0.3s ease, visibility 0s linear 0.3s;}
-    .form-open-bar.is-show{visibility:visible;transform:translateY(0);transition:transform 0.3s ease, visibility 0s;}
+    .form-open-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:12px 20px;background:var(--white);box-shadow:0 -4px 12px rgba(0,0,0,.08);}
     .form-open-bar .btn-cta-pri{width:100%;}
     .cancer-wrapper{padding-bottom:79px;} /* 고정 버튼에 내용이 가리지 않도록 */
 }
 @media (prefers-reduced-motion: reduce) {
-    .modal-form, .form-open-bar, .form-open-bar.is-show{transition:none;}
+    .modal-form{transition:none;}
 }
 
 
@@ -199,7 +197,7 @@
 .popup-body {overflow-y: auto; padding:16px var(--pop-padding-side) 20px;}
 .popup-body .sub-info{font-weight: 400;}
 .popup-foot {margin:0 var(--pop-padding-side); padding:20px 0 24px;}
-.btn-pop-close {position: absolute; top:30px; right:20px; width: 32px; height: 32px; background: url(../image/common/btn_pop_close.svg) no-repeat center / 32px 32px;}
+.btn-pop-close {position: absolute; top:30px; right:20px; width: 32px; height: 32px; background: url(/KDM-6138/marketing/image/common/btn_pop_close.svg) no-repeat center / 32px 32px;}
 
 /* full pop */
 .modal-full {overflow: hidden; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); display:flex; flex-direction: column; width: 100%; box-sizing: border-box; background-color: #fff;}
@@ -209,11 +207,11 @@
 
 /* alert */
 .modal-alert {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); width: calc(100% - 40px); max-width: 400px; padding:40px var(--pop-padding-side); border-radius: 24px; box-sizing: border-box; background-color: #fff;}
-.alert-body {padding-top:66px; background: url(../image/common/ic_exc.png) no-repeat center 0 / 50px 50px;}
+.alert-body {padding-top:66px; background: url(/KDM-6138/marketing/image/common/ic_exc.png) no-repeat center 0 / 50px 50px;}
 .alert-text {color:#000; text-align: center; line-height:1.5;}
 .alert-text ~ * {margin-top:16px;}
-.alert-body.alert--error {background-image:url(../image/ic_er.png); background-size:65px 51px;}
-.alert-body.alert--success {background-image:url(../image/common/ic_confirm.png);}
+.alert-body.alert--error {background-image:url(/KDM-6138/marketing/image/ic_er.png); background-size:65px 51px;}
+.alert-body.alert--success {background-image:url(/KDM-6138/marketing/image/common/ic_confirm.png);}
 .alert-body.icon--none {padding-top:0; background:none;}
 .modal-alert .box-basic {overflow-y:auto; max-height: 114px;}
 
@@ -283,10 +281,10 @@
 
 .util{display: flex;align-items: center;gap:16px;}
 .btn-call{border:1px solid #d9d9d9;background:var(--white);border-radius: 100px;padding:8px 12px;}
-.btn-call--icon{display:inline-block;width:26px;height:20px;vertical-align:middle;background:url(../image/cancer/ic_callcenter.svg) no-repeat center center;background-size:100% 100%;margin-right:8px;}
+.btn-call--icon{display:inline-block;width:26px;height:20px;vertical-align:middle;background:url(/KDM-6138/marketing/image/cancer/ic_callcenter.svg) no-repeat center center;background-size:100% 100%;margin-right:8px;}
 .header .btn-menu{display: none}
 .btn-menu:focus:not(:focus-visible){outline:none;} /* 마우스 클릭 시 포커스 테두리 숨김 (키보드 이동 시에는 유지) */
-.btn-menu--bar{background:url(../image/common/ic_menu.png) no-repeat center center;background-size:100% 100%;width:40px;height:40px;border-radius: 0}
+.btn-menu--bar{background:url(/KDM-6138/marketing/image/common/ic_menu.png) no-repeat center center;background-size:100% 100%;width:40px;height:40px;border-radius: 0}
 /* 모바일 메뉴 (modal-wrap#gnbSub) : 오른쪽에서 왼쪽으로 슬라이드 */
 .modal-gnb{position:absolute;top:0;right:0;bottom:0;width:80%;max-width:360px;padding:64px 20px 20px;background:var(--white);overflow-y:auto;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);}
 .modal-gnb.on{transform:translateX(0);}

@@ -40,14 +40,6 @@ $(function () {
         }
     });
 
-    //모바일 상품상담신청 버튼 : 스크롤하면 나타나고, 맨 위로 올라가면 숨김
-    var $formOpenBar = $(".form-open-bar");
-    if ($formOpenBar.length) {
-        $(window).on("scroll", function () {
-            $formOpenBar.toggleClass("is-show", $(window).scrollTop() > 50);
-        }).trigger("scroll");
-    }
-
     //input focus
     $(".text-input > input").on("focus", function () {
         $(this).parents(".input-area").addClass("focus");
