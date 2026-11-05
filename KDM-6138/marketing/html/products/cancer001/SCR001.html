@@ -11,357 +11,159 @@
   <meta name="description" content="">
 
 
-  <link type="text/css" rel="stylesheet" href="../css/jquery.ui.base.css">
-  <link type="text/css" rel="stylesheet" href="../css/jquery.ui.tooltip.css">
-  <link type="text/css" rel="stylesheet" href="../css/mobiscroll.custom-2.17.1.min.css">
-  <link type="text/css" rel="stylesheet" href="../css/default.css"><!-- 2025 리뉴얼 css : 기존 수정 -->
-  <link type="text/css" rel="stylesheet" href="../css/cancer.css"><!-- 2025 리뉴얼 css -->
+  <link type="text/css" rel="stylesheet" href="../../../css/jquery.ui.base.css">
+  <link type="text/css" rel="stylesheet" href="../../../css/mobiscroll.custom-2.17.1.min.css">
+  <link type="text/css" rel="stylesheet" href="../../../css/default.css"><!-- 2025 리뉴얼 css : 기존 수정 -->
+  <link type="text/css" rel="stylesheet" href="../../../css/cancer.css"><!-- 2025 리뉴얼 css -->
 
-  <script src="../js/lib/jquery-1.11.3.min.js"></script>
-  <script src="../js/lib/mobile-detect.min.js"></script>
-  <script src="../js/lib/mobiscroll.custom.min.js"></script>
-  <script src="../js/lib/swiper.min.js"></script>
-  <script src="../js/lib/jquery.extends-ajax.js"></script>
-  <script src="../js/lib/mobiscroll.custom.min.js"></script>
-  <script src="../js/lib/model.min.js"></script>
-  <script src="../js/lib/common-ui.js"></script>
-  <script src="../js/lib/jquery-ui.1.10.4.min.js"></script>
-
+  <script src="../../../js/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../../js/lib/mobile-detect.min.js"></script>
+  <script src="../../../js/lib/mobiscroll.custom.min.js"></script>
+  <script src="../../../js/lib/swiper.min.js"></script>
+  <script src="../../../js/lib/jquery.extends-ajax.js"></script>
+  <script src="../../../js/lib/mobiscroll.custom.min.js"></script>
+  <script src="../../../js/lib/model.min.js"></script>
+  <script src="../../../js/lib/common-ui.js"></script>
+  <script src="../../../js/lib/jquery-ui.1.10.4.min.js"></script>
 
 
-  <script src="../js/common.js"></script>
+
+  <script src="../../../js/common.js"></script>
 </head>
 
-<body class="main-body">
-  <div class="dtc-wrapper">
-    <header class="dtc-header">
-      <div class="header-inner">
-        <div class="pi-logo"></div>
-        <div class="lina-logo"></div>
-      </div>      
-    </header>
-    <div class="dtc-container">
-      <!-- pc용 summary -->
-      <aside class="left-area">
-        <div class="summary-box">
-          <dl>
-            <dt>여행국가</dt>
-            <dd>
-              <p class="txt-selected">일본</p>
-              <p class="txt-placeholder">여행국가를 입력해주세요</p>
-            </dd>
-          </dl>
-          <dl>
-            <dt>여행기간</dt>
-            <dd>
-              <div class="txt-selected">
-                <em>출발</em>
-                <div>
-                  <span data-summary="policyStart" class="date"></span><span data-summary="policyStartTime" class="date"></span> 시
-                </div>
-              </div>
-              <div class="txt-selected">
-                <em>도착</em>
-                <div>
-                  <span data-summary="policyEnd" class="date"></span><span data-summary="policyEndTime" class="date"></span> 시
-                </div>
-              </div>
-              <p class="txt-placeholder">여행기간을 입력해주세요</p>
-            </dd>
-          </dl>
-          <dl>
-            <dt>가입자정보</dt>
-            <dd>
-              <p class="txt-selected"></p>
-              <p class="txt-placeholder">가입자정보를 입력해주세요</p>
-            </dd>
-          </dl>
-          <dl>
-            <dt>플랜선택</dt>
-            <dd>
-              <div class="txt-selected"><em>실속형</em><span>1건</span></div>
-              <div class="txt-selected"><em>표준형</em><span>1건</span></div>
-              <div class="txt-selected"><em>고급형</em><span>1건</span></div>
-              <p class="txt-placeholder">플랜을 선택해주세요</p>
-            </dd>
-          </dl>
-        </div>
-      </aside>
-
-      <!-- dtc-content -->
-      <div class="dtc-content">
-        <div class="cont-head">
-          <!-- 직접 입력 -->
-          <p class="txt-main"><span class="ani">빠르고 간편하게</span> <br>여행보험 지금 바로 준비하세요.</p>
-
-          <!-- auto fill -->
-          <!--
-          <p class="txt-main">예약 정보 연동 완료!<br>가장 빠른 <span>여행보험</span> 가입이 가능해요.</p>
-          -->
-        </div>
-        <!-- 아코디언 가입정보 -->
-        <div class="trip-form-accordion">
-          <!-- 여행국가 -->
-          <div class="trip-form" id="accTravelPlace"><!-- 필수입력 누락시 .require__error 추가 --><!-- 입력완료시 .complete 추가 -->
-            <div class="trip-form__head">
-              <dl>
-                <dt>여행국가</dt>
-                <dd>
-                  <p class="txt-selected" data-summary="accTravelPlace"></p>
-                  <p class="txt-placeholder">목적지를 입력해주세요</p>
-                </dd>
-              </dl>
-              <a href="#accTravelPlace" class="btn-accd"><span class="blind">열림</span></a>
-            </div>
-            <div class="trip-form__body">
-              <!-- 여행국가 검색 -->
-              <div class="search-input">
-                <input type="text" id="travelPlaceName" name="travelPlaceName" autocomplete="off">
-                <button type="button" class="btn-search"><span class="blind">검색</span></button>   
-              </div>       
-              
-              <!-- 자동완성 -->
-              <div id="listCountryArea" class="auto-foreign">
-                <ul>
-                  <li><a href="#n"><span class="keyword">일</span>본</a></li>
-                  <li><a href="#n">독<span class="keyword">일</span></a></li>
-                  <li><a href="#n">아<span class="keyword">일</span>랜드</a></li>
-                </ul>
-                <div class="btns-wrap">
-                  <button type="button" class="btn-small"><span class="keyword">{국가명}</span>으로 선택할게요</button>
-                </div>                
-              </div>
-              
-              <div class="popular-travel" id="popularTravel"><!-- 임시 id 변경가능 -->
-                <div class="title3">인기여행국가</div>
-                <ul>
-                  <li><a href="#n" class="country-box"><i class="ic-country-1"></i><span>일본</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-2"></i><span>미국</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-3"></i><span>베트남</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-4"></i><span>태국</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-5"></i><span>중국</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-6"></i><span>인도네시아</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-7"></i><span>필리핀</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-8"></i><span>대만</span></a></li>
-                  <li><a href="#n" class="country-box"><i class="ic-country-9"></i><span>홍콩</span></a></li>
-                </ul>
-                <div class="btns-wrap">
-                  <a href="#denyTravelPlace" class="btn-line-link" data-popup-btn="denyTravelPlace">보험인수제한국가</a>
-                </div>  
-              </div>          
-            </div>
+<body class="cancer-body">
+  <div class="cancer-wrapper">
+    <header class="header">
+      <div class="header--inner">
+        <h1 class="header--logo">
+          <a href="/"><img src="../../../image/common/img_logo.png" alt="라이나손보"></a>
+        </h1>
+        <div class="header--nav">
+          <nav class="gnb" id="gnb" aria-label="주요 메뉴">
+            <ul class="gnb--list">
+              <li><a href="#" class="is-active" aria-current="page">인터넷 상담보험</a></li>
+              <li><a href="#" class="">THE 이로운 치아보험</a></li>
+            </ul>
+          </nav>
+          <div class="util">
+            <a href="tel:1566-5800" class="btn-call">
+              <span class="btn-call--icon" aria-hidden="true"></span>
+              전화상담
+            </a>
+            <button type="button" class="btn-menu" data-popup-btn="gnbSub">
+              <span class="blind">메뉴 열기</span>
+              <span class="btn-menu--bar" aria-hidden="true"></span>
+            </button>
           </div>
-
-          <!-- 여행기간 -->
-          <div class="trip-form" id="accCalendarPicker"><!-- 필수입력 누락시 .require__error 추가 --><!-- 입력완료시 .complete 추가 -->
-            <div class="trip-form__head">
-              <dl>
-                <dt>여행기간</dt>
-                <dd>
-                  <p class="txt-selected">출발 <span data-summary="policyStart" class="date"></span><span class="date"></span> 시</p>
-                  <p class="txt-selected">도착 <span data-summary="policyEnd" class="date"></span><span class="date"></span> 시</p>
-                  <p class="txt-placeholder">일정을 입력해주세요</p>
-                </dd>
-              </dl>
-               <a href="#accCalendarPicker" class="btn-accd"><span class="blind">열림</span></a>
-            </div>
-            <div class="trip-form__body">
-              <!-- 출발일시 -->
-              <div class="input-row">
-                <div class="input-area input__day">
-                  <label for="policyStart">출발일</label>
-                  <div class="text-input">
-                    <input type="text"  class="" placeholder="출발일" title="출발일" id="policyStart" name="policyStart" value=""  readonly="readonly">
-                  </div>        
-                </div>
-                <div class="input-area input__time">
-                  <label for="policyStartTime">출발시간</label>
-                  <div class="text-input">
-                    <input type="text"  class="" placeholder="출발시간" title="출발시간" id="policyStartTime" name="policyStartTime" value=""  readonly="readonly">
-                  </div>        
-                </div>
-              </div>
-              <!-- 도착일시 -->
-              <div class="input-row">
-                <div class="input-area input__day">
-                  <label for="policyEnd">도착일</label>
-                  <div class="text-input">
-                    <input type="text"  class="" placeholder="도착일" title="도착일" id="policyEnd" name="policyEnd" value="" readonly="readonly">
-                  </div>        
-                </div>
-                <div class="input-area input__time">
-                  <label for="policyEndTime">도착시간</label>
-                  <div class="text-input">
-                    <input type="text"  class="" placeholder="도착시간" title="도착시간" id="policyEndTime" name="policyEndTime" value=""  readonly="readonly">
-                  </div>        
-                </div>
-              </div>
-
-              <div class="box-noti">
-                <p class="txt-noti">자택을 출발하여 도착할  때까지 시간을 알려주세요.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 가입자정보 -->
-          <div class="trip-form" id="accTravelMember"><!-- 필수입력 누락시 .require__error 추가 --><!-- 입력완료시 .complete 추가 -->
-            <div class="trip-form__head">
-              <dl>
-                <dt>가입자 정보</dt>
-                <dd>
-                  <p class="txt-selected">나손보 외 1명</p>
-                  <p class="txt-placeholder">가입자 정보를 입력해주세요</p>
-                </dd>
-              </dl>
-              <a href="#accTravelMember" class="btn-accd"><span class="blind">열림</span></a>
-            </div>
-            <div class="trip-form__body">
-              <div class="traveler-info">                
-                <!-- 입력 -->
-                <div class="traveler-box">
-                  <div class="title2">가입자 정보(본인)</div>
-                  <div class="input-area">
-                    <label for="inputText01">이름</label>
-                    <div class="text-input">
-                      <input type="text" id="inputText01" placeholder="예:홍길동">
-                      <button type="button" class="btn-inp-clear"></button>
-                    </div>   
-                    <p class="txt-error">한글 이름을 입력 해 주세요</p>     
-                  </div>
-
-                  <div class="input-area input__jumin">
-                    <label for="inputText02">생년월일/성별</label>
-                    <div class="text-input">
-                      <input type="text" id="inputText02" placeholder="예:880606" class="jumin-1" maxlength="6"> 
-                      <span>-</span>
-                      <input type="text" id="inputText02" placeholder="1" class="jumin-2" maxlength="1">
-                      <span>******</span>
-                    </div> 
-                    <p class="txt-error">주민등록번호 앞7자리를 입력 해 주세요</p>
-                  </div>
-
-                  <div class="input-area">
-                    <label for="inputText03">휴대폰 번호</label>
-                    <div class="text-input">
-                      <input type="text" id="inputText03" placeholder="예:01012345678">
-                      <button type="button" class="btn-inp-clear"></button>
-                    </div>   
-                    <p class="txt-error">휴대폰번호 11자리를 입력 해 주세요</p>     
-                  </div>
-                </div> <!-- //traveler-box -->
-
-                <!-- 동반인 -->
-                <div class="traveler-box">
-                  <div class="title2">동반인1</div>
-                  <div class="input-area">
-                    <label for="inputText01_2">이름</label>
-                    <div class="text-input">
-                      <input type="text" id="inputText01_2" placeholder="예:홍길동">
-                      <button type="button" class="btn-inp-clear"></button>
-                    </div>        
-                  </div>
-
-                  <div class="input-area input__jumin">
-                    <label for="inputText02">생년월일/성별</label>
-                    <div class="text-input">
-                      <input type="text" id="inputText02" placeholder="예:880606" class="jumin-1" maxlength="6"> 
-                      <span>-</span>
-                      <input type="text" id="inputText02" placeholder="1" class="jumin-2" maxlength="1">
-                      <span>******</span>
-                    </div> 
-                  </div>
-
-                  <button type="button" class="btn-del"><span class="blind">동반인삭제</span></button>
-                </div> <!-- //traveler-box -->
-
-                <div class="btns-wrap">
-                  <button type="button" class="btn-add">동반인 추가</button>
-                </div>
-              </div>            
-            </div>
-          </div>
-
-          <!-- 플랜선택 -->
-          <div class="trip-form open" id="accTravelPlan"><!-- 필수입력 누락시 .require__error 추가 --><!-- 입력완료시 .complete 추가 -->
-            <div class="trip-form__head">
-              <dl>
-                <dt>플랜선택</dt>
-                <dd>
-                  <div class="txt-selected plan__selected">
-                    <dl class="selected-plan-info plan__type1">
-                      <dt>실속형</dt>
-                      <dd><span>1</span> 건</dd>
-                    </dl>
-                    <dl class="selected-plan-info plan__type2">
-                      <dt>표준형</dt>
-                      <dd><span>30</span> 건</dd>
-                    </dl>
-                    <dl class="selected-plan-info plan__type3">
-                      <dt>고급형</dt>
-                      <dd><span>1</span> 건</dd>
-                    </dl>
-                  </div>
-                  <p class="txt-placeholder">가입자 정보를 입력해주세요</p>
-                </dd>
-              </dl>
-              <a href="#accTravelPlan" class="btn-accd"><span class="blind">열림</span></a>
-            </div>
-            <div class="trip-form__body">
-              <div class="plan-choice">
-                <!-- 
-                  .tip--center : 중앙정렬 (표준형)
-                  .tip--left : 왼쪽정렬 (실속형)
-                  .tip--right : 오른쪽정렬 (고급형)
-                -->
-                <div class="tip tip--right">
-                  <div class="tip__cont"><span class="keyword">일본</span> 여행시 가장 안전한 보장</div>
-                </div>
-                <ul class="plan-type">
-                  <li><button type="button" class="btn-plan"><span>실속형</span><strong>7,000 원</strong></button></li>
-                  <li><button type="button" class="btn-plan"><span>표준형</span><strong>10,000 원</strong></button></li>
-                  <li><button type="button" class="btn-plan"><span>고급형</span><strong>15,000 원</strong></button></li>
-                </ul>
-                <ul class="plan-type">
-                  <li><button type="button" class="btn-plan" disabled><span>실속형</span><strong>여행정보 입력 후<br> 확인 가능</strong></button></li>
-                  <li><button type="button" class="btn-plan"><span>표준형</span><strong>10,000</strong></button></li>
-                  <li><button type="button" class="btn-plan" disabled><span>고급형</span><strong>가입가능한 <br> 플랜이 아닙니다.</strong></button></li>
-                </ul>
-                <div class="btns-wrap">
-                  <a href="#modalPlanComparison" class="btn-line-link" data-popup-btn="modalPlanComparison">플랜비교하기</a>
-                </div>
-              </div>
-              <div class="box-basic">
-                <p>
-                  Tip . 큰 돈 나갈 위험이 있는 해외의료비(특약)을 고급형에서 최대한 1억까지 보장 받을 수 있어요.<br>
-                  (표준형 기준 최대 7천만원)
-                </p>
-              </div>
-
-              <div class="btns-group-wrap">
-                <a href="#n" class="btn-group">모두 같은 플랜</a><!-- 선택시 .on 추가 -->
-                <a href="#eachMemberPlanChoice" class="btn-group" data-popup-btn="eachMemberPlanChoice">각자 다른 플랜</a>
-              </div>
-            </div>
-          </div>
-        </div><!-- //아코디언 가입정보 -->      
-
-        <div class="btns-fixed-wrap">
-          <a href="#n" class="btn-cta-pri disabled">모두 선택했어요</a><!-- 활성화 시  .disabled 삭제 -->
-        </div>
-      </div><!-- //dtc-content -->
-
-      <!-- pc용 -->
-      <aside class="right-area">
-      <div class="cs-center">
-        <div class="blind">
-          해외갈 때 꼭 챙기세요! 해외여행보험 1566-5800 상담시간 평일 : 09시~18시 (주말, 공휴일 제외)
         </div>
       </div>
-      </aside>
+    </header>
+
+    <!-- 모바일 메뉴 (modal) : btn-menu 클릭 시 오른쪽에서 열림 -->
+    <div class="modal-wrap" id="gnbSub">
+      <div class="modal-gnb">
+        <nav aria-label="전체 메뉴">
+          <ul class="gnb--list">
+            <li><a href="#" class="is-active" aria-current="page">인터넷 상담보험</a></li>
+            <li><a href="#" class="">THE 이로운 치아보험</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="btn-pop-close"><span class="blind">메뉴 닫기</span></button>
+      </div>
     </div>
 
+    <main id="contents">
+      <div class="container">
+        <div class="content">
+          <div class="hero">
+            <section class="banner">
+              메인 이미지 영역
+            </section>
+            <!-- 상담신청 폼 : PC는 배너 옆 고정, 모바일은 바텀시트 (modal("formPanel", true/false)) -->
+            <aside class="form-panel" id="formPanel">
+              <div class="modal-form">
+                <div class="form-panel-header">
+                  <h2>상품상담신청</h2>
+                  <button type="button" class="close-btn" aria-label="닫기" data-popup-close="formPanel"></button>
+                </div>
+
+                <form class="js-form">
+                  <div class="input-row">
+                    <div class="input-area">
+                      <div class="text-input">
+                        <input type="text" class="" id="inputText01" placeholder="성명을 입력해주세요">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <div class="input-area ">
+                      <div class="text-input">
+                        <input type="text" id="inputBirth01" placeholder="YYYYMMDD">
+                      </div>
+                    </div>
+                    <div class="radio-btns-wrap">
+                      <div class="radio-btn">
+                        <input type="radio" name="ra02" id="ra02_01"><label for="ra02_01">남</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" name="ra02" id="ra02_02"><label for="ra02_02">여</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <div class="input-area">
+                      <div class="text-input">
+                        <input type="text" class="" id="inputText02" placeholder="휴대폰번호를입력해주세요">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div class="btns-fixed-wrap">
+                  <a href="#n" class="btn-cta-pri">상품상담신청</a>
+                </div>
+              </div>
+            </aside>
+            <!-- 모바일 전용 : 상담신청 바텀시트 열기 -->
+            <div class="form-open-bar">
+              <button type="button" class="btn-cta-pri" data-popup-btn="formPanel">상품상담신청</button>
+            </div>
+          </div>
+          <div class="products">
+            <div class="products-inner">
+              <ul class="product-item">
+                <li>
+                  <div class="product-item-img">
+                     이미지
+                  </div>
+                  <div class="product-item-group">
+                    <div>
+                      <p>메인타이틀</p>
+                      <p>서브타이틀입니다.서브타이틀입니다. 서브타이틀입니다.</p>
+                    </div>
+                    <a href="#modalBottomsheet" data-popup-btn="modalBottomsheet" class="">modal Bottomsheet</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--[S] Tab-->
+          <div class="product-tab">
+            <ul>
+              <li>상품소개</li>
+            </ul>
+          </div>
+          <!--[E] Tab-->
+        </div>
+      </div>
+    </main>
+
+
+
+
+
+
     <!-- footer -->
-    <footer class="dtc-footer mobile-hide">
+    <footer class="footer mobile-hide">
       <div class="footer-inner">
         <div class="foot-logo"></div>
         <div class="foot-noti">
@@ -383,376 +185,43 @@
   </div>
 
   <!-- 팝업 : 보험 인수제한 국가 안내 -->
-  <div class="modal-wrap" id="denyTravelPlace">
-    <div class="modal-popup">
-      <div class="popup-head">
-        <h1>보험 인수제한 국가 안내</h1>
-      </div>
-      <div class="popup-body">
-        <div class="deny-place">
-          <dl>
-            <dt>아시아</dt>
-            <dd>아프가니스탄, 이스라엘, 이라크, 이란, 북한, 한국, 레바논, 미얀마, 파키스탄, 팔레스타인 자치구, 시리아, 예멘</dd>
-          </dl>
-          <dl>
-            <dt>아프리카</dt>
-            <dd>부르키나파소, 콩고(자이레), 중앙아프리카, 콩고, 코트디브와르, 기니, 리비아, 말리, 니제르, 나이지리아, 수단, 소말리아, 차드, 자이레</dd>
-          </dl>
-          <dl>
-            <dt>유럽</dt>
-            <dd>벨라루스, 몰도바, 러시아, 우크라이나</dd>
-          </dl>
-          <dl>
-            <dt>북아메리카</dt>
-            <dd>쿠바</dd>
-          </dl>
-          <dl>
-            <dt>남아메리카</dt>
-            <dd>아이티,베네수엘라</dd>
-          </dl>
-        </div>    
-      </div>
-
-      <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
-    </div>
-  </div>
-
-  <!-- 바텀시트 : 가입자별 플랜선택 -->
-  <div class="modal-wrap" id="eachMemberPlanChoice">
+  <div class="modal-wrap" id="modalBottomsheet">
     <div class="modal-bottomsheet">
       <div class="bottomsheet-head">
-        <h1>가입자별 플랜선택</h1>
+        <h1>알아두실 사항</h1>
       </div>
       <div class="bottomsheet-body">
-        <div class="each-member-box">
-          <div class="member-name">나손보</div>
-          <div class="radio-btns-wrap">
-            <div class="radio-btn">
-              <input type="radio" name="ra01" id="ra01_01"><label for="ra01_01"><span>실속형</span><strong>7,000</strong></label>
-            </div>
-            <div class="radio-btn">
-              <input type="radio" name="ra01" id="ra01_02"><label for="ra01_02"><span>표준형</span><strong>14,000</strong></label>
-            </div>
-            <div class="radio-btn">
-              <input type="radio" name="ra01" id="ra01_03"><label for="ra01_03"><span>고급형</span><strong>22,000</strong></label>
-            </div>
-          </div>
-        </div>
-        <div class="each-member-box">
-          <div class="member-name">나여행</div>
-          <div class="radio-btns-wrap">
-            <div class="radio-btn">
-              <input type="radio" name="ra02" id="ra02_01"><label for="ra02_01"><span>실속형</span><strong>7,000</strong></label>
-            </div>
-            <div class="radio-btn">
-              <input type="radio" name="ra02" id="ra02_02"><label for="ra02_02"><span>표준형</span><strong>14,000</strong></label>
-            </div>
-            <div class="radio-btn">
-              <input type="radio" name="ra02" id="ra02_03"><label for="ra02_03"><span>고급형</span><strong>22,000</strong></label>
-            </div>
-          </div>
-        </div> 
-        <div class="each-member-box">
-          <div class="member-name">나라이</div>
-          <div class="radio-btns-wrap">
-            <div class="radio-btn">
-              <input type="radio" name="ra03" id="ra03_01"><label for="ra03_01"><span>실속형</span><strong>7,000</strong></label>
-            </div>
-            <div class="radio-btn">
-              <input type="radio" name="ra03" id="ra03_02"><label for="ra03_02"><span>표준형</span><strong>14,000</strong></label>
-            </div>
-            <div class="radio-btn">
-              <input type="radio" name="ra03" id="ra03_03"><label for="ra03_03"><span>고급형</span><strong>22,000</strong></label>
-            </div>
-          </div>
-        </div> 
-        <div class="btns-wrap">
-          <a href="#modalPlanComparison" class="btn-line-link" data-popup-btn="modalPlanComparison">플랜비교하기</a>
-        </div>       
-      </div>
-      <div class="bottomsheet-foot">
-        <div class="btns-flex-wrap">
-          <a href="#n" class="btn-cta-sec">모두 같은플랜</a>
-          <a href="#n" class="btn-cta-pri">플랜 선택했어요</a>
-        </div>        
-      </div>
-      <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
-    </div>
-  </div>
-
-  <!-- 풀팝업 : 플랜비교하기 -->
-  <div class="modal-wrap" id="modalPlanComparison">
-    <div class="modal-full">
-      <div class="full-head"></div>
-      <div class="full-body">
-        <h1>플랜을 한 눈에 비교하세요!</h1>
-
-        <div class="plan-compare">
-          <div class="member-selected">
-            <dl>
-              <dt>가입자명</dt>
-              <dd>
-                <select name="memberSelected">
-                  <option>나손보</option>
-                  <option>나여행</option>
-                </select>
-              </dd>
-            </dl>
-            <p class="txt-noti">가입자별 보장내용을 확인하세요!</p>
-          </div>
-
-          <ul class="plan-type">
-            <li class="on"><button type="button" class="btn-plan"><span>실속형</span></button></li>
-            <li><button type="button" class="btn-plan"><span>표준형</span></button></li>
-            <li><button type="button" class="btn-plan"><span>고급형</span></button></li><!-- 가입불가시 disabled 추가 -->
+        <div class="coverage-info">
+          <h2>(특약) 표적항암약물허가치료보장</h2>
+          <ul class="list-dash">
+            <li>보상한도 : 암/기타피부암/갑상선암 각각 최초 1회한</li>
+            <li>면책기간 : ‘암’의 경우 계약일로부터 90일간 보장 제외</li>
+            <li>감액지급 : 계약일로부터 1년간 보험금 50%</li>
           </ul>
-          
-          <div class="plan-coverage">            
-            <div class="plan-cont">
-              <div class="title3">주계약보험</div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail">해외여행 중 상해사망 후유장애</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="plan-cont">
-              <div class="title3">특약보험</div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail00">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail01">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail02">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail03">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail04">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail00">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail01">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail02">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail03">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-              <div class="plan-box">
-                <div class="plan-detail">
-                  <a href="#modalPlanDetail" data-popup-btn="modalPlanDetail04">해외병원 상해 의료비</a>
-                </div>
-                <ul class="plan-type">
-                  <li class="on"><div class="plan-amount">5,000만 원</div></li>
-                  <li><div class="plan-amount">7,000만 원</div></li>
-                  <li><div class="plan-amount">1억 원</div></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div><!-- //plan-compare -->
-      </div><!-- //full-body -->
-
-      <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
-    </div>
-  </div>
-
-  <!-- 바텀시트 : 플랜상세 -->
-  <div class="modal-wrap" id="modalPlanDetail">
-    <div class="modal-bottomsheet">
-      <div class="bottomsheet-head">
-        <h1>해외여행 중 상해사망 후유장애</h1>
-      </div>
-      <div class="bottomsheet-body">
-        <div class="plan-detail">
-          <p>가. 해외여행 중 상해의 직접결과로써 사망한 경우<br>
-            - 보험가입금액 전액 지급</p>
-          <br>
-          <p>
-            나. 해외여행 중 상해로 장해분류표에서 정한 장해지급률에 해당하는 장해상태가 되었을 경우<br>
-            - 후유장해보험금(보험가입금액×후유장해지급률로 산출한 금액) 지급</p>
         </div>
+        <div class="coverage-info">
+          <h2>(특약) 표적항암약물허가치료보장2222</h2>
+          <ul class="list-dash">
+            <li>보상한도 : 암/기타피부암/갑상선암 각각 최초 1회한</li>
+            <li>면책기간 : ‘암’의 경우 계약일로부터 90일간 보장 제외</li>
+            <li>감액지급 : 계약일로부터 1년간 보험금 50%</li>
+          </ul>
+        </div>
+
       </div>
       <div class="bottomsheet-foot">
-        <div class="btns-flex-wrap">
-          <a href="#n" class="btn-small">확인</a>
-        </div>        
+        <div class="btns-wrap">
+          <a href="#n" class="btn-pri">확인</a>
+        </div>
       </div>
       <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
     </div>
   </div>
+
 
 
   <script>
-    $(function(){
-      //아코디언 초기 열림
-      let tripFormOpenBody = $('.trip-form.open .trip-form__body');
-      tripFormOpenBody.show();
 
-      $('#travelPlaceName').on('input', function(){
-        if($(this).val() == "") {
-          $('#listCountryArea').hide(); //자동완성리스트
-          $('#popularTravel').show(); //인기국가리스트
-        } else {
-          $('#listCountryArea').show(); //자동완성리스트
-          $('#popularTravel').hide(); //인기국가리스트
-        }      
-      });
-
-      //아코디언 여닫이 버튼
-      $('.btn-accd').click(function(){      
-        let btnAccd = $('.btn-accd');
-        let currTripForm = $(this).parents('.trip-form');
-        let tripForm = $('.trip-form');
-        let headerHeight = $('.dtc-header').outerHeight();
-        let contHeadHeight = $('.cont-head').outerHeight();
-        let headHeight = headerHeight + contHeadHeight;
-        let btnIdx = currTripForm.index();
-        let btnHeight = $(this).outerHeight();
-        let btnPosi = headHeight + (btnHeight * btnIdx);
-        var windowWidth = $( window ).width();
-
-        event.preventDefault();
-        console.log('높이', btnPosi);
-        if(currTripForm.hasClass('open')){        
-          currTripForm.removeClass('open');
-          currTripForm.find('.trip-form__body').slideUp();
-          $(this).find('.blind').text('열림');
-        } else {
-          tripForm.removeClass('open');
-          tripForm.find('.trip-form__body').slideUp();
-          btnAccd.find('.blind').text('열림');
-          currTripForm.addClass('open');
-          currTripForm.find('.trip-form__body').slideDown();
-          $(this).find('.blind').text('닫힘');
-
-          //모바일일때 스크롤 위치 스무스 이동
-          if(windowWidth < 769) {
-            if(btnIdx == 0) {
-              setTimeout(function(){
-                $('html, body').animate({scrollTop: btnPosi}, 500);
-              }, 500);
-            } else {
-              setTimeout(function(){
-                $('html, body').animate({scrollTop: btnPosi + 32}, 500);
-              }, 500);
-            }   
-          } else {
-            setTimeout(function(){
-              $('html, body').animate({scrollTop: btnPosi}, 500);
-            }, 500);
-          }                
-        }
-      });
-
-      // $(window).scroll(function(){
-      //   console.log('scroll', window.scrollY)
-      // })
-
-      //플랜선택
-      $('.plan-choice .btn-plan').click(function(e){      
-        let thisParentElm = $(this).parent();
-        let planType = $('.plan-choice .plan-type > li')
-        
-        planType.removeClass('on');
-        thisParentElm.addClass('on');
-      });
-
-      // 플랜비교하기
-      $('.modal-full .btn-plan').click(function(e){      
-        let thisParentElm = $(this).parent();
-        let thisIdx = thisParentElm.index();
-        let planType = $('.plan-type > li');
-        let planTypeLi = $('.plan-type > li:nth-child(' + (thisIdx+1) + ')');
-        
-        planType.removeClass('on');
-        planTypeLi.addClass('on');
-      });
-
-      $('.btn-group').click(function(){
-        $('.btn-group').removeClass('on');
-        $(this).addClass('on');
-      });
-    });
-
-    
-    //modalOpen('denyTravelPlace');
   </script>
 
 </body>

@@ -105,7 +105,7 @@
 .radio-btns-wrap {display: flex; align-items: center; gap:10px;}
 .radio-btn {position: relative; flex:1;}
 .radio-btn > input {position: absolute; opacity: 0;}
-.radio-btn > input + label {display: flex; flex-direction: column; align-items: center; justify-content: center;height:40px;border:1px solid #A3A3A3; border-radius: 8px;text-align: center; cursor: pointer;}
+.radio-btn > input + label {display: flex; flex-direction: column; align-items: center; justify-content: center;height:50px;border:1px solid #E5E5E8; border-radius: 8px;text-align: center; cursor: pointer;color:var(--black80);font-weight: 500}
 .radio-btn > input + label > span {display: block; font-size: 14px;font-weight: 500;color:var(--black90);}
 
 .radio-btn > input:checked + label,
@@ -119,6 +119,74 @@
 .radio-btn > input:disabled + label {cursor: default; background-color:#f1f1f1;}
 .radio-btn > input:disabled + label,
 .radio-btn > input:disabled + label * {color:#2a2a2a99;}
+/* ===== form ===== */
+/* input */
+.input-area {padding:8px 16px 7px; border:1px solid #E5E5E8; border-radius: 8px; background-color: #fff;}
+.input-area.focus {outline:1px solid #A7EBF3;}
+.text-input {position: relative; display: block;}
+.text-input > input {width: 100%; height: 33px; border:0; border-radius: 8px; box-sizing: border-box;color:var(--black80); font-size:14px;font-weight:500; background-color:#fff;}
+.text-input > input:focus {outline: none;}
+.text-input > input:disabled {background-color:#eee;}
+.input-area ~ .input-area {margin-top:8px;}
+
+
+.input-row {display: flex; gap:8px;}
+.input-row .input-area ~ .input-area {margin-top:0 !important;}
+.input-row > * {flex:1;}
+.input-row + .input-area,
+.input-area + .input-row {margin-top:8px;}
+
+.input-row ~ .input-row {margin-top:8px;}
+
+.input-area.input--disabled {background-color:#eee;}
+
+.input--half{flex:.5 }
+.input--coderow{display:block;position:relative}
+.input--coderow .text-input{display:flex;align-items:center;gap:8px}
+.code-time{font-size: 14px;font-weight: 500;color: var(--point-pink);}
+.section-label{font-size:14px;font-weight:500;margin:8px 0 0 0;color:var(--black01);}
+
+/* select */
+.select-input > select {width:100%; height:33px; border:0; padding-left:0; background-color:#fff; background-position:right -6px center;}
+.select-input .dropdown-btn {padding-left:0; background-position:right -6px center;}
+
+/* select dropdown */
+.select-dropdown {position:relative; z-index:10; display:inline-block; }
+.select-dropdown > ul {display:none; overflow-y:auto; position: absolute; min-width:100%; max-height:107px; padding:8px; border:1px solid #cacaca; border-radius:8px; background-color:#fff;}
+
+.dropdown-btn {display:block; width:100%; min-width:100px; min-height:33px; padding:0 24px 0 8px; border-radius:8px; text-align:left; background:#fff url(../image/dental/icon_arr_down.svg) no-repeat right 0 center / 24px 24px;}
+.option-btn {display:block; width:100%; min-height:30px; padding:6px; text-align:left; font-size:14px;}
+.option-btn.on,
+.option-btn:hover {background-color:#f2fcfd;}
+.select-dropdown.open > ul {display:block}
+
+/* ---------- DESKTOP FORM PANEL ---------- */
+.form-panel{background: var(--white);border: 1px solid var(--primary-color);border-radius: 16px;padding:30px 20px;width:100%;max-width:345px;box-sizing:border-box;  }
+.form-panel-header{display:flex; align-items:center;justify-content:space-between;margin-bottom: 20px;  }
+.form-panel-header h2{font-size: 18px;font-weight: 700;margin:0;color:var(--black01)}
+.close-btn{ width:32px; height:32px;cursor:pointer;background:url(../image/common/btn_pop_close.svg) no-repeat center / contain;border:0;padding:0;}
+.form-panel .close-btn{display:none;} /* PC : 닫기 버튼 숨김 */
+.form-open-bar{display:none;}
+
+/* ---------- MOBILE FORM PANEL : 바텀시트 ---------- */
+@media screen and (max-width:768px) {
+    /* .form-panel = 어두운 배경(modal-wrap 역할), .modal-form = 시트 */
+    .form-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;max-width:none;padding:0;border:0;border-radius:0;background:rgba(0,0,0,.8);}
+    .form-panel.on{display:block;}
+    .modal-form{position:absolute;left:0;right:0;bottom:0;max-height:90%;overflow-y:auto;padding:24px 20px 20px;background:var(--white);border-radius:24px 24px 0 0;transform:translateY(100%);transition:transform 0.3s;}
+    .modal-form.on{transform:translateY(0);}
+    .form-panel .close-btn{display:block;}
+    /* 하단 고정 열기 버튼 */
+    /* 처음엔 화면 아래에 숨어 있다가, 스크롤하면 .is-show로 올라옴 */
+    .form-open-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:12px 20px;background:var(--white);box-shadow:0 -4px 12px rgba(0,0,0,.08);visibility:hidden;transform:translateY(100%);transition:transform 0.3s ease, visibility 0s linear 0.3s;}
+    .form-open-bar.is-show{visibility:visible;transform:translateY(0);transition:transform 0.3s ease, visibility 0s;}
+    .form-open-bar .btn-cta-pri{width:100%;}
+    .cancer-wrapper{padding-bottom:79px;} /* 고정 버튼에 내용이 가리지 않도록 */
+}
+@media (prefers-reduced-motion: reduce) {
+    .modal-form, .form-open-bar, .form-open-bar.is-show{transition:none;}
+}
+
 
 
 /* ===== popup ===== */
@@ -131,7 +199,7 @@
 .popup-body {overflow-y: auto; padding:16px var(--pop-padding-side) 20px;}
 .popup-body .sub-info{font-weight: 400;}
 .popup-foot {margin:0 var(--pop-padding-side); padding:20px 0 24px;}
-.btn-pop-close {position: absolute; top:30px; right:20px; width: 40px; height: 40px; background: url(../image/common/btn_pop_close.svg) no-repeat center / 32px 32px;}
+.btn-pop-close {position: absolute; top:30px; right:20px; width: 32px; height: 32px; background: url(../image/common/btn_pop_close.svg) no-repeat center / 32px 32px;}
 
 /* full pop */
 .modal-full {overflow: hidden; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); display:flex; flex-direction: column; width: 100%; box-sizing: border-box; background-color: #fff;}
@@ -203,3 +271,42 @@
     .agree-table th,
     .agree-table td {padding:8px 8px;font-size:13px;}
 }
+
+.header{margin :0 auto;border-bottom:1px solid var(--line-color); padding:12px 0;}
+.header--inner{display:flex; align-items: center;justify-content: space-between;max-width:1140px;margin:0 auto;}
+.header--inner .header--logo{width:109px; height:30px;}
+.header--nav{display:flex; align-items: center;}
+.gnb{margin-right:16px;}
+.gnb .gnb--list{display: flex;gap:60px;align-items: center}
+.gnb .gnb--list li a{font-size:16px;font-weight: 600;color:var(--black100);}
+.gnb .gnb--list li a.is-active{color:var(--primary-color);}
+
+.util{display: flex;align-items: center;gap:16px;}
+.btn-call{border:1px solid #d9d9d9;background:var(--white);border-radius: 100px;padding:8px 12px;}
+.btn-call--icon{display:inline-block;width:26px;height:20px;vertical-align:middle;background:url(../image/cancer/ic_callcenter.svg) no-repeat center center;background-size:100% 100%;margin-right:8px;}
+.header .btn-menu{display: none}
+.btn-menu:focus:not(:focus-visible){outline:none;} /* 마우스 클릭 시 포커스 테두리 숨김 (키보드 이동 시에는 유지) */
+.btn-menu--bar{background:url(../image/common/ic_menu.png) no-repeat center center;background-size:100% 100%;width:40px;height:40px;border-radius: 0}
+/* 모바일 메뉴 (modal-wrap#gnbSub) : 오른쪽에서 왼쪽으로 슬라이드 */
+.modal-gnb{position:absolute;top:0;right:0;bottom:0;width:80%;max-width:360px;padding:64px 20px 20px;background:var(--white);overflow-y:auto;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);}
+.modal-gnb.on{transform:translateX(0);}
+.modal-gnb .btn-pop-close{top:12px;right:12px;}
+.modal-gnb .gnb--list li{border-bottom:1px solid #d9d9d9;padding:12px 0;}
+.modal-gnb .gnb--list li a{font-size:14px;font-weight: 500;color:var(--black100);}
+/*mo*/
+@media screen and (max-width:768px) {
+    .header{padding:12px 20px;}
+    .gnb{display:none;}
+    .header .btn-menu{display: block;}
+    .util{gap:4px;}
+    .header{background:var(--white);}
+}
+/* 동작 줄이기 설정 사용자 : 애니메이션 없이 바로 표시 */
+@media (prefers-reduced-motion: reduce) {
+    .modal-gnb{transition:none;}
+}
+
+
+/*footer*/
+.footer{background:#d3b1b1;color:#fff;padding:40px 0 0 0;}
+

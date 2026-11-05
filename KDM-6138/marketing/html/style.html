@@ -209,8 +209,8 @@
                         <p>- 닫기 : 버튼에 data-popup-close="팝업ID" 연결</p>
                     </li>
                     <li>방법 2 : function 사용
-                        <p>- 열기 : function modalOpen(popId)</p>
-                        <p>- 닫기 : function modalClose(popId)</p>
+                        <p>- 열기 : modal(popId, true)</p>
+                        <p>- 닫기 : modal(popId, false)</p>
                     </li>
                     <li>
                         <p>방법 3 : 개별 js 설정 가능</p>
@@ -518,7 +518,7 @@
   </div>
 
   <script>        
-    //modalOpen('modalBottomsheet');
+    //modal('modalBottomsheet', true);
   </script>
 </body>
 </html>
