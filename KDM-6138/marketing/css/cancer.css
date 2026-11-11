@@ -80,10 +80,10 @@
 
 /*font*/
 .title2 {color:var(--black100);}
-.title3 {margin-bottom: 16px; font-weight: 600; color:var(--black100);}
+.title3 {margin-bottom: 16px; font-weight: 600; color:var(--black80);}
 .title4 {font-weight: 600;}
 
-.sub-info{font-size:14px;color:var(--black90);margin-bottom:8px;}
+.sub-info{font-size:14px;color:var(--black80);margin-bottom:8px;font-weight: 400}
 .txt-argee-info{font-size:14px;font-weight: 400;color:var(--black80);}
 
 .products{background:#f2f2f2;padding:20px;}
