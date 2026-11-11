@@ -35,7 +35,7 @@ table {table-layout:fixed; border-collapse: collapse; border-spacing: 0px; word-
 caption, legend { visibility:hidden;overflow:hidden;font-size:0;line-height:0; }
 address,caption,cite,code,dfn,em,var {font-style: normal; font-weight: 400;}
 
-button:disabled{opacity:0.3;}
+button:disabled{background-color:#a3a3a3}
 
 b, strong {font-family: inherit; font-size:inherit; color:inherit; font-weight:700; letter-spacing:inherit;}
 
@@ -66,10 +66,12 @@ em, span, i, label{font-size:inherit; color:inherit; font-weight:inherit; letter
 .paBot10 { padding-bottom: 10px; }
 
 /* margin */
+.maBot4{ margin-bottom: 4px; }
 .maBot8{ margin-bottom: 8px; }
 .maBot12 { margin-bottom: 12px; }
 .maBot16 { margin-bottom: 16px; }
 .maBot24 { margin-bottom: 24px; }
+.maTot8 { margin-top: 8px; }
 .maTot16 { margin-top: 16px; }
 
 /* text */
