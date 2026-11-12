@@ -96,17 +96,12 @@
                     </div>
                   </div>
                   <div class="input-row">
-                    <div class="input-area ">
+                    <div class="input-area input-jumin">
                       <div class="text-input">
-                        <input type="text" id="inputBirth01" placeholder="YYYYMMDD">
-                      </div>
-                    </div>
-                    <div class="radio-btns-wrap">
-                      <div class="radio-btn">
-                        <input type="radio" name="ra02" id="ra02_01"><label for="ra02_01">남</label>
-                      </div>
-                      <div class="radio-btn">
-                        <input type="radio" name="ra02" id="ra02_02"><label for="ra02_02">여</label>
+                        <input type="text" class="jumin-1" id="inputText02" placeholder="880606" maxlength="6">
+                        <span>-</span>
+                        <input type="text" class="jumin-2" id="inputText02" placeholder="" maxlength="1">
+                        <span>******</span>
                       </div>
                     </div>
                   </div>
@@ -147,11 +142,10 @@
             </div>
           </div>
           <!--[S] Tab-->
-          <div class="product-tab">
-            <ul>
-              <li>상품소개</li>
-            </ul>
-          </div>
+
+
+
+
           <!--[E] Tab-->
         </div>
       </div>
@@ -221,6 +215,36 @@
 
 
   <script>
+    $(document).ready(function () {
+      // 1. 상단 메인 탭 클릭 이벤트
+      $('.main-tabs a').on('click', function (e) {
+        e.preventDefault();
+        const targetId = $(this).attr('href');
+
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+        $('.main-panel').removeClass('active');
+        $(targetId).addClass('active');
+      });
+
+      // 2. 중단 서브 탭 클릭 이벤트
+      $('.sub-tabs a').on('click', function (e) {
+        e.preventDefault();
+        const subTargetId = $(this).attr('href');
+
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+        $('.sub-panel').removeClass('active');
+        $(subTargetId).addClass('active');
+      });
+
+      // 3. 성별/연령 토글 클릭 이벤트
+      $('.segment-control a').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+        updatePreviewData();
+      });
+
+
+    });
 
   </script>
 

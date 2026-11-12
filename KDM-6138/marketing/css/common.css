@@ -148,9 +148,7 @@
 .input-row > * {flex:1;}
 .input-row + .input-area,
 .input-area + .input-row {margin-top:8px;}
-
 .input-row ~ .input-row {margin-top:8px;}
-
 .input-area.input--disabled {background-color:#eee;}
 
 .input--half{flex:.5 }
@@ -159,6 +157,10 @@
 .code-time{font-size: 14px;font-weight: 500;color: var(--point-pink);}
 .section-label{font-size:14px;font-weight:500;margin:8px 0 0 0;color:var(--black01);}
 
+.input-jumin{}
+.input-jumin .text-input{display:flex;align-items: center;gap: 8px;}
+.input-jumin .jumin-1{width:100px;}
+.input-jumin .jumin-2{width:30px;text-align: center}
 /* select */
 .select-input > select {width:100%; height:33px; border:0; padding-left:0; background-color:#fff; background-position:right -6px center;}
 .select-input .dropdown-btn {padding-left:0; background-position:right -6px center;}
