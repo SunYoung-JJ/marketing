@@ -73,3 +73,21 @@ function modal(popId, isOpen) {
         }
     }
 }
+
+//공통 include : <div data-include="/marketing/KDM-6138/marketing/includes/footer.jsp"></div>
+// - Tomcat 에서는 JSP 실행 결과를, GitHub Pages 에서는 파일 원본을 받아 <% %> 태그를 지우고 넣음
+(function ($) {
+    $(function () {
+        $("[data-include]").each(function () {
+            var $el = $(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", $el.attr("data-include"), true);
+            xhr.overrideMimeType("text/html; charset=utf-8");
+            xhr.onload = function () {
+                if (xhr.status < 200 || xhr.status >= 300) return;
+                $el.html(xhr.responseText.replace(/<%[\s\S]*?%>/g, ""));
+            };
+            xhr.send();
+        });
+    });
+})(jQuery);
