@@ -38,7 +38,7 @@
         <h1 class="header--logo">
           <a href="/"><img src="/marketing/KDM-6138/marketing/image/common/img_logo.png" alt="라이나손보"></a>
         </h1>
-        <div class="header--nav">
+        <div class="header--nav" style="display: none">
           <nav class="gnb" id="gnb" aria-label="주요 메뉴">
             <ul class="gnb--list">
               <li><a href="#" class="is-active" aria-current="page">인터넷 상담보험</a></li>
@@ -60,7 +60,7 @@
     </header>
 
     <!-- 모바일 메뉴 (modal) : btn-menu 클릭 시 오른쪽에서 열림 -->
-    <div class="modal-wrap" id="gnbSub">
+    <div class="modal-wrap" id="gnbSub" style="display: none">
       <div class="modal-gnb">
         <nav aria-label="전체 메뉴">
           <ul class="gnb--list">
@@ -142,9 +142,113 @@
             </div>
           </div>
           <!--[S] Tab-->
+          <div class="tabs-area">
+            <section class="product-tabs">
+              <!--[S] 상품특징, 보장내역 가입안내 탭 -->
+              <div class="tab-list" role="tablist" aria-label="상품 안내">
+                <div class="tab-list-inner">
+                  <button type="button" class="tab-item on" role="tab" id="tab-feature" aria-controls="panel-feature" aria-selected="true">상품특징</button>
+                  <button type="button" class="tab-item" role="tab" id="tab-coverage" aria-controls="panel-coverage" aria-selected="false" tabindex="-1">보장내역</button>
+                  <button type="button" class="tab-item" role="tab" id="tab-guide" aria-controls="panel-guide" aria-selected="false" tabindex="-1">가입안내</button>
+                </div>
+              </div>
+              <!--[E] 상품특징, 보장내역 가입안내 탭 -->
+
+
+              <!--[S] 상품특징, 보장내역, 가입안내  상세내용 탭-->
+              <div class="tab-panels">
+                <div class="tab-panels-inner">
+                  <!--[S] 상품특징-->
+                  <div class="tab-panel" role="tabpanel" id="panel-feature" aria-labelledby="tab-feature" hidden="">
+                    <section class="product-feature">
+                      상품특징
+                    </section>
+                  </div>
+                  <!--[E] 상품특징-->
+
+                  <!--[S] 보장내역-->
+                  <div class="tab-panel" role="tabpanel" id="panel-coverage" aria-labelledby="tab-coverage" hidden="">
+                    <section class="panel-coverage">
+                      보장내역
+                    </section>
+                  </div>
+                  <!--[E] 보장내역-->
+
+
+                  <!--[S] 가입안내 상세 탭-->
+                  <div class="tab-panel" role="tabpanel" id="panel-guide" aria-labelledby="tab-guide" hidden="">
+                    <section class="feature-section">
+                      <div class="feature-inner">
+                        <!--[S] 가입안내, 알아두실사항 보험료예시 해야환급금예시-->
+                        <div class="tab-list tab-type02" role="tablist" aria-label="가입안내">
+                          <div class="tab-list-inner">
+                            <button type="button" class="tab-item on" role="tab" id="tab-guide04" aria-controls="panel-guide04" aria-selected="true">가입내용</button>
+                            <button type="button" class="tab-item" role="tab" id="tab-guide05" aria-controls="panel-guide05" aria-selected="false" tabindex="-1">보험료예시</button>
+                            <button type="button" class="tab-item" role="tab" id="tab-guide06" aria-controls="panel-guide06" aria-selected="false" tabindex="-1">해약환급금예시</button>
+                            <button type="button" class="tab-item" role="tab" id="tab-guide07" aria-controls="panel-guide07" aria-selected="false" tabindex="-1">꼭알아둘사항</button>
+                          </div>
+                        </div>
+                        <!--[E] 가입안내, 알아두실사항 보험료예시 해야환급금예시-->
+
+                        <!--[S] 가입안내, 알아두실사항 보험료예시 해야환급금예시 상세내용-->
+                        <div class="tab-panels">
+                          <div class="tab-panels-inner">
+                            <!--[S] 가입안내 -->
+                            <div class="tab-panel on" role="tabpanel" id="panel-guide04" aria-labelledby="tab-guide04">
+                              <div class="pannel-detail">
+                                 가입안내 상세내용1
+                              </div>
+                            </div>
+                            <!--[E] 가입안내 -->
+
+                            <!--[S] 알아두실사항 -->
+                            <div class="tab-panel on" role="tabpanel" id="panel-guide05" aria-labelledby="tab-guide05">
+                              <div class="pannel-detail">
+                               알아두실사항 2
+                              </div>
+                            </div>
+                            <!--[E] 알아두실사항 -->
+
+                            <!--[S] 보험료예시 -->
+                            <div class="tab-panel on" role="tabpanel" id="panel-guide06" aria-labelledby="tab-guide06">
+                              <div class="pannel-detail">
+                                보험료예시
+                              </div>
+                            </div>
+                            <!--[E] 보험료예시 -->
+
+                            <!--[S] 해야환급금예시 -->
+                            <div class="tab-panel on" role="tabpanel" id="panel-guide07" aria-labelledby="tab-guide07">
+                              <div class="pannel-detail">
+                                해야환급금예시
+                              </div>
+                            </div>
+                            <!--[E] 해야환급금예시 -->
+
+                          </div>
+                        </div>
+                        <!--[E] 가입안내, 알아두실사항 보험료예시 해야환급금예시 상세내용-->
+
+
+                      </div>
+                    </section>
+                  </div>
+                  <!--[E] 가입안내 상세 탭-->
 
 
 
+                </div>
+              </div>
+              <!--[E] 상품특징, 보장내역, 가입안내  상세내용 탭-->
+
+
+
+
+
+
+
+            </section>
+          </div>
 
           <!--[E] Tab-->
         </div>

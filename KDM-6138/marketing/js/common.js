@@ -40,6 +40,30 @@ $(function () {
         }
     });
 
+    //tab : 탭 버튼(.tab-item) 클릭 → aria-controls 에 적힌 패널 보여주기
+    // - .tab-list, .tab-list.tab-type02(안쪽 탭) 모두 동작
+    $(".tab-item").on("click", function () {
+        var $this = $(this);
+        var $panel = $("#" + $this.attr("aria-controls"));
+
+        //1. 클릭한 탭만 on
+        $this.addClass("on").attr("aria-selected", "true")
+            .siblings(".tab-item").removeClass("on").attr("aria-selected", "false");
+
+        //2. 같은 그룹의 패널만 숨기고, 연결된 패널 보이기 (바깥 탭 패널은 그대로)
+        $panel.siblings(".tab-panel").removeClass("on").attr("hidden", "hidden");
+        $panel.addClass("on").removeAttr("hidden");
+
+        //3. 가로 스크롤 탭(tab-type02) : 클릭한 탭이 가운데 오도록 스크롤
+        var $inner = $this.parent(".tab-list-inner");
+        $inner.stop().animate({
+            scrollLeft: $inner.scrollLeft() + $this.position().left - ($inner.width() - $this.outerWidth()) / 2
+        }, 200);
+    });
+
+    //tab : 처음 열릴 때 .on 탭의 패널 보이기
+    $(".tab-item.on").trigger("click");
+
     //input focus
     $(".text-input > input").on("focus", function () {
         $(this).parents(".input-area").addClass("focus");

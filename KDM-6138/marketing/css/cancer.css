@@ -68,10 +68,6 @@
 
 
 
-
-
-
-
 /*알아두실사항*/
 .coverage-info{}
 .coverage-info + .coverage-info{margin-top:24px;}
@@ -86,6 +82,7 @@
 .sub-info{font-size:14px;color:var(--black80);margin-bottom:8px;font-weight: 400}
 .txt-argee-info{font-size:14px;font-weight: 400;color:var(--black80);}
 
+/*상품배너*/
 .products{background:#f2f2f2;padding:20px;}
 .products-inner{border-radius: 8px;padding:20px;background:#fff;}
 .product-item{display: block;position: relative;}
@@ -97,142 +94,52 @@
 .product-item-group a{flex:0 0 20px;background:yellow;width:20px;height:20px;overflow:hidden;} /* 크기 고정 : 글 영역이 길어져도 줄어들지 않음 */
 
 
-
+/*보험료계산*/
 .calculator{display:block;background:#f3fcfe;border:1px solid #daeaed;border-radius: 16px;padding:20px 40px;margin-bottom:40px;}
 .calculator .calculator-inner{text-align:center;margin-bottom:20px;}
 .calculator .calculator-box{text-align: center;align-items: center;}
 .calculator .txt{font-size:24px;color:var(--black80);}
 .calculator .price{font-size:36px;color:var(--point-blue);font-weight: 600;}
-
+/*보험료계산-chip*/
 .chip{text-align: center}
 .chip .chip-text{font-size:14px;color:var(--black80);padding:8px 10px;border-radius:100px; border:1px solid #d9d9d9;background:var(--white);text-align: center;display:inline-block;}
 .chip .chip-text.chip-bg{background:#E0F4F7;border:1px solid #E0F4F7;}
-
+/*보험료계산 결과*/
 .result{margin-bottom:20px;}
 .result-text {color:var(--black80); line-height:1.5;}
 .result-text ~ * {margin-top:16px;}
 .result-subtxt {font-size:14px;font-weight: 500;color:var(--black80); line-height: 1.5}
 
-.tab-panel{margin:20px 70px;}
-/*1 main-tab*/
-.main-tabs{display: flex; align-items: center;gap:8px;margin-bottom:20px}
-.main-tabs li {
-    flex: 1;
-}
+/*tab*/
+.tabs-area{background:#fff;}
+.product-tabs{padding:40px 0 80px 0}
+.tab-list{padding:0 70px;}
+.tab-list-inner{display: flex; align-items: center;gap:8px}
+.tab-item {border:1px solid #d9d9d9;padding:12px 24px;color:var(--black80);font-size:14px; min-width: 80px; border-radius: 100px;font-weight: 500}
+.tab-item.on{background-color:#00C1D7;color:#fff;border:1px solid #00C1D7;font-weight: 600}
 
-.main-tabs li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 999px;
-    background-color: #f3f5f8;
-    color: #333333;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
+.tab-type02 {padding:0;}
+/* tab-type02 : 가로 스크롤 */
+.tab-type02 .tab-list-inner{position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;scrollbar-width:none;-ms-overflow-style:none;}
+.tab-type02 .tab-list-inner::-webkit-scrollbar{display:none;}
+.tab-type02 .tab-item{flex-shrink:0;white-space:nowrap;font-weight: 400}
+.tab-type02 .tab-list-inner { gap:0; flex-wrap:nowrap; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
+.tab-type02 .tab-list-inner::-webkit-scrollbar { display:none; height:0; }
+.tab-type02 .tab-item{border:0;border-bottom:1px solid #d9d9d9;border-radius: 0;gap:0;width:calc(100% / 4);position: relative}
+.tab-type02 .tab-item.on{background-color:#fff;color:var(--black80); font-width: 500;}
+.tab-type02 .tab-item.on::before{content:'';display:block;height:2px;background-color:#00C1D7;width:100%;position:absolute;bottom:0;left:0}
 
-.main-tabs li.active a {
-    background-color: #15c2d1;
-    color: #ffffff;
-}
+.panel-coverage{padding:40px 70px 0 70px;}
+.feature-section{padding:40px 70px 0 70px;}
 
-/* 2. 중단 언더라인 서브 탭 (Underline Tabs) */
-.sub-tabs {
-    display: flex;
-    border-bottom: 1px solid #e5e8eb;
-    margin-bottom: 20px;
-}
+@media screen and (max-width:768px) {
+    .product-tabs{padding:20px 0 40px 0;}
+    .tab-list{padding:0 20px;}
+    .tab-item{padding:6px 12px;}
+    .tab-type02{padding:0;}
+    .panel-coverage{padding:20px 20px 0;}
+    .feature-section{padding:20px 20px 0;}
+    .tab-type02 .tab-item{padding:6px 12px;width:auto;}
 
-.sub-tabs li {
-    flex: 1;
-}
 
-.sub-tabs li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 12px 4px;
-    color: #4e5968;
-    font-size: 14px;
-    font-weight: 500;
-    position: relative;
-    transition: color 0.2s ease;
-    white-space: nowrap;
-}
-
-.sub-tabs li.active a {
-    color: #15c2d1;
-    font-weight: 700;
-}
-
-.sub-tabs li.active a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 3px;
-    background-color: #15c2d1;
-}
-
-/* 3. 세그먼트 토글 그룹 (Segmented Controls) */
-.filter-group {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 24px;
-}
-
-.segment-control {
-    display: flex;
-    background-color: #f2f4f7;
-    padding: 4px;
-    border-radius: 8px;
-}
-
-.segment-gender {
-    flex: 2;
-}
-
-.segment-age {
-    flex: 3;
-}
-
-.segment-control li {
-    flex: 1;
-}
-
-.segment-control li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 9px 12px;
-    border-radius: 6px;
-    background: transparent;
-    color: #333333;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.segment-control li.active a {
-    background-color: #ffffff;
-    color: #1d4ed8;
-    font-weight: 700;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* 탭 패널 전환 제어 */
-.main-panel,
-.sub-panel {
-    display: none;
-}
-
-.main-panel.active,
-.sub-panel.active {
-    display: block;
 }
