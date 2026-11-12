@@ -97,3 +97,18 @@
 .product-item-group a{flex:0 0 20px;background:yellow;width:20px;height:20px;overflow:hidden;} /* 크기 고정 : 글 영역이 길어져도 줄어들지 않음 */
 
 .product-tab{height: 2000px;background:gold}
+
+.calculator{display:block;background:#f3fcfe;border:1px solid #daeaed;border-radius: 16px;padding:20px 40px;margin-bottom:40px;}
+.calculator .calculator-inner{text-align:center;margin-bottom:20px;}
+.calculator .calculator-box{text-align: center;align-items: center;}
+.calculator .txt{font-size:24px;color:var(--black80);}
+.calculator .price{font-size:36px;color:var(--point-blue);font-weight: 600;}
+
+.chip{text-align: center}
+.chip .chip-text{font-size:14px;color:var(--black80);padding:8px 10px;border-radius:100px; border:1px solid #d9d9d9;background:var(--white);text-align: center;display:inline-block;}
+.chip .chip-text.chip-bg{background:#E0F4F7;border:1px solid #E0F4F7;}
+
+.result{margin-bottom:20px;}
+.result-text {color:var(--black80); line-height:1.5;}
+.result-text ~ * {margin-top:16px;}
+.result-subtxt {font-size:14px;font-weight: 500;color:var(--black80); line-height: 1.5}

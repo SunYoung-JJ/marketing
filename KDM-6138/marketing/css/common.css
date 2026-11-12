@@ -10,7 +10,7 @@
     --font-default: 14px;
     --font-small: 12px;
     --pop-padding-side: 20px;
-    --point-blue: #1742FF;
+    --point-blue: #08039C;
     --point-red:#F1352B;
     --black100:#0c0c0c; /*bold폰트색상*/
     --black90:#1c1c1e; /* default폰트색상*/
@@ -98,6 +98,9 @@
 .box-basic{padding:40px;border-radius: 16px;font-size:14px;background-color:#F7F8FB;}
 .box-basic--title{font-size:16px;font-weight: 600;color:var(--black90);margin-bottom:8px}
 .box-basic--subtitle{font-size:14px;font-weight: 500;color:var(--black80);margin-bottom:8px}
+@media screen and (max-width:768px) {
+    .box-basic{padding:20px;}
+}
 
 /* checkbox basic */
 .checkbox-area {display:inline-flex;}
@@ -201,7 +204,7 @@
 .modal-wrap {display: none; position: fixed; z-index: 99; top:0; left:0; right: 0; bottom:0; background-color: rgba(0,0,0,.8);}
 .modal-wrap.on {display: block;}
 .modal-popup {overflow: hidden; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); display:flex; flex-direction: column; width: calc(100% - 40px); max-width: 500px; min-height: 400px; max-height: 90%; border-radius: 24px; box-sizing: border-box; background-color: #fff;}
-.popup-head {margin:0 var(--pop-padding-side); height:40px; padding:24px 0 12px;background-color: #fff;}
+.popup-head {margin:0 var(--pop-padding-side); /*height:40px; */padding:24px 0 12px;background-color: #fff;}
 .bottomsheet-head {margin:0 var(--pop-padding-side); padding:12px 0 13px;background-color: #fff;}
 .modal-wrap h1 {display: flex; align-items: center; min-height: 40px; padding-right:40px; font-weight: 600; font-size: 16px; color:#000; line-height: 1.2;}
 .popup-body {overflow-y: auto; padding:16px var(--pop-padding-side) 20px;}
@@ -216,7 +219,7 @@
 .modal-full .btn-pop-close {top:8px; right:8px;}
 
 /* alert */
-.modal-alert {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); width: calc(100% - 40px); max-width: 400px; padding:40px var(--pop-padding-side); border-radius: 24px; box-sizing: border-box; background-color: #fff;}
+.modal-alert {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); width: calc(100% - 40px); max-width: 500px; padding:40px var(--pop-padding-side); border-radius: 24px; box-sizing: border-box; background-color: #fff;}
 .alert-body {padding-top:66px; background: url(../image/common/ic_exc.png) no-repeat center 0 / 50px 50px;}
 .alert-text {color:var(--black80); text-align: center; line-height:1.5;}
 .alert-text ~ * {margin-top:16px;}
