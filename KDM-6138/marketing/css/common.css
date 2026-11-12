@@ -207,7 +207,7 @@
 .popup-head {margin:0 var(--pop-padding-side); /*height:40px; */padding:24px 0 12px;background-color: #fff;}
 .bottomsheet-head {margin:0 var(--pop-padding-side); padding:12px 0 13px;background-color: #fff;}
 .modal-wrap h1 {display: flex; align-items: center; min-height: 40px; padding-right:40px; font-weight: 600; font-size: 16px; color:#000; line-height: 1.2;}
-.popup-body {overflow-y: auto; padding:16px var(--pop-padding-side) 20px;}
+.popup-body {overflow-y: auto; padding:12px var(--pop-padding-side) 20px;}
 .popup-body .sub-info{font-weight: 400;}
 .popup-foot {margin:0 var(--pop-padding-side); padding:20px 0 24px;}
 .btn-pop-close {position: absolute; top:30px; right:20px; width: 32px; height: 32px; background: url(../image/common/btn_pop_close.svg) no-repeat center / 32px 32px;}
