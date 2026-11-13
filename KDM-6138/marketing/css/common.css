@@ -10,7 +10,7 @@
     --font-default: 14px;
     --font-small: 12px;
     --pop-padding-side: 20px;
-    --point-blue: #08039C;
+    --point-blue: #00C1D7;
     --point-red:#F1352B;
     --black100:#0c0c0c; /*bold폰트색상*/
     --black90:#1c1c1e; /* default폰트색상*/
@@ -67,8 +67,8 @@
 .type-hangul > li{position:relative; padding-left:16px; color:#4e4e4e; font-size:14px; line-height:1.4; counter-increment:list-num;}
 .list-num > li::before ,
 .type-hangul > li::before{content:counter(list-num) "."; position:absolute; top:0; left:0; color:inherit; font-size:inherit; line-height:inherit;}
-.list-num > li ~ li,
-.type-hangul > li ~ li{margin-top:8px;}
+.list-num > li ~ li{margin-top:8px;}
+.type-hangul > li ~ li{margin-top:4px;}
 
 .list-dash > li > ol,
 .list-dot > li > ol {margin-top:8px;}

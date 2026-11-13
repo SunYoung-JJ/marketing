@@ -128,7 +128,7 @@
 .tab-type02 .tab-item{border:0;border-bottom:1px solid #d9d9d9;border-radius: 0;gap:0;width:calc(100% / 4);position: relative}
 .tab-type02 .tab-item.on{background-color:#fff;color:var(--black80); font-weight: 500;}
 .tab-type02 .tab-item.on::before{content:'';display:block;height:2px;background-color:#00C1D7;width:100%;position:absolute;bottom:0;left:0}
-
+.feature-section .tab-panel{padding:20px 0 0;}
 .panel-coverage{padding:40px 70px 0 70px;}
 .feature-section{padding:40px 70px 0 70px;}
 
@@ -140,6 +140,14 @@
     .panel-coverage{padding:20px 20px 0;}
     .feature-section{padding:20px 20px 0;}
     .tab-type02 .tab-item{padding:6px 12px;width:auto;}
-
-
 }
+
+.prd-box{margin:0 0 40px 0;}
+.prd-box + .prd-box{margin:0 0 40px 0;}
+.prd-box h2{font-size:20px; font-weight: 500;color:var(--black80);margin-bottom:16px;}
+.prd-box h3{font-size:16px;font-weight: 500;color:var(--black80);margin-bottom:8px;}
+.prd-box .info-txt{font-size:16px;font-weight: 400;color:var(--black80);margin-bottom:16px;}
+.prd-box .list-num > li{font-size:16px; color:var(--black80);font-weight: 400}
+.prd-box .type-hangul > li{font-size:16px; color:var(--black80);font-weight: 400}
+.prd-box .list-num > li::before{top:-1px;}
+.prd-box .list-num > li > div{margin-bottom:8px;color:var(--black80);font-weight: 400}
