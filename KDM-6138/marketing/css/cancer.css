@@ -147,7 +147,12 @@
 .prd-box h2{font-size:20px; font-weight: 500;color:var(--black80);margin-bottom:16px;}
 .prd-box h3{font-size:16px;font-weight: 500;color:var(--black80);margin-bottom:8px;}
 .prd-box .info-txt{font-size:16px;font-weight: 400;color:var(--black80);margin-bottom:16px;}
+.prd-box .info-txt p{color:var(--black80);font-weight: 400;}
 .prd-box .list-num > li{font-size:16px; color:var(--black80);font-weight: 400}
 .prd-box .type-hangul > li{font-size:16px; color:var(--black80);font-weight: 400}
 .prd-box .list-num > li::before{top:-1px;}
 .prd-box .list-num > li > div{margin-bottom:8px;color:var(--black80);font-weight: 400}
+.prd-box .list-dash *{font-size:16px}
+.product-banner{display:flex; align-items: center; gap:16px;position: relative}
+.product-banner > div{display:block;background:url(../image/common/img_product.png) no-repeat;background-size:107px 80px;width:107px;height: 80px;flex-shrink:0;}
+.product-banner .info-txt{flex:1;min-width:0;margin-bottom:0}
