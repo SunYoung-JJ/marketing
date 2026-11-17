@@ -13,8 +13,8 @@
 
   <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/jquery.ui.base.css">
   <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/mobiscroll.custom-2.17.1.min.css">
-  <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/default.css"><!-- 2025 리뉴얼 css : 기존 수정 -->
-  <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/cancer.css"><!-- 2025 리뉴얼 css -->
+  <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/default.css">
+  <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/dental01.css">
 
   <script src="/marketing/KDM-6138/marketing/js/lib/jquery-1.11.3.min.js"></script>
   <script src="/marketing/KDM-6138/marketing/js/lib/mobile-detect.min.js"></script>
@@ -77,8 +77,11 @@
         <div class="content">
           <div class="hero">
             <section class="banner">
-              메인 이미지 영역
+              <p class="banner-bage">(무) THE이로운치아보험 1종(갱신형)</p>
+
+
             </section>
+
             <!-- 상담신청 폼 : PC는 배너 옆 고정, 모바일은 바텀시트 (modal("formPanel", true/false)) -->
             <aside class="form-panel" id="formPanel">
               <div class="modal-form">
@@ -91,7 +94,7 @@
                   <div class="input-row">
                     <div class="input-area">
                       <div class="text-input">
-                        <input type="text" class="" id="inputText01" placeholder="성명을 입력해주세요">
+                        <input type="text" class="" id="inputText01" placeholder="성명을 입력해주세요"/>
                       </div>
                     </div>
                   </div>
@@ -126,16 +129,36 @@
           <div class="products">
             <div class="products-inner">
               <ul class="product-item">
-                <li>
+                <li class="img01">
                   <div class="product-item-img">
-                     이미지
+                    업계 최초 상품
                   </div>
                   <div class="product-item-group">
                     <div>
-                      <p>메인타이틀</p>
-                      <p>서브타이틀입니다.서브타이틀입니다. 서브타이틀입니다.</p>
+                      <p class="tit">업계 최초 상품</p>
+                      <p class="stit">치아 충전물 및 크라운 수리, 복구, 교체 및 재부착 보장(특약)</p>
                     </div>
-                    <a href="#modalBottomsheet" data-popup-btn="modalBottomsheet" class="">modal Bottomsheet</a>
+                    <a href="#modalBottomsheet01" data-popup-btn="modalBottomsheet01" class=""><span class="blind">상세보기</span></a>
+                  </div>
+                </li>
+                <li class="img02">
+                  <div class="product-item-img">크라운 치료 최대 40만원</div>
+                  <div class="product-item-group">
+                    <div>
+                      <p class="tit">크라운 치료 최대 40만원</p>
+                      <p class="stit">면책기간 90일, 감액기간 270일 적용(특약)</p>
+                    </div>
+                    <a href="#modalBottomsheet02" data-popup-btn="modalBottomsheet02" class=""><span class="blind">상세보기</span></a>
+                  </div>
+                </li>
+                <li class="img03">
+                  <div class="product-item-img">크라운 및 보존치료 감액기간 단축</div>
+                  <div class="product-item-group">
+                    <div>
+                      <p class="tit">크라운 및 보존치료 감액기간 단축</p>
+                      <p class="stit">1년이 아닌, 270일 이후 개수제한 없이 100% 보장(특약)</p>
+                    </div>
+                    <a href="#modalBottomsheet03" data-popup-btn="modalBottomsheet03" class=""><span class="blind">상세보기</span></a>
                   </div>
                 </li>
               </ul>
@@ -451,39 +474,66 @@
     <div id="footer" data-include="/marketing/KDM-6138/marketing/includes/footer.jsp"></div>
   </div>
 
-  <!-- 팝업 : 보험 인수제한 국가 안내 -->
-  <div class="modal-wrap" id="modalBottomsheet">
+  <!-- [S] 업계최초상품 -->
+  <div class="modal-wrap" id="modalBottomsheet01">
     <div class="modal-bottomsheet">
       <div class="bottomsheet-head">
         <h1>알아두실 사항</h1>
       </div>
       <div class="bottomsheet-body">
         <div class="coverage-info">
-          <h2>(특약) 표적항암약물허가치료보장</h2>
+          <h2>(특약) 치아충전물 수리∙복구치료보장</h2>
+          <h2>(특약) 치아보철물 재부착치료보장</h2>
           <ul class="list-dash">
-            <li>보상한도 : 암/기타피부암/갑상선암 각각 최초 1회한</li>
-            <li>면책기간 : ‘암’의 경우 계약일로부터 90일간 보장 제외</li>
-            <li>감액지급 : 계약일로부터 1년간 보험금 50%</li>
+            <li>면책기간: 계약일로 부터 90일간</li>
+            <li>감액기간: 계약일로부터 270일간 보험금 50% 지급 (치아충전물 수리∙복구치료보장은 질병사고에 한함)</li>
           </ul>
-        </div>
-        <div class="coverage-info">
-          <h2>(특약) 표적항암약물허가치료보장2222</h2>
-          <ul class="list-dash">
-            <li>보상한도 : 암/기타피부암/갑상선암 각각 최초 1회한</li>
-            <li>면책기간 : ‘암’의 경우 계약일로부터 90일간 보장 제외</li>
-            <li>감액지급 : 계약일로부터 1년간 보험금 50%</li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="bottomsheet-foot">
-        <div class="btns-wrap">
-          <a href="#n" class="btn-pri">확인</a>
         </div>
       </div>
       <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
     </div>
   </div>
+  <!-- [E] 업계최초상품 -->
+
+  <!-- [S] 크라운 치료 최대 40만원 -->
+  <div class="modal-wrap" id="modalBottomsheet02">
+    <div class="modal-bottomsheet">
+      <div class="bottomsheet-head">
+        <h1>알아두실 사항</h1>
+      </div>
+      <div class="bottomsheet-body">
+        <div class="coverage-info">
+          <h2>(특약) 신크라운치료보장 II</h2>
+          <ul class="list-dash">
+            <li>면책기간: 질병사고에 대해 계약일로 부터 90일간</li>
+            <li>감액기간: 질병사고에 대해 계약일로부터 270일간 보험금 50% 지급</li>
+          </ul>
+        </div>
+      </div>
+      <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
+    </div>
+  </div>
+  <!-- [E] 크라운 치료 최대 40만원 -->
+
+  <!-- [S] 크라운 및 보존치료 감액기간 단축-->
+  <div class="modal-wrap" id="modalBottomsheet03">
+    <div class="modal-bottomsheet">
+      <div class="bottomsheet-head">
+        <h1>알아두실 사항</h1>
+      </div>
+      <div class="bottomsheet-body">
+        <div class="coverage-info">
+          <h2>(특약) 신크라운치료보장 II</h2>
+          <ul class="list-dash">
+            <li>면책기간: 질병사고에 대해 계약일로 부터 90일간</li>
+            <li>감액기간: 질병사고에 대해 계약일로부터 270일간 보험금 50% 지급</li>
+          </ul>
+        </div>
+      </div>
+      <button type="button" class="btn-pop-close"><span class="blind">닫기</span></button>
+    </div>
+  </div>
+  <!-- [E] 크라운 및 보존치료 감액기간 단축 -->
 
 
 

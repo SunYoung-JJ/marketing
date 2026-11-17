@@ -229,7 +229,7 @@
 
 /* bottomsheet */
 .modal-bottomsheet {position: absolute; display:flex; flex-direction: column; width: 100%; max-height:90%; box-sizing: border-box; background-color: #fff;}
-.bottomsheet-body {overflow-y: auto; min-height: 200px; padding:12px var(--pop-padding-side);}
+.bottomsheet-body {overflow-y: auto; min-height: 200px; padding:12px var(--pop-padding-side) 20px;}
 .bottomsheet-foot {position: static; bottom:0; margin:0 var(--pop-padding-side); padding:40px 0 20px;}
 /* mo */
 @media screen and (max-width:768px) {
@@ -246,7 +246,7 @@
     .bottomsheet-foot {padding-bottom: 40px; border-top:0;}
     .modal-bottomsheet {top:50%; left:50%; transform: translate(-50%, -50%); width: 100%; max-width: 734px; border-radius: 24px;}
     .modal-full {max-width: 768px; min-height: 90%; max-height: 90%; border-radius:24px;}
-    .modal-full .btn-pop-close {top:24px; right:10px; width:35px; height:35px;}
+    .modal-full .btn-pop-close {top:16px; right:10px; width:35px; height:35px;}
     .full-head {padding:24px var(--pop-padding-side) 8px;}
     .full-body .cont-area {padding:24px 40px;}
 }
