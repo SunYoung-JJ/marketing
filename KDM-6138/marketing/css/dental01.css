@@ -291,7 +291,7 @@ banner-chart img{width: 100%}
 /*상품특징 01*/
 .product-feature{padding:40px 0 0;}
 .product-feature-inner{}
-.product-feature-inner.inner-bg02{background:yellow;padding:40px 0 0 0;}
+.product-feature-inner.inner-bg02{background:#F5FAFB;padding:40px 0 0 0;}
 .feature-inner-content{display:flex;flex-direction:column;align-items:center;gap:40px;}
 .product-num{font-size:14px;color:#fff;border-radius: 100px;background:#00C1D7;text-align: center;display:inline-block;width:38px;height:38px;padding:10px 0;}
 
