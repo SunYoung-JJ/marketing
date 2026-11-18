@@ -64,6 +64,56 @@ $(function () {
     //tab : 처음 열릴 때 .on 탭의 패널 보이기
     $(".tab-item.on").trigger("click");
 
+    //tab-type03 (보험료예시 성별 탭) : 버튼 클릭 → aria-controls 에 적힌 .premium-panel 보이기
+    $(".tab-type03 [role='tab']").on("click", function () {
+        var $this = $(this);
+        var $panel = $("#" + $this.attr("aria-controls"));
+
+        //1. 클릭한 탭만 선택
+        $this.addClass("on").attr("aria-selected", "true")
+            .siblings("[role='tab']").removeClass("on").attr("aria-selected", "false");
+
+        //2. 같은 그룹의 성별 패널만 숨기고, 연결된 패널 보이기
+        $panel.siblings(".premium-panel").attr("hidden", "hidden");
+        $panel.removeAttr("hidden");
+    });
+
+    //tab-type03 : 처음 열릴 때 aria-selected="true" 인 첫 탭의 패널 보이기
+    $(".tab-type03").each(function () {
+        var $tabs = $(this).find("[role='tab']");
+        var $first = $tabs.filter("[aria-selected='true']").first();
+        ($first.length ? $first : $tabs.first()).trigger("click");
+    });
+
+    //상단 메인 탭(.main-tabs) : 링크 href 의 패널(.main-panel) 보이기
+    $(".main-tabs a").on("click", function (e) {
+        e.preventDefault();
+        var targetId = $(this).attr("href");
+
+        $(this).parent("li").addClass("active").siblings().removeClass("active");
+        $(".main-panel").removeClass("active");
+        $(targetId).addClass("active");
+    });
+
+    //중단 서브 탭(.sub-tabs) : 링크 href 의 패널(.sub-panel) 보이기
+    $(".sub-tabs a").on("click", function (e) {
+        e.preventDefault();
+        var subTargetId = $(this).attr("href");
+
+        $(this).parent("li").addClass("active").siblings().removeClass("active");
+        $(".sub-panel").removeClass("active");
+        $(subTargetId).addClass("active");
+    });
+
+    //성별/연령 토글(.segment-control) (updatePreviewData 가 정의된 경우에만 실행)
+    $(".segment-control a").on("click", function (e) {
+        e.preventDefault();
+        $(this).parent("li").addClass("active").siblings().removeClass("active");
+        if (typeof updatePreviewData === "function") {
+            updatePreviewData();
+        }
+    });
+
     //input focus
     $(".text-input > input").on("focus", function () {
         $(this).parents(".input-area").addClass("focus");

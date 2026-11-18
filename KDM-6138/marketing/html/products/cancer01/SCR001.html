@@ -521,40 +521,6 @@
 
 
 
-  <script>
-    $(document).ready(function () {
-      // 1. 상단 메인 탭 클릭 이벤트
-      $('.main-tabs a').on('click', function (e) {
-        e.preventDefault();
-        const targetId = $(this).attr('href');
-
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        $('.main-panel').removeClass('active');
-        $(targetId).addClass('active');
-      });
-
-      // 2. 중단 서브 탭 클릭 이벤트
-      $('.sub-tabs a').on('click', function (e) {
-        e.preventDefault();
-        const subTargetId = $(this).attr('href');
-
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        $('.sub-panel').removeClass('active');
-        $(subTargetId).addClass('active');
-      });
-
-      // 3. 성별/연령 토글 클릭 이벤트
-      $('.segment-control a').on('click', function (e) {
-        e.preventDefault();
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        updatePreviewData();
-      });
-
-
-    });
-
-  </script>
-
 </body>
 </html>
 

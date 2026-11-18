@@ -191,8 +191,32 @@
 
                   <!--[S] 보장내역-->
                   <div class="tab-panel" role="tabpanel" id="panel-coverage" aria-labelledby="tab-coverage" hidden="">
-                    <section class="panel-coverage">
-                      보장내역
+                    <section class="coverage-section">
+                      <div class="coverage-inner">
+                        <!--[S] 기본계약,선택특약 -->
+                        <div class="tab-list tab-type02" role="tablist" aria-label="가입안내">
+                          <div class="tab-list-inner">
+                            <button type="button" class="tab-item on" role="tab" id="tab-guide08" aria-controls="panel-guide08" aria-selected="true">기본계약</button>
+                            <button type="button" class="tab-item" role="tab" id="tab-guide09" aria-controls="panel-guide09" aria-selected="false" tabindex="-1">선택특약</button>
+                          </div>
+                        </div>
+                        <!-- [E] 기본계약, 선택특약 -->
+
+                        <div class="tab-panels">
+                          <div class="tab-panels-inner">
+                            <!--[S] 가입안내 -->
+                            <div class="tab-panel on" role="tabpanel" id="panel-guide08" aria-labelledby="tab-guide08">
+                              <div class="pannel-detail">
+                              기본계약
+                              </div>
+                            </div>
+                            <div class="tab-panel on" role="tabpanel" id="panel-guide09" aria-labelledby="tab-guide09">
+                              <div class="pannel-detail">
+                                선택특약
+                              </div>
+                            </div>
+                          </div>
+                      </div>
                     </section>
                   </div>
                   <!--[E] 보장내역-->
@@ -241,6 +265,7 @@
                                  </table>
                               </div>
                             </div>
+
                             <!--[E] 가입안내 -->
 
                             <!--[S] 알아두실사항 -->
@@ -439,7 +464,212 @@
                             <!--[S] 보험료예시 -->
                             <div class="tab-panel on" role="tabpanel" id="panel-guide06" aria-labelledby="tab-guide06">
                               <div class="pannel-detail">
-                                 보험료예시
+                                <p class="table-info-text">가입기준 : 갱신형, 최초계약, 월납, 10년납, 10년만기 (단위 : 원)</p>
+                                <div class="tab-type03" role="tablist" aria-label="성별">
+                                  <button type="button" role="tab" id="tab-male" aria-selected="true" aria-controls="panel-male">남자</button>
+                                  <button type="button" role="tab" id="tab-female" aria-selected="false" aria-controls="panel-female">여자</button>
+                                </div>
+                                <p class="table-info-unit">(단위:원)</p>
+                                <!-- [S] 남자 -->
+                                <div class="premium-panel" role="tabpanel" id="panel-male" aria-labelledby="tab-male">
+                                  <table class="detail-table detail-table02" id="m">
+                                    <colgroup>
+                                      <col style="width:*"/>
+                                      <col style="width:12%"/>
+                                      <col style="width:12%"/>
+                                      <col style="width:12%"/>
+                                      <col style="width:12%"/>
+                                    </colgroup>
+                                    <thead>
+                                      <tr>
+                                        <th>담보</th>
+                                        <th>가입금액</th>
+                                        <th>30세</th>
+                                        <th>40세</th>
+                                        <th>50세</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>치아관련보장 및 만기환급금(갱신형)_치아관련보장 및 만기환급금</td>
+                                        <td class="text-right">100만원</td>
+                                        <td class="text-right">8,097</td>
+                                        <td class="text-right">6,937</td>
+                                        <td class="text-right">7,255</td>
+                                      </tr>
+                                      <tr>
+                                        <td>치아관련 보장 및 만기환급금(갱신형)_충전수리복구치료</td>
+                                        <td class="text-right">5,000만원</td>
+                                        <td class="text-right">339</td>
+                                        <td class="text-right">543</td>
+                                        <td class="text-right">921</td>
+                                      </tr>
+                                      <tr>
+                                        <td>치아보철물 재부착치료보장(치아당) 특별약관(갱신형)</td>
+                                        <td class="text-right">1만원</td>
+                                        <td class="text-right">44</td>
+                                        <td class="text-right">76</td>
+                                        <td class="text-right">127</td>
+                                      </tr>
+                                      <tr>
+                                        <td>컴퍼짓레진 직접치아충전치료보장 특별약관(갱신형)</td>
+                                        <td class="text-right">5만원</td>
+                                        <td class="text-right">4,805</td>
+                                        <td class="text-right">3,930</td>
+                                        <td class="text-right">3,785</td>
+                                      </tr>
+                                      <tr>
+                                        <td>간접치아충전치료보장 특별약관(갱신형)</td>
+                                        <td class="text-right">15만원</td>
+                                        <td class="text-right">6,225</td>
+                                        <td class="text-right">3,180</td>
+                                        <td class="text-right">2,505</td>
+                                      </tr>
+                                      <tr>
+                                        <td>크라운치료보장Ⅱ 특별약관(갱신형)_①크라운치료보장</td>
+                                        <td class="text-right">40만원</td>
+                                        <td class="text-right">11,920</td>
+                                        <td class="text-right">29,800</td>
+                                        <td class="text-right">57,680</td>
+                                      </tr>
+                                      <tr>
+                                        <td>크라운치료보장Ⅱ 특별약관(갱신형)_②크라운수리복구</td>
+                                        <td class="text-right">5,000만원</td>
+                                        <td class="text-right">149</td>
+                                        <td class="text-right">424</td>
+                                        <td class="text-right">1,823</td>
+                                      </tr>
+                                      <tr>
+                                        <td>New보철치료보장Ⅱ 특별약관(보철치료보장)(갱신형)</td>
+                                        <td class="text-right">50만원</td>
+                                        <td class="text-right">21,500</td>
+                                        <td class="text-right">19,450</td>
+                                        <td class="text-right">19,150</td>
+                                      </tr>
+                                      <tr>
+                                        <td>New보철치료보장Ⅱ 특별약관(재식립 임플란트치료보장)(갱신형)</td>
+                                        <td class="text-right">50만원</td>
+                                        <td class="text-right">75</td>
+                                        <td class="text-right">75</td>
+                                        <td class="text-right">55</td>
+                                      </tr>
+                                    </tbody>
+                                    <tfoot>
+                                      <tr>
+                                        <td colspan="2">ToTal</td>
+
+                                        <td class="text-right">53,150</td>
+                                        <td class="text-right">64,420</td>
+                                        <td class="text-right">93,300</td>
+                                      </tr>
+                                    </tfoot>
+                                  </table>
+                                  <ul class="list-dash maBot40">
+                                    <li class="fc-point01">본상품은 10년만기 갱신형 상품으로 갱신시 보험료가 인상될 수 있습니다.</li>
+                                  </ul>
+                                </div>
+                                <!-- [E] 남자 -->
+                                <!-- [S] 여자 -->
+                                <div class="premium-panel" role="tabpanel" id="panel-female" aria-labelledby="tab-female" hidden>
+                                  <table class="detail-table detail-table02">
+                                    <colgroup>
+                                      <col style="width:*"/>
+                                      <col style="width:12%"/>
+                                      <col style="width:12%"/>
+                                      <col style="width:12%"/>
+                                      <col style="width:12%"/>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                      <th>담보</th>
+                                      <th>가입금액</th>
+                                      <th>30세</th>
+                                      <th>40세</th>
+                                      <th>50세</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td>치아관련보장 및 만기환급금(갱신형)_치아관련보장 및 만기환급금</td>
+                                      <td class="text-right">100만원</td>
+                                      <td class="text-right">9,275</td>
+                                      <td class="text-right">7,845</td>
+                                      <td class="text-right">8,089</td>
+                                    </tr>
+                                    <tr>
+                                      <td>치아관련 보장 및 만기환급금(갱신형)_충전수리복구치료</td>
+                                      <td class="text-right">5,000만원</td>
+                                      <td class="text-right">3420</td>
+                                      <td class="text-right">551</td>
+                                      <td class="text-right">912</td>
+                                    </tr>
+                                    <tr>
+                                      <td>치아보철물 재부착치료보장(치아당) 특별약관(갱신형)</td>
+                                      <td class="text-right">1만원</td>
+                                      <td class="text-right">44</td>
+                                      <td class="text-right">57</td>
+                                      <td class="text-right">92</td>
+                                    </tr>
+                                    <tr>
+                                      <td>컴퍼짓레진 직접치아충전치료보장 특별약관(갱신형)</td>
+                                      <td class="text-right">5만원</td>
+                                      <td class="text-right">6,235</td>
+                                      <td class="text-right">5,170</td>
+                                      <td class="text-right">5,225</td>
+                                    </tr>
+                                    <tr>
+                                      <td>간접치아충전치료보장 특별약관(갱신형)</td>
+                                      <td class="text-right">15만원</td>
+                                      <td class="text-right">7,740</td>
+                                      <td class="text-right">4,680</td>
+                                      <td class="text-right">3,690</td>
+                                    </tr>
+                                    <tr>
+                                      <td>크라운치료보장Ⅱ 특별약관(갱신형)_①크라운치료보장</td>
+                                      <td class="text-right">40만원</td>
+                                      <td class="text-right">15,800</td>
+                                      <td class="text-right">26,280</td>
+                                      <td class="text-right">45,960</td>
+                                    </tr>
+                                    <tr>
+                                      <td>크라운치료보장Ⅱ 특별약관(갱신형)_②크라운수리복구</td>
+                                      <td class="text-right">5,000만원</td>
+                                      <td class="text-right">177</td>
+                                      <td class="text-right">379</td>
+                                      <td class="text-right">1,415</td>
+                                    </tr>
+                                    <tr>
+                                      <td>New보철치료보장Ⅱ 특별약관(보철치료보장)(갱신형)</td>
+                                      <td class="text-right">50만원</td>
+                                      <td class="text-right">13,800</td>
+                                      <td class="text-right">19,300</td>
+                                      <td class="text-right">20,200</td>
+                                    </tr>
+                                    <tr>
+                                      <td>New보철치료보장Ⅱ 특별약관(재식립 임플란트치료보장)(갱신형)</td>
+                                      <td class="text-right">50만원</td>
+                                      <td class="text-right">50</td>
+                                      <td class="text-right">85</td>
+                                      <td class="text-right">85</td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                      <td colspan="2">ToTal</td>
+
+                                      <td class="text-right">53,540</td>
+                                      <td class="text-right">64,350</td>
+                                      <td class="text-right">85,670</td>
+                                    </tr>
+                                    </tfoot>
+                                  </table>
+                                  <ul class="list-dash">
+                                    <li class="fc-point01">본상품은 10년만기 갱신형 상품으로 갱신시 보험료가 인상될 수 있습니다.</li>
+                                  </ul>
+                                </div>
+                                <!--[E] 여자 -->
+
+
                               </div>
                             </div>
                             <!--[E] 보험료예시 -->
@@ -633,40 +863,6 @@
   <!-- [E] 크라운 및 보존치료 감액기간 단축 -->
 
 
-
-  <script>
-    $(document).ready(function () {
-      // 1. 상단 메인 탭 클릭 이벤트
-      $('.main-tabs a').on('click', function (e) {
-        e.preventDefault();
-        const targetId = $(this).attr('href');
-
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        $('.main-panel').removeClass('active');
-        $(targetId).addClass('active');
-      });
-
-      // 2. 중단 서브 탭 클릭 이벤트
-      $('.sub-tabs a').on('click', function (e) {
-        e.preventDefault();
-        const subTargetId = $(this).attr('href');
-
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        $('.sub-panel').removeClass('active');
-        $(subTargetId).addClass('active');
-      });
-
-      // 3. 성별/연령 토글 클릭 이벤트
-      $('.segment-control a').on('click', function (e) {
-        e.preventDefault();
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        updatePreviewData();
-      });
-
-
-    });
-
-  </script>
 
 </body>
 </html>

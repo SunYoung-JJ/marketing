@@ -57,7 +57,7 @@
 
 /*table- 세로*/
 .detail-table02 thead th{text-align: center;padding:16px 8px;font-size:16px;font-weight: 600}
-
+.detail-table02 tfoot td{background:rgb(255 182 23 / 0.2);font-size:14px;font-weight: 400;padding:16px;}
 
 /*mo*/
 @media screen and (max-width:768px) {
@@ -166,16 +166,53 @@ banner-chart img{width: 100%}
 
 .tab-type02 {padding:0;}
 /* tab-type02 : 가로 스크롤 */
-.tab-type02 .tab-list-inner{position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;scrollbar-width:none;-ms-overflow-style:none;}
+.tab-type02 .tab-list-inner{position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;scrollbar-width:none;-ms-overflow-style:none;border-bottom:1px solid #d9d9d9}
 .tab-type02 .tab-list-inner::-webkit-scrollbar{display:none;}
 .tab-type02 .tab-item{flex-shrink:0;white-space:nowrap;font-weight: 400}
 .tab-type02 .tab-list-inner { gap:0; flex-wrap:nowrap; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
 .tab-type02 .tab-list-inner::-webkit-scrollbar { display:none; height:0; }
-.tab-type02 .tab-item{border:0;border-bottom:1px solid #d9d9d9;border-radius: 0;gap:0;width:calc(100% / 4);position: relative}
+.tab-type02 .tab-item{border:0;border-radius: 0;gap:0;width:calc(100% / 4);position: relative}
 .tab-type02 .tab-item.on{background-color:#fff;color:var(--black80); font-weight: 500;}
 .tab-type02 .tab-item.on::before{content:'';display:block;height:2px;background-color:#00C1D7;width:100%;position:absolute;bottom:0;left:0}
+
+.tab-type03{ display: flex; gap: 12px; margin-bottom: 24px; }
+.tab-type03 button{min-width:72px;min-height:44px;padding:0 20px;border:1px solid #d9d9d9;border-radius:22px;background:#fff;color:var(--black80);font-size:15px;font-weight:500;}
+.tab-type03 button[aria-selected="true"]{border-color:#00C1D7;background:#00C1D7;color:#fff;font-weight:700;}
+.premium-gender,
+.premium-age {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 12px;
+    background: #0A7C8A;
+}
+.premium-gender button,
+.premium-age button {
+    min-width: 72px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--black80);
+    font-size: 15px;
+    font-weight: 500;
+}
+.premium-gender button[aria-selected="true"],
+.premium-age button[aria-pressed="true"] {
+    background: #ffffff;
+    color: var(--primary-color);
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+.premium-age { display: none; }   /* PC는 30·40·50세를 표로 모두 보여줌 */
+
+.coverage-section .tab-panel,
 .feature-section .tab-panel{padding:20px 0 0;}
+
 .panel-coverage{padding:40px 70px 0 70px;}
+
+.coverage-section,
 .feature-section{padding:40px 70px 0 70px;}
 
 @media screen and (max-width:768px) {
@@ -183,7 +220,9 @@ banner-chart img{width: 100%}
     .tab-list{padding:0 20px;}
     .tab-item{padding:8px 12px;}
     .tab-type02{padding:0;}
+
     .panel-coverage{padding:20px 20px 0;}
+    .coverage-section,
     .feature-section{padding:20px 20px 0;}
     .tab-type02 .tab-item{padding:6px 12px;width:auto;}
 }
