@@ -68,6 +68,7 @@
     .section-head {padding:40px 20px 0;}
     .section-body {padding:32px 20px;}
     .section-foot {padding:32px 20px;}
+    .detail-table tbody th{padding: 16px 8px;}
     .detail-table th{font-size:14px;font-weight: 500;}
     .detail-table02 thead th{padding:16px 4px;font-size:14px;}
     .detail-table02 tbody td{padding:16px 4px;}
@@ -126,7 +127,7 @@ banner-chart img{width: 100%}
 .products{background:#f2f2f2;padding:20px 70px; }
 .products-inner{max-width:1140px;width:100%;margin:0 auto;}
 .product-item{display: flex;position: relative;gap:40px;}
-.product-item li{display:flex;flex-direction:column;gap:24px;background:#fff;border-radius: 16px;padding:20px;flex:1;align-items:center}
+.product-item li{display:flex;flex-direction:column;gap:12px;background:#fff;border-radius: 16px;padding:20px;flex:1;align-items:center}
 .product-item li.img01 .product-item-img{background:url(../image/dental/img_banner01.png) center center no-repeat;background-size:90px 90px;width:90px;height:90px;text-indent: -9999px;}
 .product-item li.img02 .product-item-img{background:url(../image/dental/img_banner02.png) center center no-repeat;background-size:70px 90px;width:70px;height: 90px;text-indent: -9999px;}
 .product-item li.img03 .product-item-img{background:url(../image/dental/img_banner03.png) center center no-repeat;background-size:82px 90px;width:82px;height:90px;text-indent: -9999px;}
@@ -167,7 +168,7 @@ banner-chart img{width: 100%}
 /*tab*/
 .tabs-area{background:#fff;}
 .product-tabs{padding:40px 0 80px 0}
-.tab-list{padding:0 70px;}
+.tab-list{max-width: 1140px;margin:0 auto;}
 .tab-list-inner{display: flex; align-items: center;gap:8px}
 .tab-item {border:1px solid #d9d9d9;padding:12px 24px;color:var(--black80);font-size:14px; min-width: 80px; border-radius: 100px;font-weight: 500}
 .tab-item.on{background-color:#00C1D7;color:#fff;border:1px solid #00C1D7;font-weight: 600}
@@ -285,4 +286,129 @@ banner-chart img{width: 100%}
     .prd-box .type-hangul > li{font-size:14px}
     .prd-box .list-num > li > div{font-size:14px;}
 
+}
+
+/*상품특징 01*/
+.product-feature{padding:40px 0 0;}
+.product-feature-inner{}
+.product-feature-inner.inner-bg02{background:yellow;padding:40px 0 0 0;}
+.feature-inner-content{display:flex;flex-direction:column;align-items:center;gap:40px;}
+.product-num{font-size:14px;color:#fff;border-radius: 100px;background:#00C1D7;text-align: center;display:inline-block;width:38px;height:38px;padding:10px 0;}
+
+.product-tit {font-size:30px;color:var(--black90);font-weight:600;text-align: center;margin-bottom:16px;}
+.product-tit p{font-size:30px;font-weight:600;color:#08039C;}
+.product-sit{font-size:20px;font-weight: 500;color:var(--black80);text-align: center;}
+.product-img{display: block;margin-top:40px;}
+.product-img img{display: block;width: 100%;height: auto}
+.product-img .mo-only{display: none}
+
+/*상품특징 02*/
+.products-item-banner{ display: flex;align-items: flex-start;gap:32px}
+.products-item-banner li{border-radius: 16px;background: #FFF;box-shadow: 0 4px 4px 0 rgba(164, 164, 164, 0.25);}
+product-img-item *, .product-img-item *::before, .product-img-item *::after { box-sizing: border-box; }
+.product-img-item p { margin: 0; }
+
+.products-item-banner {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+/* 카드 */
+.products-item-banner li {
+    display: flex;
+    flex-direction: column;
+    padding: 92px 16px 24px;                 /* 위쪽은 아이콘 자리 */
+    border-radius: 12px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center 16px;
+    background-size: auto 64px;              /* 아이콘 높이 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+.products-item-banner li > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* 아이콘 (배경 이미지) */
+.products-item-banner .img01 { background-image: url(../image/dental/img_product02.png); }
+.products-item-banner .img02 { background-image: url(../image/dental/img_product03.png); }
+.products-item-banner .img03 { background-image: url(../image/dental/img_product04.png); }
+.products-item-banner .img04 { background-image: url(../image/dental/img_product05.png); }
+
+/* 제목 */
+.products-item-banner .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.products-item-banner .tit {
+    font-size: 15px;
+    font-weight: 500;
+}
+.products-item-banner .stit {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--gray90);
+}
+.products-item-banner .badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #eef1f4;
+    font-size: 12px;
+    color: var(--gray90);
+}
+
+/* 금액: 최대 / 100 / 만원 */
+.products-item-banner .price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    color: #08039C;
+    font-weight: 700;
+}
+.products-item-banner .price span:nth-child(1) { margin-right: 4px; font-size: 15px; }
+.products-item-banner .price span:nth-child(2) { font-size: 26px; font-weight: 900; line-height: 1; }
+.products-item-banner .price span:nth-child(3) { font-size: 15px; }
+
+@media screen and (max-width:768px) {
+    .product-feature{padding:20px;}
+    .product-tit,
+    .product-tit p{font-size:24px;font-weight: 600;}
+    .product-sit{font-size: 14px;font-weight: 400;}
+    .product-img .mo-only{display: block;}
+    .product-img .pc-only{display: none;}
+
+    .product-img-item { padding: 0; }
+
+    /* 가로 슬라이드 (Swiper : common.js 에서 mo 일 때만 실행) */
+    .product-img-item.swiper-container { position: relative; overflow: hidden; }
+    .products-item-banner {
+        display: flex;
+        gap: 0;                                /* 카드 간격은 Swiper spaceBetween(12px) 으로 */
+        padding: 4px 0 16px;                   /* 그림자 잘림 방지 (좌우 여백은 Swiper slidesOffset 16px) */
+        box-sizing: content-box;
+        transition-property: transform;
+    }
+
+    .products-item-banner li {
+        flex: 0 0 62%;                         /* 다음 카드가 살짝 보이게 */
+        padding: 80px 12px 20px;
+        background-position: center 14px;
+        background-size: auto 56px;
+    }
+    .products-item-banner li > div { gap: 18px; }
+    .products-item-banner .tit { font-size: 14px; }
+    .products-item-banner .stit { font-size: 12px; }
+    .products-item-banner .price span:nth-child(2) { font-size: 22px; }
 }

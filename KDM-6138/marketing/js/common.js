@@ -101,6 +101,59 @@ $(function () {
         ($first.length ? $first : $btns.first()).trigger("click");
     });
 
+    //products-item-banner (상품특징 카드) : mo(768px 이하)에서만 Swiper 슬라이드, PC 는 해제
+    // - 감싸는 .product-img-item 이 swiper-container, ul 이 swiper-wrapper, li 가 swiper-slide
+    (function () {
+        var $banner = $(".products-item-banner");
+        var bannerSwipers = [];
+
+        if (!$banner.length || typeof Swiper !== "function") {
+            return;
+        }
+
+        function bannerOn() {
+            $banner.each(function () {
+                var $ul = $(this);
+                var $box = $ul.parent();
+
+                $box.addClass("swiper-container");
+                $ul.addClass("swiper-wrapper").children("li").addClass("swiper-slide");
+
+                bannerSwipers.push(new Swiper($box[0], {
+                    slidesPerView: "auto",     //카드 폭은 css (62%)
+                    spaceBetween: 12,
+                    slidesOffsetBefore: 16,
+                    slidesOffsetAfter: 16,
+                    watchOverflow: true,
+                    observer: true,            //숨겨진 탭 패널이 열릴 때 크기 다시 계산
+                    observeParents: true
+                }));
+            });
+        }
+
+        function bannerOff() {
+            $.each(bannerSwipers, function (i, swiper) {
+                swiper.destroy(true, true);
+            });
+            bannerSwipers = [];
+            $banner.removeClass("swiper-wrapper").children("li").removeClass("swiper-slide");
+            $banner.parent().removeClass("swiper-container");
+        }
+
+        function bannerCheck() {
+            var isMo = window.matchMedia("(max-width:768px)").matches;
+
+            if (isMo && !bannerSwipers.length) {
+                bannerOn();
+            } else if (!isMo && bannerSwipers.length) {
+                bannerOff();
+            }
+        }
+
+        bannerCheck();
+        $(window).on("resize", bannerCheck);
+    })();
+
     //상단 메인 탭(.main-tabs) : 링크 href 의 패널(.main-panel) 보이기
     $(".main-tabs a").on("click", function (e) {
         e.preventDefault();
