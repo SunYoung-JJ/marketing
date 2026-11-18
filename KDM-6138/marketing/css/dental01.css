@@ -175,6 +175,7 @@ banner-chart img{width: 100%}
 
 .prd-box{margin:0 0 40px 0;}
 .prd-box + .prd-box{margin:0 0 40px 0;}
+.prd-box + .prd-box:last-child{margin:0 0 0px 0;}
 .prd-box h2{font-size:20px; font-weight: 500;color:var(--black80);margin-bottom:16px;}
 .prd-box h3{font-size:16px;font-weight: 500;color:var(--black80);margin-bottom:8px;}
 .prd-box .info-txt{font-size:16px;font-weight: 400;color:var(--black80);margin-bottom:16px;}
@@ -191,8 +192,13 @@ banner-chart img{width: 100%}
 @media screen and (max-width:768px) {
     .prd-box + .prd-box{margin:0 0 20px 0}
     .prd-box h2{font-size:16px;}
+    .prd-box h3{font-size:14px;}
     .prd-box .info-txt{font-size: 14px;}
+    .prd-box .info-txt p{font-size:14px;}
     .prd-box .list-dash *{font-size: 14px;}
+    .prd-box .list-dash li{font-size: 14px;}
     .prd-box .list-num > li{font-size:14px;}
     .prd-box .type-hangul > li{font-size:14px}
+    .prd-box .list-num > li > div{font-size:14px;}
+
 }
