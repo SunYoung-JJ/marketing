@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>web-in</title>
-
   <meta charset="utf-8">
+  <title>THE 이로운 치아보험 | 라이나손보</title>
+
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -11,7 +11,6 @@
   <meta name="description" content="">
 
 
-  <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/jquery.ui.base.css">
   <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/mobiscroll.custom-2.17.1.min.css">
   <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/default.css">
   <link type="text/css" rel="stylesheet" href="/marketing/KDM-6138/marketing/css/dental01.css">
@@ -21,7 +20,6 @@
   <script src="/marketing/KDM-6138/marketing/js/lib/mobiscroll.custom.min.js"></script>
   <script src="/marketing/KDM-6138/marketing/js/lib/swiper.min.js"></script>
   <script src="/marketing/KDM-6138/marketing/js/lib/jquery.extends-ajax.js"></script>
-  <script src="/marketing/KDM-6138/marketing/js/lib/mobiscroll.custom.min.js"></script>
   <script src="/marketing/KDM-6138/marketing/js/lib/model.min.js"></script>
   <script src="/marketing/KDM-6138/marketing/js/lib/common-ui.js"></script>
   <script src="/marketing/KDM-6138/marketing/js/lib/jquery-ui.1.10.4.min.js"></script>
@@ -77,6 +75,7 @@
         <div class="content">
           <div class="hero">
             <section class="banner">
+              <h2 class="blind">THE 이로운 치아보험 상품 안내</h2>
               <p class="banner-bage">(무) THE이로운치아보험 1종(갱신형)</p>
 
 
@@ -90,10 +89,11 @@
                   <button type="button" class="close-btn" aria-label="닫기" data-popup-close="formPanel"></button>
                 </div>
 
-                <form class="js-form">
+                <form class="js-form" id="consultForm">
                   <div class="input-row">
                     <div class="input-area">
                       <div class="text-input">
+                        <label for="inputText01" class="blind">성명</label>
                         <input type="text" class="" id="inputText01" placeholder="성명을 입력해주세요"/>
                       </div>
                     </div>
@@ -101,23 +101,26 @@
                   <div class="input-row">
                     <div class="input-area input-jumin">
                       <div class="text-input">
+                        <label for="inputText02" class="blind">생년월일 6자리</label>
                         <input type="text" class="jumin-1" id="inputText02" placeholder="880606" maxlength="6">
-                        <span>-</span>
-                        <input type="text" class="jumin-2" id="inputText02" placeholder="" maxlength="1">
-                        <span>******</span>
+                        <span aria-hidden="true">-</span>
+                        <label for="inputText03" class="blind">주민등록번호 뒷자리 첫 번째 숫자</label>
+                        <input type="text" class="jumin-2" id="inputText03" placeholder="" maxlength="1">
+                        <span aria-hidden="true">******</span>
                       </div>
                     </div>
                   </div>
                   <div class="input-row">
                     <div class="input-area">
                       <div class="text-input">
-                        <input type="text" class="" id="inputText02" placeholder="휴대폰번호를입력해주세요">
+                        <label for="inputText04" class="blind">휴대폰번호</label>
+                        <input type="tel" class="" id="inputText04" placeholder="휴대폰번호를입력해주세요">
                       </div>
                     </div>
                   </div>
                 </form>
                 <div class="btns-fixed-wrap">
-                  <a href="#n" class="btn-cta-pri">상품상담신청</a>
+                  <button type="submit" class="btn-cta-pri" form="consultForm">상품상담신청</button>
                 </div>
               </div>
             </aside>
@@ -138,7 +141,7 @@
                       <p class="tit">업계 최초 상품</p>
                       <p class="stit">치아 충전물 및 크라운 수리, 복구, 교체 및 재부착 보장(특약)</p>
                     </div>
-                    <a href="#modalBottomsheet01" data-popup-btn="modalBottomsheet01" class=""><span class="blind">상세보기</span></a>
+                    <a href="#modalBottomsheet01" data-popup-btn="modalBottomsheet01" class=""><span class="blind">업계 최초 상품 상세보기</span></a>
                   </div>
                 </li>
                 <li class="img02">
@@ -148,7 +151,7 @@
                       <p class="tit">크라운 치료 최대 40만원</p>
                       <p class="stit">면책기간 90일, 감액기간 270일 적용(특약)</p>
                     </div>
-                    <a href="#modalBottomsheet02" data-popup-btn="modalBottomsheet02" class=""><span class="blind">상세보기</span></a>
+                    <a href="#modalBottomsheet02" data-popup-btn="modalBottomsheet02" class=""><span class="blind">크라운 치료 최대 40만원 상세보기</span></a>
                   </div>
                 </li>
                 <li class="img03">
@@ -158,7 +161,7 @@
                       <p class="tit">크라운 및 보존치료 감액기간 단축</p>
                       <p class="stit">1년이 아닌, 270일 이후 개수제한 없이 100% 보장(특약)</p>
                     </div>
-                    <a href="#modalBottomsheet03" data-popup-btn="modalBottomsheet03" class=""><span class="blind">상세보기</span></a>
+                    <a href="#modalBottomsheet03" data-popup-btn="modalBottomsheet03" class=""><span class="blind">크라운 및 보존치료 감액기간 단축 상세보기</span></a>
                   </div>
                 </li>
               </ul>
@@ -308,15 +311,15 @@
                                   <caption>치아관련 보장 및 만기환급금(갱신형)_충전수리복구치료- 담보명,지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                     <tr>
-                                      <th class="v-top">담보명</th>
+                                      <th scope="row" class="v-top">담보명</th>
                                       <td>치아관련 보장 및 만기환급금(갱신형)_충전수리복구치료</td>
                                     </tr>
                                     <tr>
-                                      <th class="v-top">지급사유</th>
+                                      <th scope="row" class="v-top">지급사유</th>
                                       <td>
                                           <ul class="list-num maBot16">
                                             <li>상해 또는 질병을 원인으로 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 아래의 기준에서 정한 치아관련 치료를 받은 경우 각 담보별 보장금액 지급</li>
@@ -341,15 +344,15 @@
                                   <caption>치아관련 보장 및 만기환급금(갱신형)_치아관련보장 및 만기환급금- 담보명,지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                     <tr>
-                                      <th class="v-top">담보명</th>
+                                      <th scope="row" class="v-top">담보명</th>
                                       <td>치아관련 보장 및 만기환급금(갱신형)_치아관련보장 및 만기환급금</td>
                                     </tr>
                                     <tr>
-                                      <th class="v-top">지급사유</th>
+                                      <th scope="row" class="v-top">지급사유</th>
                                       <td>
                                         <ul class="list-num maBot16">
                                           <li>상해 또는 질병을 원인으로 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 아래의 기준에서 정한 치아관련 치료를 받은 경우 각 담보별 보장금액 지급</li>
@@ -387,15 +390,15 @@
                                   <caption>치아보철물 재부착치료보장(치아당) 특별약관(갱신형) - 담보명,지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>치아보철물 재부착치료보장(치아당) 특별약관(갱신형)</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <p class="maBot16">피보험자가 보험기간 중에 보철치료를 받은 치아에서 떨어진 기존의 보철물에 대하여 “보철물재부착” 치료를 받았을 때 치아치료 1개당 보험가입금액 지급.</p>
                                       <ul class="list-mark">
@@ -411,15 +414,15 @@
                                   <caption>컴퍼짓레진 직접치아충전치료보장 특별약관(갱신형) - 담보명,지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>컴퍼짓레진 직접치아충전치료보장 특별약관(갱신형)</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <ul class="list-num maBot16">
                                         <li>상해 또는 질병을 원인으로 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 컴퍼짓레진 직접충전 및 교체치료를 받은 경우 컴퍼짓레진 직접충전치료보험금을 지급</li>
@@ -438,15 +441,15 @@
                                   <caption>간접치아충전치료보장 특별약관(갱신형) - 담보명,지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>간접치아충전치료보장 특별약관(갱신형)</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <ul class="list-num maBot16">
                                         <li>상해 또는 질병을 원인으로 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 간접치아충전 및 교체치료를 받은 경우 간접치아충전치료보험금을 지급(간접치아충전 및 교체치료란 골드 인레이 / 골드온레이 및 기타 간접치아충전 및 교체치료를 포함)</li>
@@ -465,15 +468,15 @@
                                   <caption>크라운치료보장Ⅱ 특별약관(갱신형)_①크라운치료보장 - 담보명,지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>크라운치료보장Ⅱ 특별약관(갱신형)_①크라운치료보장</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <ul class="list-num maBot16">
                                         <li>상해 또는 질병을 원인으로 크라운 치료를 진단확정 받고 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 크라운치료 및 교체치료를 받은 경우 크라운치료보험금을 지급</li>
@@ -492,15 +495,15 @@
                                   <caption>크라운치료보장Ⅱ 특별약관(갱신형)_②크라운수리복구</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>크라운치료보장Ⅱ 특별약관(갱신형)_②크라운수리복구</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <ul class="list-num maBot16">
                                         <li>상해 또는 질병을 원인으로 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 크라운수리·복구치료를 받은 경우 크라운수리·복구치료보험금을 지급.</li>
@@ -518,15 +521,15 @@
                                   <caption>New보철치료보장Ⅱ 특별약관(보철치료보장)(갱신형)</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>New보철치료보장Ⅱ 특별약관(보철치료보장)(갱신형)</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <p>상해 또는 질병을 직접적인 원인으로 의료법에서 정한 치과 병,의원 또는 국외의 의료관리법에서 정한 의료기관에서 영구치 발거에 대한 진단확정을 받고 해당 영구치를 발거한 부위에 임플란트, 가철성의치(틀니) 또는 고정성가공의치(브릿지) 치료(이하 "보철치료"라 합니다)를 받은 경우</p>
                                       <ul class="list-normal maBot16">
@@ -552,15 +555,15 @@
                                   <caption>New보철치료보장Ⅱ 특별약관(재식립 임플란트치료보장)(갱신형) - 담보명, 지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>New보철치료보장Ⅱ 특별약관(재식립 임플란트치료보장)(갱신형)</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <p class="maBot16">임플란트치료 보험금 지급사유가 발생하고, 그 임플란트 치료일로부터 그 날을 포함하여 1년이 지난 날의 다음날 이후에 해당 부위에 "재식립 임플란트 치료"를 받았을 경우 임플란트치료 보험금 지급사유 발생시 회사가 지급한 임플란트 치료보험금 지급금액과 동일한 금액 지급(동일부위당 1회한)</p>
                                       <ul class="list-mark">
@@ -575,15 +578,15 @@
                                   <caption>치주질환수술(치주소파술 포함) 및 턱관절장애 치료보장 특별약관(갱신형) - 담보명, 지급사유</caption>
                                   <colgroup>
                                     <col style="width:120px;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <tbody>
                                   <tr>
-                                    <th class="v-top">담보명</th>
+                                    <th scope="row" class="v-top">담보명</th>
                                     <td>치주질환수술(치주소파술 포함) 및 턱관절장애 치료보장 특별약관(갱신형)</td>
                                   </tr>
                                   <tr>
-                                    <th class="v-top">지급사유</th>
+                                    <th scope="row" class="v-top">지급사유</th>
                                     <td>
                                       <ul class="list-num">
                                         <li>치주소파술 : 치주소파술을 받은 경우 1/3악당 보험가입금액</li>
@@ -597,18 +600,18 @@
 
 
                                   <table class="detail-table detail-table03">
-                                    <caption>치주질환수술(치주소파술 포함)보장 특별약관(갱신형 - 담보명, 지급사유</caption>
+                                    <caption>치주질환수술(치주소파술 포함)보장 특별약관(갱신형) - 담보명, 지급사유</caption>
                                     <colgroup>
                                       <col style="width:120px;">
-                                      <col style="width:*;">
+                                      <col>
                                     </colgroup>
                                     <tbody>
                                     <tr>
-                                      <th class="v-top">담보명</th>
-                                      <td>치주질환수술(치주소파술 포함)보장 특별약관(갱신형</td>
+                                      <th scope="row" class="v-top">담보명</th>
+                                      <td>치주질환수술(치주소파술 포함)보장 특별약관(갱신형)</td>
                                     </tr>
                                     <tr>
-                                      <th class="v-top">지급사유</th>
+                                      <th scope="row" class="v-top">지급사유</th>
                                       <td>
                                         <p>피보험자에게 다음 중 어느 하나의 사유가 발생한 경우 보험수익자에게 약정한 보험금을 지급</p>
                                         <ul class="list-num">
@@ -652,21 +655,22 @@
                             <div class="tab-panel on" role="tabpanel" id="panel-guide04" aria-labelledby="tab-guide04">
                               <div class="pannel-detail">
                                  <table class="detail-table">
+                                   <caption>가입안내 - 가입연령, 보험기간, 납입주기</caption>
                                    <colgroup>
                                      <col style="width:120px;">
-                                     <col style="width:*;">
+                                     <col>
                                    </colgroup>
                                    <tbody>
                                      <tr>
-                                       <th>가입연령</th>
+                                       <th scope="row">가입연령</th>
                                        <td>1세~75세</td>
                                      </tr>
                                      <tr>
-                                       <th>보험기간</th>
+                                       <th scope="row">보험기간</th>
                                        <td>10년</td>
                                      </tr>
                                      <tr>
-                                       <th>납입주기</th>
+                                       <th scope="row">납입주기</th>
                                        <td>전기납/80세만기</td>
                                      </tr>
                                    </tbody>
@@ -820,7 +824,7 @@
                                   <div class="info-txt">
                                     <p>주소 : 충청북도 음성군 맹동면 용두로 54</p>
                                     <p>전화 : 1372</p>
-                                    <p>홈페이지 : <span class="fc-point02"><a href="http://www.kca.go.kr" target="_blank">www.kca.go.kr</a></span></p>
+                                    <p>홈페이지 : <span class="fc-point02"><a href="http://www.kca.go.kr" target="_blank" rel="noopener" title="새 창 열림">www.kca.go.kr</a></span></p>
                                   </div>
                                 </div>
 
@@ -833,7 +837,7 @@
                                   <h2>보험모집질서 위반행위 신고센터</h2>
                                   <div class="info-txt">
                                     <p>전화 : 1332</p>
-                                    <p>홈페이지 : <span class="fc-point02"><a href="http://www.fss.or.kr" target="_blank"> www.fss.or.kr</a></span></p>
+                                    <p>홈페이지 : <span class="fc-point02"><a href="http://www.fss.or.kr" target="_blank" rel="noopener" title="새 창 열림">www.fss.or.kr</a></span></p>
                                   </div>
                                 </div>
 
@@ -1081,18 +1085,19 @@
                                 <p class="table-info-text">가입기준 : 갱신형, 최초계약, 월납, 10년납, 10년만기 (단위 : 원) 남자, 40세, 가입담보 </p>
                                 <p class="table-info-unit">보험료예시 참고(단위:원)</p>
                                 <table class="detail-table detail-table02">
+                                  <caption>해약환급금예시 - 경과기간, 납입보험료, 해지환급금, 환급률</caption>
                                   <colgroup>
                                     <col style="width:25%;">
                                     <col style="width:25%;">
                                     <col style="width:25%;">
-                                    <col style="width:*;">
+                                    <col>
                                   </colgroup>
                                   <thead>
                                     <tr>
-                                      <th>경과기간</th>
-                                      <th>납입보험료</th>
-                                      <th>해지환급금</th>
-                                      <th>환급률</th>
+                                      <th scope="col">경과기간</th>
+                                      <th scope="col">납입보험료</th>
+                                      <th scope="col">해지환급금</th>
+                                      <th scope="col">환급률</th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -1206,12 +1211,11 @@
   <div class="modal-wrap" id="modalBottomsheet01">
     <div class="modal-bottomsheet">
       <div class="bottomsheet-head">
-        <h1>알아두실 사항</h1>
+        <h2>알아두실 사항</h2>
       </div>
       <div class="bottomsheet-body">
         <div class="coverage-info">
-          <h2>(특약) 치아충전물 수리∙복구치료보장</h2>
-          <h2>(특약) 치아보철물 재부착치료보장</h2>
+          <h3>(특약) 치아충전물 수리∙복구치료보장<br>(특약) 치아보철물 재부착치료보장</h3>
           <ul class="list-dash">
             <li>면책기간: 계약일로 부터 90일간</li>
             <li>감액기간: 계약일로부터 270일간 보험금 50% 지급 (치아충전물 수리∙복구치료보장은 질병사고에 한함)</li>
@@ -1227,11 +1231,11 @@
   <div class="modal-wrap" id="modalBottomsheet02">
     <div class="modal-bottomsheet">
       <div class="bottomsheet-head">
-        <h1>알아두실 사항</h1>
+        <h2>알아두실 사항</h2>
       </div>
       <div class="bottomsheet-body">
         <div class="coverage-info">
-          <h2>(특약) 신크라운치료보장 II</h2>
+          <h3>(특약) 신크라운치료보장 II</h3>
           <ul class="list-dash">
             <li>면책기간: 질병사고에 대해 계약일로 부터 90일간</li>
             <li>감액기간: 질병사고에 대해 계약일로부터 270일간 보험금 50% 지급</li>
@@ -1247,11 +1251,11 @@
   <div class="modal-wrap" id="modalBottomsheet03">
     <div class="modal-bottomsheet">
       <div class="bottomsheet-head">
-        <h1>알아두실 사항</h1>
+        <h2>알아두실 사항</h2>
       </div>
       <div class="bottomsheet-body">
         <div class="coverage-info">
-          <h2>(특약) 신크라운치료보장 II</h2>
+          <h3>(특약) 신크라운치료보장 II</h3>
           <ul class="list-dash">
             <li>면책기간: 질병사고에 대해 계약일로 부터 90일간</li>
             <li>감액기간: 질병사고에 대해 계약일로부터 270일간 보험금 50% 지급</li>

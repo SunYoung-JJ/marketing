@@ -112,7 +112,8 @@ banner-chart img{width: 100%}
 /*알아두실사항*/
 .coverage-info{}
 .coverage-info + .coverage-info{margin-top:24px;}
-.coverage-info h2{font-size:16px;font-weight: 600;color:var(--black80);margin-bottom:16px;}
+.coverage-info h2,
+.coverage-info h3{font-size:16px;font-weight: 600;color:var(--black80);margin-bottom:16px;}
 .coverage-info .list-dash li {color:var(--gray90);}
 
 /*font*/
@@ -291,7 +292,7 @@ banner-chart img{width: 100%}
 /*상품특징 01*/
 .product-feature{padding:40px 0 0;}
 .product-feature-inner{}
-.product-feature-inner.inner-bg02{background:green;padding:40px 0 0 0;}
+.product-feature-inner.inner-bg02{background:#F5FAFB;padding:40px 0 0 0;}
 .feature-inner-content{display:flex;flex-direction:column;align-items:center;gap:40px;}
 .product-num{font-size:14px;color:#fff;border-radius: 100px;background:#00C1D7;text-align: center;display:inline-block;width:38px;height:38px;padding:10px 0;}
 

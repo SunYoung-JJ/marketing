@@ -46,9 +46,9 @@ $(function () {
         var $this = $(this);
         var $panel = $("#" + $this.attr("aria-controls"));
 
-        //1. 클릭한 탭만 on
-        $this.addClass("on").attr("aria-selected", "true")
-            .siblings(".tab-item").removeClass("on").attr("aria-selected", "false");
+        //1. 클릭한 탭만 on (선택 탭만 Tab 키로 들어올 수 있게 tabindex 0, 나머지 -1)
+        $this.addClass("on").attr({ "aria-selected": "true", tabindex: "0" })
+            .siblings(".tab-item").removeClass("on").attr({ "aria-selected": "false", tabindex: "-1" });
 
         //2. 같은 그룹의 패널만 숨기고, 연결된 패널 보이기 (바깥 탭 패널은 그대로)
         $panel.siblings(".tab-panel").removeClass("on").attr("hidden", "hidden");
@@ -69,9 +69,9 @@ $(function () {
         var $this = $(this);
         var $panel = $("#" + $this.attr("aria-controls"));
 
-        //1. 클릭한 탭만 선택
-        $this.addClass("on").attr("aria-selected", "true")
-            .siblings("[role='tab']").removeClass("on").attr("aria-selected", "false");
+        //1. 클릭한 탭만 선택 (선택 탭만 tabindex 0)
+        $this.addClass("on").attr({ "aria-selected": "true", tabindex: "0" })
+            .siblings("[role='tab']").removeClass("on").attr({ "aria-selected": "false", tabindex: "-1" });
 
         //2. 같은 그룹의 성별 패널만 숨기고, 연결된 패널 보이기
         $panel.siblings(".tab-panel").removeClass("on").attr("hidden", "hidden");
@@ -83,6 +83,28 @@ $(function () {
         var $tabs = $(this).find("[role='tab']");
         var $first = $tabs.filter("[aria-selected='true']").first();
         ($first.length ? $first : $tabs.first()).trigger("click");
+    });
+
+    //tab 키보드 : 탭 목록(role="tablist") 안에서 ←/→ 이전·다음 탭, Home/End 처음·마지막 탭으로 이동 + 선택
+    $("[role='tablist']").on("keydown", "[role='tab']", function (e) {
+        var $tabs = $(e.delegateTarget).find("[role='tab']");
+        var idx = $tabs.index(this);
+        var next;
+
+        switch (e.which) {
+            case 37: next = (idx - 1 + $tabs.length) % $tabs.length; break; //←
+            case 39: next = (idx + 1) % $tabs.length; break;                 //→
+            case 36: next = 0; break;                                        //Home
+            case 35: next = $tabs.length - 1; break;                         //End
+            default: return;
+        }
+        e.preventDefault();
+        $tabs.eq(next).trigger("click").focus();
+    });
+
+    //상담신청 폼 : 제출 버튼(type="submit", form="consultForm") → 페이지 이동 막기 (개발 연동 전)
+    $(".js-form").on("submit", function (e) {
+        e.preventDefault();
     });
 
     //tab-age (보험료예시 나이 버튼, mo 전용) : 선택한 나이를 .pannel-detail[data-age] 에 넣음 → css 가 해당 나이 열만 보여줌
