@@ -292,7 +292,7 @@ banner-chart img{width: 100%}
 /*상품특징 01*/
 .product-feature{padding:40px 0 0;}
 .product-feature-inner{}
-.product-feature-inner.inner-bg02{background:#F5FAFB;padding:40px 0 0 0;}
+.product-feature-inner.inner-bg02{background:#F5FAFB;padding:40px 0 ;}
 .feature-inner-content{display:flex;flex-direction:column;align-items:center;gap:40px;}
 .product-num{font-size:14px;color:#fff;border-radius: 100px;background:#00C1D7;text-align: center;display:inline-block;width:38px;height:38px;padding:10px 0;}
 
@@ -306,7 +306,8 @@ banner-chart img{width: 100%}
 /*상품특징 02*/
 .products-item-banner{ display: flex;align-items: flex-start;gap:32px}
 .products-item-banner li{border-radius: 16px;background: #FFF;box-shadow: 0 4px 4px 0 rgba(164, 164, 164, 0.25);}
-product-img-item *, .product-img-item *::before, .product-img-item *::after { box-sizing: border-box; }
+.product-img-item, .product-img-item *, .product-img-item *::before, .product-img-item *::after { box-sizing: border-box; }
+.product-img-item { width: 100%; min-width: 0; }   /* 부모가 align-items:center 라 폭이 내용만큼 늘어나 넘치던 것 방지 */
 .product-img-item p { margin: 0; }
 
 .products-item-banner {
@@ -314,7 +315,7 @@ product-img-item *, .product-img-item *::before, .product-img-item *::after { bo
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));   /* 긴 담보명이 있어도 4칸이 폭 안에 들어가게 */
     gap: 16px;
 }
 
@@ -383,7 +384,8 @@ product-img-item *, .product-img-item *::before, .product-img-item *::after { bo
 .products-item-banner .price span:nth-child(3) { font-size: 15px; }
 
 @media screen and (max-width:768px) {
-    .product-feature{padding:20px;}
+    .product-feature{padding:20px 0;}
+    .feature-inner-content{padding:0 20px;}
     .product-tit,
     .product-tit p{font-size:24px;font-weight: 600;}
     .product-sit{font-size: 14px;font-weight: 400;}
@@ -403,7 +405,7 @@ product-img-item *, .product-img-item *::before, .product-img-item *::after { bo
     }
 
     .products-item-banner li {
-        flex: 0 0 62%;                         /* 다음 카드가 살짝 보이게 */
+        flex-shrink: 0;                        /* 카드 폭은 Swiper slidesPerView(1.6) 가 계산해서 넣음 */
         padding: 80px 12px 20px;
         background-position: center 14px;
         background-size: auto 56px;

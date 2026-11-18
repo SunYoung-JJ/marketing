@@ -142,7 +142,7 @@ $(function () {
                 $ul.addClass("swiper-wrapper").children("li").addClass("swiper-slide");
 
                 bannerSwipers.push(new Swiper($box[0], {
-                    slidesPerView: "auto",     //카드 폭은 css (62%)
+                    slidesPerView: 1.6,        //카드 1.6장 보이게 (다음 카드가 살짝 보임) : 폭은 Swiper 가 계산
                     spaceBetween: 12,
                     slidesOffsetBefore: 16,
                     slidesOffsetAfter: 16,
