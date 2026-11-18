@@ -5,7 +5,7 @@
     --second-color : #D9D9D9;
     --gap-large : 40px;
     --gap-middle : 24px;
-    --gqp-small : 8px;
+    --gap-small : 8px;
     --font-large: 24px;
     --font-default: 14px;
     --font-small: 12px;
@@ -17,8 +17,9 @@
     --black80:#252525;/*sub폰트색상*/
     --gray100:#404040; /*bold폰트색상*/
     --gray90:#4e4e4e; /* default폰트색상*/
-    --gary80:#a3a3a3;/*sub폰트색상*/
+    --gray80:#a3a3a3;/*sub폰트색상*/
     --white:#fff;
+    --primary-opacity20: rgba(0, 193, 215, 0.2); /* --primary-color(#00C1D7) 20% */
     --line-color:#EFEFEF;
 }
 

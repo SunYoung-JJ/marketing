@@ -107,13 +107,13 @@ $(function () {
         e.preventDefault();
     });
 
-    //tab-age (보험료예시 나이 버튼, mo 전용) : 선택한 나이를 .pannel-detail[data-age] 에 넣음 → css 가 해당 나이 열만 보여줌
+    //tab-age (보험료예시 나이 버튼, mo 전용) : 선택한 나이를 .panel-detail[data-age] 에 넣음 → css 가 해당 나이 열만 보여줌
     $(".tab-age button").on("click", function () {
         var $this = $(this);
 
         $this.attr("aria-pressed", "true")
             .siblings("button").attr("aria-pressed", "false");
-        $this.closest(".pannel-detail").attr("data-age", $this.attr("data-age"));
+        $this.closest(".panel-detail").attr("data-age", $this.attr("data-age"));
     });
 
     //tab-age : 처음 열릴 때 aria-pressed="true" 인 나이 적용

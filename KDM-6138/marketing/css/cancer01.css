@@ -30,8 +30,8 @@
 
 /* group type */
 .btns-group-wrap {display: flex; align-items: center;}
-.btn-group {flex:1; height:36px; border:1px solid #CACACACC}
-.btn-group.on {position: relative; border-color: #abeef5; background-color: var(--primary-opcity20);}
+.btn-group {flex:1; height:36px; border:1px solid #CACACA;}
+.btn-group.on {position: relative; border-color: #abeef5; background-color: var(--primary-opacity20);}
 .btn-group:first-child {border-radius: 8px 0 0 8px;}
 .btn-group:last-child {border-radius: 0 8px 8px 0;}
 .btn-group ~ .btn-group {margin-left: -1px;}
@@ -71,7 +71,7 @@
 .banner img { display: block; max-width: 100%; height: auto; }
 
 /* 배지 */
-.banner-bage {grid-column: 1;justify-self: start;align-self: end;padding: 6px 16px;border-radius: 999px;background: #00C1D7;color: #ffffff;font-size: 16px;font-weight: 600;line-height: 1.4;}
+.banner-badge {grid-column: 1;justify-self: start;align-self: end;padding: 6px 16px;border-radius: 999px;background: #00C1D7;color: #ffffff;font-size: 16px;font-weight: 600;line-height: 1.4;}
 /* 타이틀: 최대 / 5(이미지) / 회 받는 암진단비 */
 .banner-text {grid-column: 1;display: flex;align-items: center;gap: 8px;font-weight: 600;line-height: 1.1;letter-spacing: -0.02em;}
 .banner-text > div:first-of-type { font-size:50px; color:#00C1D7;}/* 최 대 (첫 자식은 h2.blind라 first-child는 안 걸림) */
@@ -86,7 +86,6 @@ banner-chart{display:inline-block;width:384px;height: 179px;}
 banner-chart img{width: 100%}
 
 /*알아두실사항*/
-.coverage-info{}
 .coverage-info + .coverage-info{margin-top:24px;}
 .coverage-info h2{font-size:16px;font-weight: 600;color:var(--black80);margin-bottom:16px;}
 .coverage-info .list-dash li {color:var(--gray90);}
@@ -97,7 +96,7 @@ banner-chart img{width: 100%}
 .title4 {font-weight: 600;font-size:14px;margin-bottom:8px;}
 
 .sub-info{font-size:14px;color:var(--black80);margin-bottom:8px;font-weight: 400}
-.txt-argee-info{font-size:14px;font-weight: 400;color:var(--black80);}
+.txt-agree-info{font-size:14px;font-weight: 400;color:var(--black80);}
 
 /*상품배너*/
 .products{background:#f2f2f2;padding:20px 70px; }
