@@ -48,16 +48,20 @@
 .table-info-text{font-size:14px;font-weight: 500;color:#252525;margin-bottom:8px}
 .table-info-unit{font-size:14px;font-weight: 400;color:#252525;margin-bottom:8px;}
 .detail-table{width: 100%;border-top:1px solid #252525;margin-bottom:12px;}
+.detail-table:first-child{margin-bottom:40px}
+.detail-table + .detail-table{margin-bottom:40px}
 .detail-table thead th{text-align: left}
 .detail-table tbody th,
 .detail-table tbody td{text-align: left;padding:16px;}
 .detail-table th{background-color:#F3F3F3;font-size:16px;font-weight: 500;color:var(--black80)}
 .detail-table td{font-size:14px;font-weight:400;color:var(--black80);}
 .detail-table tbody tr{border-bottom:1px solid #d9d9d9}
-
+.detail-table p{font-size:14px;font-weight: 400;color:#252525;}
 /*table- 세로*/
 .detail-table02 thead th{text-align: center;padding:16px 8px;font-size:16px;font-weight: 600}
 .detail-table02 tfoot td{background:rgb(255 182 23 / 0.2);font-size:14px;font-weight: 400;padding:16px;}
+/*table- th 배경색X */
+.detail-table03 th{background:#fff; color:#0EA5B7}
 
 /*mo*/
 @media screen and (max-width:768px) {
@@ -66,7 +70,11 @@
     .section-foot {padding:32px 20px;}
     .detail-table th{font-size:14px;font-weight: 500;}
     .detail-table02 thead th{padding:16px 4px;font-size:14px;}
-    .detail-table02 tbody td{padding:16px 8px;}
+    .detail-table02 tbody td{padding:16px 4px;}
+    .detail-table02 tfoot th,
+    .detail-table02 tfoot td{padding:16px 4px;}
+    .detail-table:first-child{margin-bottom:20px}
+    .detail-table + .detail-table{margin-bottom:20px}
 }
 
 /*layout*/
@@ -175,9 +183,30 @@ banner-chart img{width: 100%}
 .tab-type02 .tab-item.on{background-color:#fff;color:var(--black80); font-weight: 500;}
 .tab-type02 .tab-item.on::before{content:'';display:block;height:2px;background-color:#00C1D7;width:100%;position:absolute;bottom:0;left:0}
 
-.tab-type03{ display: flex; gap: 12px; margin-bottom: 24px; }
-.tab-type03 button{min-width:72px;min-height:44px;padding:0 20px;border:1px solid #d9d9d9;border-radius:22px;background:#fff;color:var(--black80);font-size:15px;font-weight:500;}
-.tab-type03 button[aria-selected="true"]{border-color:#00C1D7;background:#00C1D7;color:#fff;font-weight:700;}
+.tab-type03{ display:inline-flex; gap: 8px; margin-bottom: 24px; background:#F2F4F7;border-radius: 8px;padding:4px;}
+.tab-type03 button{min-width:57px;padding:8px 16px;background:#fff;color:var(--black80);font-size:14px;font-weight:500;border-radius:4px;}
+.tab-type03 button[aria-selected="true"],
+.tab-type03 button[aria-pressed="true"]{border-color:#00C1D7;background:#00C1D7;color:#fff;font-weight:700;}
+.tab-age{display:none;}   /* PC는 30·40·50세를 표로 모두 보여줌 */
+
+/*mo : 나이 버튼으로 선택한 나이 열만 보이기 (.pannel-detail[data-age] 는 common.js 에서 넣음) */
+@media screen and (max-width:768px) {
+    .tab-age{display:inline-flex;}
+    .pannel-detail .col-name { width: 55%; }   /* 담보명 열 넓게 (나머지 가입금액·나이 열이 나눠 씀) */
+    .pannel-detail[data-age] .tab-panel col{width:auto !important;}
+    .pannel-detail[data-age] .tab-panel thead th:nth-child(n+3),
+    .pannel-detail[data-age] .tab-panel tbody td:nth-child(n+3),
+    .pannel-detail[data-age] .tab-panel tfoot td:nth-child(n+2){display:none;}
+    .pannel-detail[data-age="30"] .tab-panel thead th:nth-child(3),
+    .pannel-detail[data-age="30"] .tab-panel tbody td:nth-child(3),
+    .pannel-detail[data-age="30"] .tab-panel tfoot td:nth-child(2),
+    .pannel-detail[data-age="40"] .tab-panel thead th:nth-child(4),
+    .pannel-detail[data-age="40"] .tab-panel tbody td:nth-child(4),
+    .pannel-detail[data-age="40"] .tab-panel tfoot td:nth-child(3),
+    .pannel-detail[data-age="50"] .tab-panel thead th:nth-child(5),
+    .pannel-detail[data-age="50"] .tab-panel tbody td:nth-child(5),
+    .pannel-detail[data-age="50"] .tab-panel tfoot td:nth-child(4){display:table-cell;}
+}
 .premium-gender,
 .premium-age {
     display: flex;
@@ -208,7 +237,7 @@ banner-chart img{width: 100%}
 .premium-age { display: none; }   /* PC는 30·40·50세를 표로 모두 보여줌 */
 
 .coverage-section .tab-panel,
-.feature-section .tab-panel{padding:20px 0 0;}
+.feature-section .tab-panel{padding:40px 0 0;}
 
 .panel-coverage{padding:40px 70px 0 70px;}
 
@@ -220,7 +249,8 @@ banner-chart img{width: 100%}
     .tab-list{padding:0 20px;}
     .tab-item{padding:8px 12px;}
     .tab-type02{padding:0;}
-
+    .coverage-section .tab-panel,
+    .feature-section .tab-panel{padding:20px 0 0;}
     .panel-coverage{padding:20px 20px 0;}
     .coverage-section,
     .feature-section{padding:20px 20px 0;}
@@ -230,7 +260,7 @@ banner-chart img{width: 100%}
 .prd-box{margin:0 0 40px 0;}
 .prd-box + .prd-box{margin:0 0 40px 0;}
 .prd-box + .prd-box:last-child{margin:0 0 0px 0;}
-.prd-box h2{font-size:20px; font-weight: 500;color:var(--black80);margin-bottom:16px;}
+.prd-box h2{font-size:18px; font-weight: 500;color:var(--black80);margin-bottom:16px;}
 .prd-box h3{font-size:16px;font-weight: 500;color:var(--black80);margin-bottom:8px;}
 .prd-box .info-txt{font-size:16px;font-weight: 400;color:var(--black80);margin-bottom:16px;}
 .prd-box .info-txt p{color:var(--black80);font-weight: 400;}

@@ -64,7 +64,7 @@ $(function () {
     //tab : 처음 열릴 때 .on 탭의 패널 보이기
     $(".tab-item.on").trigger("click");
 
-    //tab-type03 (보험료예시 성별 탭) : 버튼 클릭 → aria-controls 에 적힌 .premium-panel 보이기
+    //tab-type03 (보험료예시 성별 탭) : 버튼 클릭 → aria-controls 에 적힌 .tab-panel 보이기
     $(".tab-type03 [role='tab']").on("click", function () {
         var $this = $(this);
         var $panel = $("#" + $this.attr("aria-controls"));
@@ -74,8 +74,8 @@ $(function () {
             .siblings("[role='tab']").removeClass("on").attr("aria-selected", "false");
 
         //2. 같은 그룹의 성별 패널만 숨기고, 연결된 패널 보이기
-        $panel.siblings(".premium-panel").attr("hidden", "hidden");
-        $panel.removeAttr("hidden");
+        $panel.siblings(".tab-panel").removeClass("on").attr("hidden", "hidden");
+        $panel.addClass("on").removeAttr("hidden");
     });
 
     //tab-type03 : 처음 열릴 때 aria-selected="true" 인 첫 탭의 패널 보이기
@@ -83,6 +83,22 @@ $(function () {
         var $tabs = $(this).find("[role='tab']");
         var $first = $tabs.filter("[aria-selected='true']").first();
         ($first.length ? $first : $tabs.first()).trigger("click");
+    });
+
+    //tab-age (보험료예시 나이 버튼, mo 전용) : 선택한 나이를 .pannel-detail[data-age] 에 넣음 → css 가 해당 나이 열만 보여줌
+    $(".tab-age button").on("click", function () {
+        var $this = $(this);
+
+        $this.attr("aria-pressed", "true")
+            .siblings("button").attr("aria-pressed", "false");
+        $this.closest(".pannel-detail").attr("data-age", $this.attr("data-age"));
+    });
+
+    //tab-age : 처음 열릴 때 aria-pressed="true" 인 나이 적용
+    $(".tab-age").each(function () {
+        var $btns = $(this).find("button");
+        var $first = $btns.filter("[aria-pressed='true']").first();
+        ($first.length ? $first : $btns.first()).trigger("click");
     });
 
     //상단 메인 탭(.main-tabs) : 링크 href 의 패널(.main-panel) 보이기

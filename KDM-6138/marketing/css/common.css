@@ -36,14 +36,18 @@
 .list-dash > li {position:relative; padding-left:10px;}
 .list-dot > li {position:relative; padding-left:10px;}
 .list-mark > li {position:relative; padding-left:14px;word-break:keep-all;}
+.list-normal > li {position:relative;word-break:keep-all;}
+
 .list-dash > li > ul,
 .list-dot > li > ul,
 .list-dash > li li ~ li,
 .list-dot > li li ~ li,
-.list-mark > li li ~ li{margin-top:8px}
+.list-mark > li li ~ li,
+.list-normal > li li ~ li{margin-top:8px}
 .list-dash > li ~ li,
 .list-dot > li ~ li ,
-.list-mark > li ~ li {margin-top:8px;}
+.list-mark > li ~ li,
+.list-normal > li ~li{margin-top:8px;}
 
 .list-dot > li::before {content:''; position:absolute; top:8px; left:0; display:block; width:4px; height:4px; border-radius:100%; background-color:#4e4e4e;}
 .list-dash > li::before {content:'-'; position:absolute; top:0; left:0; display:block;}
@@ -57,14 +61,16 @@
 .list-dot strong,
 .list-mark .bold,
 .list-mark .bold *,
-.list-mark strong {font-weight:600; color:#4e4e4e}
+.list-mark strong *,
+.list-normal strong{font-weight:600; color:#252525}
 
 
 /* 숫자 리스트 : <ol class="list-num"> */
 .list-num,
 .type-hangul{counter-reset:list-num;}
 .list-num > li,
-.type-hangul > li{position:relative; padding-left:16px; color:#4e4e4e; font-size:14px; line-height:1.4; counter-increment:list-num;}
+.type-hangul > li{position:relative; padding-left:16px; color:#252525;font-size:14px; line-height:1.4; counter-increment:list-num;font-weight: 400}
+.list-normal >li{color:#252525;font-size:14px;line-height: 1.4;font-weight: 400}
 .list-num > li::before ,
 .type-hangul > li::before{content:counter(list-num) "."; position:absolute; top:0; left:0; color:inherit; font-size:inherit; line-height:inherit;}
 .list-num > li ~ li{margin-top:8px;}
