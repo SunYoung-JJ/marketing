@@ -79,7 +79,7 @@
 }
 
 /*layout*/
-.cancer-wrapper{display: block;background:#f9fafb;}
+.dental-wrapper{display: block;background:#f9fafb;}
 .container{width: 100%;background:var(--white);}
 .content{padding:50px 0 0 0;}
 .hero{max-width:1140px;width:100%;margin:0 auto 20px;display:flex;align-items:flex-start;justify-content:space-between;gap: 50px;box-sizing:border-box;}
@@ -88,11 +88,59 @@
     .content{padding:20px 0 0;}
     .hero{padding:0 20px 0;}
 }
-/*메인 hero*/
-.banner {margin: 0 auto;box-sizing: border-box;display: grid;grid-template-columns: auto minmax(0, 600px);grid-template-rows: auto auto auto;justify-content: space-between;align-content: center;column-gap: 48px;row-gap: 16px;color: #08039C;}
-.banner *, .banner *::before, .banner *::after { box-sizing: border-box; }
-.banner p { margin: 0; }
-.banner img { display: block; max-width: 100%; height: auto; }
+/* ===== 메인 비주얼 (치아) ===== */
+.main-visual {overflow: hidden;width:100%;background:#fff;}
+.mv-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.mv-text { flex: 0 0 auto; }
+
+.mv-badge {display: inline-block; padding: 8px 24px;border-radius: 999px;background: #00C1D7;color: #fff;font-size:16px;font-weight: 600;}
+.mv-sub {margin-top:12px;font-size: 32px;font-weight: 500; color: #484848;}
+.mv-title {
+    margin-top:12px;
+    font-size:32px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.04em;
+    color: #111;
+}
+.mv-title .point-navy { color: #0b1a9c; }
+.mv-title .point-cyan { color: #22c3dc; }
+
+.mv-desc {
+    margin-top: 14px;
+    font-size: 15px;
+    color: #333;
+    letter-spacing: -0.02em;
+}
+
+.mv-img { flex: 0 1 256px; padding:40px 0 0 0}
+
+/* ===== 모바일 ===== */
+@media (max-width: 768px) {
+    .mv-text{width: 100%}
+    .mv-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        gap: 24px;
+    }
+    .mv-badge { font-size: 14px; padding: 6px 16px; }
+    .mv-sub { margin-top: 20px; font-size: 17px; }
+    .mv-title { margin-top: 8px; font-size: 26px; line-height: 1.25; }
+    .mv-title .line2 { font-size: 20px; }
+    .mv-desc { margin-top: 6px; font-size: 11px; }
+    .mv-img { flex: none; width:100%;height:156px;padding:0; }
+    .mv-img img{width:165px;height:auto;margin:0 auto;}
+}
 
 /* 배지 */
 .banner-badge {grid-column: 1;justify-self: start;align-self: end;padding: 6px 16px;border-radius: 999px;background: #00C1D7;color: #ffffff;font-size: 16px;font-weight: 600;line-height: 1.4;}
@@ -165,6 +213,9 @@
 .result-text {color:var(--black80); line-height:1.5;}
 .result-text ~ * {margin-top:16px;}
 .result-subtxt {font-size:14px;font-weight: 500;color:var(--black80); line-height: 1.5;}
+
+.cal-result{padding:0 20px;
+}
 
 /*tab*/
 .tabs-area{background:#fff;}
@@ -337,8 +388,10 @@
     .products-item-banner .price span:nth-child(2) { font-size: 22px; }
 }
 /*준법감시인 심의필 영역*/
-.box-compliance{display: block;padding:20px 0;background:yellowgreen}
-.box-compliance-inner{max-width: 1140px;margin: 0 auto;}
+.box-compliance{display: block;padding:20px 0;}
+.box-compliance-inner{max-width: 1140px;margin: 0 auto;display:flex; flex-direction:row;gap:4px;}
+.box-compliance-inner span{font-size: 14px;font-weight: 400}
 @media screen and (max-width:768px) {
     .box-compliance-inner{padding:0 20px;}
+    .box-compliance-inner{flex-direction: column;}
 }
