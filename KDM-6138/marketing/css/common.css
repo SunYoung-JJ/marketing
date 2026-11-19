@@ -99,7 +99,7 @@
 }
 
 
-.box-basic{padding:40px;border-radius: 16px;font-size:14px;background-color:#F7F8FB;}
+.box-basic{padding:40px;border-radius: 16px;font-size:14px;background-color:#fff;width:100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing:border-box;}
 .box-basic--title{font-size:16px;font-weight: 600;color:var(--black90);margin-bottom:8px}
 .box-basic--subtitle{font-size:14px;font-weight: 500;color:var(--black80);margin-bottom:8px}
 @media screen and (max-width:768px) {

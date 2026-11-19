@@ -143,7 +143,7 @@ $(function () {
 
                 bannerSwipers.push(new Swiper($box[0], {
                     slidesPerView: 1.6,        //카드 1.6장 보이게 (다음 카드가 살짝 보임) : 폭은 Swiper 가 계산
-                    spaceBetween: 12,
+                    spaceBetween: 14,
                     slidesOffsetBefore: 16,
                     slidesOffsetAfter: 16,
                     watchOverflow: true,
