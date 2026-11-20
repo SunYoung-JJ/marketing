@@ -143,12 +143,15 @@ $(function () {
 
                 bannerSwipers.push(new Swiper($box[0], {
                     slidesPerView: 1.6,        //카드 1.6장 보이게 (다음 카드가 살짝 보임) : 폭은 Swiper 가 계산
-                    spaceBetween: 14,
-                    slidesOffsetBefore: 16,
+                    spaceBetween: 24,
+                    centeredSlides: true,
+                    slidesOffsetBefore:0,
                     slidesOffsetAfter: 16,
                     watchOverflow: true,
                     observer: true,            //숨겨진 탭 패널이 열릴 때 크기 다시 계산
-                    observeParents: true
+                    observeParents: true,
+                    loop: true,
+                    loopedSlides: 2,
                 }));
             });
         }
