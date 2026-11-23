@@ -125,8 +125,9 @@ $(function () {
 
     //products-item-banner (상품특징 카드) : mo(768px 이하)에서만 Swiper 슬라이드, PC 는 해제
     // - 감싸는 .product-img-item 이 swiper-container, ul 이 swiper-wrapper, li 가 swiper-slide
+    // - .no-swiper 가 붙은 배너는 제외 (암보험 SCR001 : mo 에서 세로 배치)
     (function () {
-        var $banner = $(".products-item-banner");
+        var $banner = $(".products-item-banner").not(".no-swiper");
         var bannerSwipers = [];
 
         if (!$banner.length || typeof Swiper !== "function") {

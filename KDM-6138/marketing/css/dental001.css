@@ -214,7 +214,7 @@
 .result{margin-bottom:20px;text-align: center}
 .result-text {color:var(--black80); line-height:1.5;font-size:18px;font-weight: 600;display:flex;gap:8px;flex-direction: column;}
 .result-text ~ * {margin-top:16px;}
-.result-subtxt {font-size:14px;font-weight: 500;color:var(--black80); line-height: 1.5;}
+.result-subtxt {font-size:16px;font-weight: 500;color:var(--black80); line-height: 1.5;}
 .cal-result{padding:0 20px;}
 @media screen and (max-width:768px) {
     .calculator{padding:20px;}

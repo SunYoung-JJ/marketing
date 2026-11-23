@@ -211,11 +211,15 @@
 .chip .chip-text{font-size:14px;color:var(--black80);padding:8px 10px;border-radius:100px; border:1px solid #d9d9d9;background:var(--white);text-align: center;display:inline-block;}
 .chip .chip-text.chip-bg{background:#E0F4F7;border:1px solid #E0F4F7;}
 /*보험료계산 결과*/
-.result{margin-bottom:20px;text-align: center}
+.result{margin-bottom:20px;text-align:left}
 .result-text {color:var(--black80); line-height:1.5;font-size:18px;font-weight: 600;display:flex;gap:8px;flex-direction: column;}
 .result-text ~ * {margin-top:16px;}
-.result-subtxt {font-size:14px;font-weight: 500;color:var(--black80); line-height: 1.5;}
+.result-subtxt {font-size:16px;font-weight: 500;color:var(--black80); line-height: 1.5;}
 .cal-result{padding:0 20px;}
+/*보험료계산-chip*/
+.chip{text-align: center}
+.chip .chip-text{font-size:14px;color:var(--black80);padding:8px 10px;border-radius:100px; border:1px solid #d9d9d9;background:var(--white);text-align: center;display:inline-block;}
+.chip .chip-text.chip-bg{background:#E0F4F7;border:1px solid #E0F4F7;}
 @media screen and (max-width:768px) {
     .calculator{padding:20px;}
     .result-text{font-size: 16px}
@@ -335,14 +339,16 @@
 
 .product-sit{font-size:24px;font-weight: 500;color:var(--black80);text-align: center;margin-bottom:8px;}
 .product-info{font-size:20px;font-weight: 400;color:var(--black80);text-align: center;}
-.product-img{display: block;padding:40px;width: 520px;height:153px;}
+.product-img{display: block;padding:40px;width: 100%;max-width: 600px;box-sizing: border-box;}
 .product-img img{display: block;width: 100%;height: auto;}
 .product-img .mo-only{display: none;}
 
 /*상품특징 02*/
-.product-img-step02{display: block;height: 427px}
-.product-img-step02 img{display: block;width: 100%;height: auto;}
+.product-img-step02{display: block;width: 100%;max-width: 800px;}
+.product-img-step02 img{display: block;max-width: 100%;height: auto;margin: 0 auto;}
 .product-img-step02 .mo-only{display: none;}
+
+
 /*상품특징 03*/
 .products-item-banner{ display: flex;align-items: flex-start;gap:32px;}
 .products-item-banner li{border-radius: 16px;background: #FFF;}
@@ -351,16 +357,15 @@
 .product-img-item p { margin: 0; }
 /* 카드 */
 .products-item-banner {margin: 0;padding: 0; list-style: none;display: grid;grid-template-columns: repeat(3, minmax(0, 1fr));gap: 28px;}
-.products-item-banner li {display: flex;flex-direction: column;padding:140px 20px 30px 20px;border-radius: 12px;background-color: #fff;background-repeat: no-repeat;background-position: center 20px;background-size: auto 100px;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);text-align: center;max-height: 292px;}
-.products-item-banner li > div {flex: 1;display: flex;flex-direction: column;justify-content: space-between;gap: 40px;}
+.products-item-banner li {display: flex;flex-direction: column;padding:124px 20px 30px 20px;border-radius: 12px;background-color: #fff;background-repeat: no-repeat;background-position: center 20px;background-size: auto 100px;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);text-align: center;max-height: 292px;}
+.products-item-banner li > div {flex: 1;display: flex;flex-direction: column;justify-content: space-between;gap:8px;}
 
-/* 아이콘 (배경 이미지) */
-.products-item-banner .img01 { background-image: url(../image/cancer/img_banner04.png); }
-.products-item-banner .img02 { background-image: url(../image/cancer/img_banner05.png); }
-.products-item-banner .img03 { background-image: url(../image/cancer/img_banner06.png); }
-/* 제목 */
-.products-item-banner .tit {font-size: 16px;font-weight: 500;margin-bottom:12px;}
-.products-item-banner .stit {font-size:14px;line-height: 1.5; color: var(--gray90);}
+.products-item-banner li.img01{background:url(../image/cancer/img_banner04.png) center 20px no-repeat;background-size:80px;}
+.products-item-banner li.img02{background:url(../image/cancer/img_banner05.png) center 20px no-repeat;background-size:80px;}
+.products-item-banner li.img03{background:url(../image/cancer/img_banner06.png) center 20px no-repeat;background-size:80px;}
+
+.product-item-title .tit{font-size: 16px;color:var(--black90);font-weight:600;text-align: center;}
+.product-item-title .stit{font-size: 14px;color:var(--black80);font-weight:400;text-align:center ;}
 
 @media screen and (max-width:768px) {
     .product-feature{padding:20px 0 0;}
@@ -374,11 +379,22 @@
     .product-img{padding:20px;}
     .product-img .mo-only{display: block;}
     .product-img .pc-only{display: none;}
-
+    .product-img-step02 .mo-only{display: block;}
+    .product-img-step02 .pc-only{display: none;}
     .product-img-item {padding: 0;}
+    .products-item-banner{grid-template-columns:repeat(1, minmax(0, 1fr));gap:20px;}
+    .products-item-banner li{flex-direction: row;padding:20px;max-height:auto;}
+    .products-item-banner li > div{display:inline-flex;justify-content:flex-start;flex:auto;}
+    .products-item-banner li.img01,
+    .products-item-banner li.img02,
+    .products-item-banner li.img03{background-position: 20px;background-size:60px 60px;}
+    .product-item-title .tit{text-align: left;}
+    .product-item-title .stit{text-align: left;}
+
 
 
 }
+
 
 
 /*준법감시인 심의필 영역*/
