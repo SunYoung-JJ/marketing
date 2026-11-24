@@ -304,7 +304,7 @@
     .feature-section .tab-panel{padding:20px 0 0;}
     .panel-coverage{padding:20px 20px 0;}
     .coverage-section,
-    .feature-section{padding:20px 20px 80px ;}
+    .feature-section{padding:20px 20px 40px ;}
     /* 섹션에 이미 좌우 20px 여백이 있어 탭 라인을 표와 맞춤 */
     .coverage-section .tab-list,
     .feature-section .tab-list{padding:0;}
