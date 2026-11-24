@@ -391,6 +391,9 @@
     .product-item-title .tit{text-align: left;}
     .product-item-title .stit{text-align: left;}
 
+    /* .no-swiper : Swiper 미사용 (common.js 에서 Swiper 대상 제외) - 슬라이드 없이 세로 배치 유지 */
+    .products-item-banner.no-swiper{display:grid;transform:none;}
+    .products-item-banner.no-swiper li{width:auto;max-height:none;}
 
 
 }
