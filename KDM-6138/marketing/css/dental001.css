@@ -212,11 +212,12 @@
 .chip .chip-text{font-size:14px;color:var(--black80);padding:8px 10px;border-radius:100px; border:1px solid #d9d9d9;background:var(--white);text-align: center;display:inline-block;}
 .chip .chip-text.chip-bg{background:#E0F4F7;border:1px solid #E0F4F7;}
 /*보험료계산 결과*/
-.result{margin-bottom:20px;text-align: center}
+.result{margin-bottom:20px;text-align:left}
 .result-text {color:var(--black80); line-height:1.5;font-size:18px;font-weight: 600;display:flex;gap:8px;flex-direction: column;}
 .result-text ~ * {margin-top:16px;}
 .result-subtxt {font-size:16px;font-weight: 500;color:var(--black80); line-height: 1.5;}
 .cal-result{padding:0 20px;}
+
 @media screen and (max-width:768px) {
     .calculator{padding:20px;}
     .result-text{font-size: 16px}
