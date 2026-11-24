@@ -216,6 +216,29 @@ $(function () {
     $(".text-input > input").on("focusout", function () {
         $(this).parents(".input-area").removeClass("focus");
     });
+
+    //scroll top (.btn-scroll-top) : 300px 이상 스크롤하면 보이기, 클릭하면 맨 위로 부드럽게 이동
+    (function () {
+        var $btn = $(".btn-scroll-top");
+        if (!$btn.length) {
+            return;
+        }
+
+        function topCheck() {
+            $btn.toggleClass("on", $(window).scrollTop() > 300);
+        }
+
+        $btn.on("click", function () {
+            //동작 줄이기 설정이면 바로 이동
+            var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            $("html, body").stop().animate({ scrollTop: 0 }, reduce ? 0 : 400);
+            //키보드 사용자 : 페이지 처음으로 포커스 이동
+            $("#contents").attr("tabindex", "-1").focus();
+        });
+
+        topCheck();
+        $(window).on("scroll", topCheck);
+    })();
 });
 
 //modal : modal("팝업ID", true) 열기, modal("팝업ID", false) 닫기

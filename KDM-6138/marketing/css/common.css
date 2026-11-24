@@ -333,6 +333,17 @@
     .modal-gnb{transition:none;}
 }
 
+/*scroll top : 맨 위로 이동 (common.js 에서 300px 이상 스크롤 시 .on)*/
+.btn-scroll-top{position:fixed;right:24px;bottom:24px;z-index:80;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:url(../image/common/ic_scroll_top.png) no-repeat center / 40px 40px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease, transform .25s ease, visibility .25s;}
+.btn-scroll-top.on{opacity:1;visibility:visible;transform:none;}
+.btn-scroll-top:focus-visible{outline:2px solid var(--primary-color);outline-offset:2px;}
+@media screen and (max-width:768px) {
+    .btn-scroll-top{right:16px;bottom:95px;} /* 하단 고정 버튼(.form-open-bar 79px) 위 */
+}
+@media (prefers-reduced-motion: reduce) {
+    .btn-scroll-top{transition:none;}
+}
+
 /*footer*/
 .footer{background:#4B4D52;color:var(--white);overflow:hidden;}
 .footer-inner{max-width:1140px;margin:0 auto;}

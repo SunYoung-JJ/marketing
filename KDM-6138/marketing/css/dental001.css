@@ -238,6 +238,23 @@
 .tab-type02 .tab-item.on{background-color:#fff;color:var(--black80); font-weight: 500;}
 .tab-type02 .tab-item.on::before{content:'';display:block;height:2px;background-color:#00C1D7;width:100%;position:absolute;bottom:0;left:0;}
 
+/* 탭 선택 부드럽게 : 버튼 색 전환 + 밑줄 펼침 + 패널 페이드인 */
+.tab-item,
+.tab-type03 button{transition:background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;}
+.tab-type02 .tab-item::before{content:'';display:block;height:2px;background-color:#00C1D7;width:100%;position:absolute;bottom:0;left:0;transform:scaleX(0);transition:transform .3s cubic-bezier(0.22, 1, 0.36, 1);}
+.tab-type02 .tab-item.on::before{transform:scaleX(1);}
+.tab-panel.on{animation:tabPanelIn .35s cubic-bezier(0.22, 1, 0.36, 1);}
+@keyframes tabPanelIn{
+    from{opacity:0;transform:translateY(8px);}
+    to{opacity:1;transform:none;}
+}
+@media (prefers-reduced-motion: reduce) {
+    .tab-item,
+    .tab-type03 button,
+    .tab-type02 .tab-item::before{transition:none;}
+    .tab-panel.on{animation:none;}
+}
+
 .tab-type03{ display:inline-flex; gap: 8px; background:#F2F4F7;border-radius: 8px;padding:4px;}
 .tab-type03 button{min-width:57px;padding:8px 16px;color:var(--black80);font-size:14px;font-weight:500;border-radius:4px;}
 .tab-type03 button[aria-selected="true"],
@@ -334,7 +351,7 @@
 .product-tit {font-size:30px;color:var(--black90);font-weight:600;text-align: center;margin-bottom:16px;}
 .product-tit p{font-size:30px;font-weight:600;color:#08039C;display: flex;flex-direction: row;align-items: center;margin-top:8px;}
 
-.product-sit{font-size:20px;font-weight: 500;color:var(--black80);text-align: center;}
+.product-sit{font-size:20px;font-weight: 500;color:var(--black80);text-align: center;line-height: 1.5;}
 .product-img{display: block;padding:40px;}
 .product-img img{display: block;width: 100%;height: auto;}
 .product-img .mo-only{display: none;}
