@@ -383,19 +383,19 @@
 .product-img-item, .product-img-item *, .product-img-item *::before, .product-img-item *::after { box-sizing: border-box; }
 .product-img-item { width: 100%; min-width: 0; }   /* 부모가 align-items:center 라 폭이 내용만큼 늘어나 넘치던 것 방지 */
 .product-img-item p { margin: 0; }
-.m-product{display: block;position: relative;background: url(../image/cancer/img_mo_product02.png) no-repeat center center ;background-size: 178px 165px;min-height:330px;} /* 이미지 178x165 + 위아래 글 영역 */
+.m-product{display: block;position: relative;background: url(../image/cancer/img_product02.png) no-repeat center center ;background-size:350px 324px;min-height:324px;} /* 이미지 350px + 위아래 글 영역 */
 .m-product-text{}
 /* 네 모서리 배치 : 1 좌상, 2 우상, 3 좌하, 4 우하 (배경 이미지의 원 4개 옆) */
 .m-product-text{position:absolute;max-width:calc(50% - 4px);word-break:keep-all;}
-.m-product-text:nth-child(1){top:50px;left:0;text-align:right;}
-.m-product-text:nth-child(2){top:50px;right:10px;text-align:left;}
-.m-product-text:nth-child(3){bottom:10px;left:20px;text-align:right;}
-.m-product-text:nth-child(4){bottom:10px;right:20px;text-align:left;}
+.m-product-text:nth-child(1){top:0;left:100px;text-align:right;}
+.m-product-text:nth-child(2){top:0;right:140px;text-align:left;}
+.m-product-text:nth-child(3){bottom:10px;left:100px;text-align:right;}
+.m-product-text:nth-child(4){bottom:10px;right:100px;text-align:left;}
 /* 원발암(1)·재발암(3) 오른쪽 정렬, 전이암(2)·잔여암(4) 왼쪽 정렬 */
 .m-product-text:nth-child(1) p,
 .m-product-text:nth-child(3) p{text-align:right;}
-.m-product-text span{font-size:12px;color:#fff;padding:2px 6px; background-color:var(--primary-color);border-radius: 4px;margin-bottom:6px;display: inline-flex;}
-.m-product-text p{ text-align: left;font-size:12px;line-height:1.4;color:var(--gray90);}
+.m-product-text span{font-size:14px;color:#fff;padding:2px 12px; background-color:var(--primary-color);border-radius: 4px;margin-bottom:6px;display: inline-flex;}
+.m-product-text p{ text-align: left;font-size:14px;line-height:1.4;color:var(--gray90);}
 .m-product-text p strong{font-size:13px;color:var(--black90);}
 /* 카드 */
 .products-item-banner {margin: 0;padding: 0; list-style: none;display: grid;grid-template-columns: repeat(3, minmax(0, 1fr));gap: 28px;}
@@ -437,7 +437,16 @@
     /* .no-swiper : Swiper 미사용 (common.js 에서 Swiper 대상 제외) - 슬라이드 없이 세로 배치 유지 */
     .products-item-banner.no-swiper{display:grid;transform:none;}
     .products-item-banner.no-swiper li{width:auto;max-height:none;}
-
+    .m-product{background: url(../image/cancer/img_mo_product02.png) no-repeat center center ;background-size: 178px 165px;min-height:330px;}
+    /* 네 모서리 배치 : 1 좌상, 2 우상, 3 좌하, 4 우하 (배경 이미지의 원 4개 옆) */
+    .m-product-text{position:absolute;max-width:calc(50% - 4px);word-break:keep-all;}
+    .m-product-text:nth-child(1){top:50px;left:0;text-align:right;}
+    .m-product-text:nth-child(2){top:50px;right:10px;text-align:left;}
+    .m-product-text:nth-child(3){bottom:10px;left:20px;text-align:right;}
+    .m-product-text:nth-child(4){bottom:10px;right:20px;text-align:left;}
+    .m-product-text span{font-size:12px;color:#fff;padding:2px 6px; background-color:var(--primary-color);border-radius: 4px;margin-bottom:6px;display: inline-flex;}
+    .m-product-text p{ text-align: left;font-size:12px;line-height:1.4;color:var(--gray90);}
+    .m-product-text p strong{font-size:13px;color:var(--black90);}
 
 }
 
